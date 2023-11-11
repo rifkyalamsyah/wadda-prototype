@@ -16,7 +16,7 @@
   </head>
   <body>
       <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg border-bottom">
       <div class="container cashier-navbar">
         <a class="navbar-brand fw-bold" href="#">Wadda.</a>
         <button
@@ -31,7 +31,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-4">
             <li class="nav-item">
               <a class="nav-link" href="#features">Fitur</a>
             </li>
@@ -52,31 +52,33 @@
             </li>
           </ul>
           <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="btn btn-primary" href="#">Konsultasi Gratis</a>
+            <li class="nav-item d-flex">
+              <a class="btn btn-primary flex-grow-1 flex-sm-grow-0" href="#">Konsultasi Gratis</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <!-- End Navbar -->
+    <!-- hero section -->
     <header>
-      <!-- hero section -->
       <section class="hero-section">
         <div class="container">
-          <div class="row text-center">
-            <h1>Undangan Pernikahan Digital</h1>
-            <p>Dikemas dalam bentuk website yang menarik serta dapat dibagikan kapanpun dan dimanapun.</p>
-            <div>
+          <div class="row d-flex text-center">
+            <div class="text-wrapper order-2 order-sm-0 mt-5 mt-lg-0">
+              <h1>Undangan Pernikahan Digital</h1>
+              <p>Dikemas dalam bentuk website yang menarik serta dapat dibagikan kapanpun dan dimanapun.</p>
+            </div>
+            <div class="d-flex justify-content-center flex-column flex-sm-row gap-2 order-3 order-sm-0">
               <a href="#" class="btn btn-primary">Pesan Sekarang</a>
               <a href="#" class="btn btn-secondary">Pelajari lebih lanjut</a>
             </div>
-              <img src="src/img/hero-image.png" class="mt-5 rounded-5" alt="hero-image">
+              <img src="src/img/hero-image.png" class="mt-sm-5 rounded-5 order-1 order-sm-0" alt="hero-image">
           </div>
         </div>
       </section>
-      <!-- hero section end-->
     </header>
+    <!-- hero section end-->
 
       <main>
         <!-- feature section -->
@@ -89,7 +91,7 @@
           <!-- card-wrapper -->
           <!-- row 1st -->
           <div class="row mt-5">
-            <div class="col d-lg-flex gap-4">
+            <div class="col d-flex flex-column flex-sm-row gap-3">
               <div class="card rounded-4" >
                 <img src="src/img/images-feature.png" class="card-img-top p-3 rounded-5" alt="img-feature">
                 <div class="card-body">
@@ -108,8 +110,8 @@
             </div>
           </div>
           <!-- row 2nd-->
-          <div class="row mt-4">
-            <div class="col d-lg-flex gap-4">
+          <div class="row mt-3 mt-lg-4">
+            <div class="col d-flex flex-column flex-sm-row gap-3">
               <div class="card rounded-4" >
                 <img src="src/img/maps-feature.png" class="card-img-top p-3 rounded-5" alt="img-feature">
                 <div class="card-body">
@@ -147,7 +149,7 @@
             <!-- card-wrapper -->
             <!-- row 1st -->
             <div class="row mt-4">
-              <div class="col d-lg-flex gap-4">
+              <div class="col d-flex flex-column flex-sm-row gap-3">
                 <div class="card w-100 rounded-4">
                   <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between mb-2">
@@ -181,8 +183,8 @@
               </div>
             </div>
             <!-- row 2nd -->
-            <div class="row mt-4">
-              <div class="col d-lg-flex gap-4">
+            <div class="row mt-3">
+              <div class="col  d-flex flex-column flex-sm-row gap-3">
                 <div class="card w-100 rounded-4">
                   <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between mb-2">
@@ -222,35 +224,37 @@
         <section class="theme">
           <div class="container">
             <div class="row d-flex justify-content-between">
-              <div class="col-8">
-                <h3>Pilihan Tema</h3>
-                <p>Pilih Tema Sesuai Dengan Undangan Pernikahan Impianmu.</p>
+              <div class="col-lg-8">
+                <div class="text-wrapper text-center text-lg-start">
+                  <h3>Pilihan Tema</h3>
+                  <p>Pilih Tema Sesuai Dengan Undangan Pernikahan Impianmu.</p>
+                </div>
               </div>
-              <div class="col d-flex align-items-center justify-content-end">
+              <div class="col d-flex align-items-center justify-content-end d-none d-lg-inline-flex">
                 <div class="btn btn-primary">Lihat semua tema</div>
               </div>
             </div>
             <!-- card-wrapper -->
             <div class="row mt-4">
-              <div class="col d-lg-flex gap-3">
-                <div class="card  rounded-4">
-                  <img src="src/img/hero-image.png" class="card-img-top p-3 rounded-5" alt="img-feature">
+              <div class="col d-flex flex-column flex-sm-row flex-wrap flex-lg-nowrap gap-3">
+                <div class="card rounded-4">
+                  <img src="src/img/product/card-image-brown.png" class="card-img-top p-3 rounded-5" alt="img-feature">
                   <div class="card-body">
-                    <h4 class="card-title">Sweet brown</h4>
-                    <div class="d-flex gap-3">
-                      <p class="fw-bold text-decoration-line-through fs-5 text-secondary">Rp.479.000</p>
+                    <h5 class="card-title">Sweet brown</h5>
+                    <div class="d-flex align-items-end flex-wrap gap-1">
+                      <p class="fw-bold text-decoration-line-through text-secondary">Rp.479.000</p>
                       <p class="fw-bold fs-5">Rp.249.000</p>
                     </div>
-                    <div class="d-flex justify-content-center align-items-center gap-2">
+                    <div class="d-flex flex-lg-row justify-content-center align-items-center gap-2">
                       <div class="btn btn-secondary w-100">Preview</div>
                       <div class="btn btn-primary w-100">Pilih Tema</div>
                     </div>
                   </div>
                 </div>
                 <div class="card rounded-4">
-                  <img src="src/img/hero-image.png" class="card-img-top p-3 rounded-5" alt="img-feature">
+                  <img src="src/img/product/card-image-purple.png" class="card-img-top p-3 rounded-5" alt="img-feature">
                   <div class="card-body">
-                    <h4 class="card-title">Sweet purple</h4>
+                    <h5 class="card-title">Sweet purple</h5>
                     <div class="d-flex">
                       <p class="fw-bold fs-5">Rp.349.000</p>
                     </div>
@@ -260,9 +264,9 @@
                   </div>
                 </div>
                 <div class="card rounded-4">
-                  <img src="src/img/hero-image.png" class="card-img-top p-3 rounded-5" alt="img-feature">
+                  <img src="src/img/product/card-image-green.png" class="card-img-top p-3 rounded-5" alt="img-feature">
                   <div class="card-body">
-                    <h4 class="card-title">Sweet green</h4>
+                    <h5 class="card-title">Sweet green</h5>
                     <div class="d-flex">
                       <p class="fw-bold fs-5">Rp.349.000</p>
                     </div>
@@ -272,6 +276,9 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="col d-flex align-items-center justify-content-center pt-5 d-lg-none">
+              <div class="btn btn-primary">Lihat semua tema</div>
             </div>
           </div>
         </section>
@@ -284,43 +291,46 @@
               <h3>Testimonial</h3>
               <p>Lihat Seberapa Puas Mereka Yang Menggukan Undangan Digital</p>
             </div>
-            <div class="row mt-5">
-              <div class="col d-lg-flex gap-4">
-                <div class="card rounded-4 p-3">
+            <div class="row mt-4">
+              <div class="col d-flex flex-column flex-lg-row gap-3">
+                <div class="card rounded-4 p-2">
                   <div class="card-body">
-                    <figure>
+                    <figure class="mb-0">
                       <blockquote class="blockquote">
-                        <p class="text-secondary">“Undangan digitalnya bagus banget. Layanannya juga keren, kalo ada kesulitan langsung dibantu sama adminnya. Thanks Wadda”</p>
+                        <p class="text-secondary">“Undangan digitalnya bagus banget. service juga keren, kalo ada kesulitan langsung dibantu sama adminnya. Thanks Wadda”.
+                        </p>
                       </blockquote>
                       <div class="d-flex align-items-center gap-3 mt-4">
                         <img src="src/img/people-1.png" class="rounded-circle" style="width: 60px;" alt="img-people">
-                        <p class="fw-bold">Sarah putri</p>
+                        <p class="fw-bold mb-0">Sarah Putra</p>
                       </div>
                     </figure>
                   </div>
                 </div>
-                <div class="card rounded-4 p-3">
+                <div class="card rounded-4 p-2">
                   <div class="card-body">
-                    <figure>
+                    <figure class="mb-0">
                       <blockquote class="blockquote">
-                        <p class="text-secondary">“Undangan digitalnya bagus banget. Fiturnya juga keren, kalo ada kesulitan langsung dibantu sama adminnya. Thanks Wadda”.</p>
+                        <p class="text-secondary">“Undangan digitalnya bagus banget. Fiturnya juga keren, kalo ada kesulitan langsung dibantu sama adminnya. Thanks Wadda”.
+                        </p>
                       </blockquote>
                       <div class="d-flex align-items-center gap-3 mt-4">
                         <img src="src/img/people-2.png" class="rounded-circle" style="width: 60px;" alt="img-people">
-                        <p class="fw-bold">Angga Putra</p>
+                        <p class="fw-bold mb-0">Angga Putra</p>
                       </div>
                     </figure>
                   </div>
                 </div>
-                <div class="card rounded-4 p-3">
+                <div class="card rounded-4 p-2">
                   <div class="card-body">
-                    <figure>
+                    <figure class="mb-0">
                       <blockquote class="blockquote">
-                        <p class="text-secondary">“Undangan digitalnya bagus banget. Desainn-nya keren, kalo ada kesulitan langsung dibantu sama adminnya. Thanks Wadda”</p>
+                        <p class="text-secondary">“Undangan digitalnya bagus banget. Desainn-nya keren, kalo ada kesulitan langsung dibantu sama adminnya. Thanks Wadda”
+                        </p>
                       </blockquote>
                       <div class="d-flex align-items-center gap-3 mt-4">
                         <img src="src/img/people-3.png" class="rounded-circle" style="width: 60px;" alt="img-people">
-                        <p class="fw-bold">Nabila putri</p>
+                        <p class="fw-bold mb-0">Nabila putri</p>
                       </div>
                     </figure>
                   </div>
@@ -339,27 +349,31 @@
               <p>Dapatkan Undangan Digital Premium Dengan Harga Terjangkau</p>
             </div>
             <div class="row mt-4">
-              <div class="col d-lg-flex gap-4 align-items-center">
+              <div class="col d-flex flex-column flex-sm-row gap-3 align-items-center">
                 <div class="card w-100 rounded-4 p-3">
                   <div class="card-body">
                     <h3 class="card-title">Design Template</h3>
                     <p class="card-text">Pilih Tema Sesuai Dengan Undangan Pernikahan Impianmu, Ada berbagai tema menarik siap pakai.</p>
-                    <div class="d-flex flex-wrap gap-2 gap-lg-3 mb-2 mb-lg-3">
-                      <h3 class="fw-bold text-decoration-line-through text-secondary">Rp.479.000</h3>
-                      <h3 class="fw-bold">Rp.249.000</h3>
+                    <div class="d-flex align-items-end flex-wrap  gap-1 gap-lg-2 mb-2 mb-lg-3">
+                      <p class="fw-bold text-decoration-line-through text-secondary">Rp.479.000</p>
+                      <p class="fw-bold fs-4">Rp.249.000</p>
                     </div>
-                    <a href="#" class="btn btn-primary">Pesan Sekarang</a>
+                    <div class="d-flex">
+                      <a href="#" class="btn btn-primary flex-grow-1 flex-lg-grow-0">Pesan Sekarang</a>
+                    </div>
                   </div>
                 </div>
                 <div class="card w-100 rounded-4 p-3">
                   <div class="card-body">
                     <h3 class="card-title">Custom Desain</h3>
                     <p class="card-text">Wujudkan desain impianmu! Tentukan tema, warna, ornament, sesuai yang kamu inginkan.</p>
-                    <div class="d-flex flex-wrap gap-2 gap-lg-3 mb-2 mb-lg-3">
-                      <h3 class="fw-bold text-decoration-line-through text-secondary">Rp.1.500.000</h3>
-                      <h3 class="fw-bold">Rp.749.000</h3>
+                    <div class="d-flex align-items-end flex-wrap gap-1 gap-lg-2 mb-2 mb-lg-3">
+                      <p class="fw-bold text-decoration-line-through text-secondary">Rp.1.500.000</p>
+                      <p class="fw-bold fs-4">Rp.749.000</p>
                     </div>
-                    <a href="#" class="btn btn-secondary">Konsultasi Sekarang</a>
+                    <div class="d-flex">
+                      <a href="#" class="btn btn-secondary flex-grow-1 flex-lg-grow-0">Konsultasi Sekarang</a>
+                    </div>
                   </div>
                 </div>
               </div>

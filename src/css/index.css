@@ -67,27 +67,35 @@ footer {
   background: #4d3936;
 }
 
-footer .brand p{
+footer .brand p {
   color: #b0b0b0;
 }
 
-
-footer .brand a:hover{
+footer .brand a:hover {
   transform: scale(1.2);
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
-footer a{
+footer a {
   text-decoration: none;
   color: #b0b0b0;
-
 }
-footer a:hover{
+footer a:hover {
   text-decoration: none;
   color: #ffffff;
 }
 
-footer hr{
+footer hr {
   color: #b0b0b0;
 }
 /* footer end */
+
+/* --- Media Query --- */
+/* mobile device */
+@media (max-width: 576px) {
+}
+
+/* tablet */
+@media (max-width: 768px) {
+ 
+}
