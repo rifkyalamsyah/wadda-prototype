@@ -9,6 +9,12 @@ body {
   font-family: 'DM Sans', sans-serif !important;
 }
 
+/* nav */
+.navbar {
+  padding: 1rem 0 !important;
+}
+/* nav end */
+
 /* hero section */
 .hero-section {
   padding: 8rem 0;
@@ -25,3 +31,17 @@ body {
   padding: 8rem 0;
 }
 /* feature section end */
+
+/* guide section */
+.guide {
+  padding: 8rem 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f6f6f6 100%);
+}
+/* guide section end */
+
+/* theme section */
+.theme {
+  padding: 8rem 0;
+  background: linear-gradient(180deg, #E8E0D9 0%, rgba(232, 224, 217, 0.00) 100%);
+}
+/* theme section end */
