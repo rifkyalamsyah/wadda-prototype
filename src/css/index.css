@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Sacramento&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'DM Sans', sans-serif !important;
 }
@@ -12,7 +16,7 @@ body {
 
 /* hero section */
 .hero-section {
-  padding: 8rem 0;
+  padding: 5rem 0;
 }
 
 .hero-section img {
@@ -23,20 +27,20 @@ body {
 
 /* feature section */
 .feature {
-  padding: 8rem 0;
+  padding: 5rem 0;
 }
 /* feature section end */
 
 /* guide section */
 .guide {
-  padding: 8rem 0;
+  padding: 5rem 0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f6f6f6 100%);
 }
 /* guide section end */
 
 /* theme section */
 .theme {
-  padding: 8rem 0;
+  padding: 5rem 0;
   background: linear-gradient(180deg, #e8e0d9 0%, rgba(232, 224, 217, 0) 100%);
 }
 /* theme section end */
@@ -50,14 +54,14 @@ body {
 
 /* pricing section */
 .pricing {
-  padding: 8rem 0;
+  padding: 5rem 0;
   background: linear-gradient(180deg, #e8e0d9 0%, rgba(232, 224, 217, 0) 100%);
 }
 /* pricing section end */
 
 /* FAQ section */
 .faq {
-  padding: 8rem 0;
+  padding: 5rem 0;
 }
 /* FAQ section end */
 
@@ -97,5 +101,4 @@ footer hr {
 
 /* tablet */
 @media (max-width: 768px) {
- 
 }
