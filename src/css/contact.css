@@ -1,54 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Sacramento&display=swap');
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'DM Sans', sans-serif !important;
-}
-
-/* nav */
-.navbar {
-  padding: 1rem 0 !important;
-}
-/* nav end */
-
 /* contact section */
 .contact {
   padding: 5rem 0;
 }
 
-form{
-    background-color: #e7e7e7 !important;
+form {
+  background-color: var(--grey-100) !important;
 }
 /* contact section end */
 
-/* footer */
-footer {
-  padding: 4rem 0 0 0;
-  background: #4d3936;
-}
-
-footer .brand p {
-  color: #b0b0b0;
-}
-
-footer .brand a:hover {
-  transform: scale(1.2);
-  transition: transform 0.2s;
-}
-
-footer a {
-  text-decoration: none;
-  color: #b0b0b0;
-}
-footer a:hover {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-footer hr {
-  color: #b0b0b0;
-}
-/* footer end */
