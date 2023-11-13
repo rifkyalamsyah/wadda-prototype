@@ -13,6 +13,14 @@
 .feature {
   padding: 5rem 0;
 }
+
+.feature .card {
+  transition: box-shadow 1s;
+}
+
+.feature .card:hover {
+  box-shadow: 0 0 16px rgba(33, 33, 33, 0.2);
+}
 /* feature section end */
 
 /* guide section */
@@ -23,6 +31,18 @@
     rgba(255, 255, 255, 0) 0%,
     var(--grey-50) 100%
   );
+}
+
+.guide .card h6 {
+  color: var(--brown-700);
+}
+
+.guide .card {
+  transition: box-shadow 1s;
+}
+
+.guide .card:hover {
+  box-shadow: 0 0 16px rgba(33, 33, 33, 0.2);
 }
 /* guide section end */
 
@@ -64,7 +84,6 @@
   padding: 5rem 0;
 }
 /* FAQ section end */
-
 
 /* --- Media Query --- */
 /* mobile device */

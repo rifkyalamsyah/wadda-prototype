@@ -94,11 +94,45 @@ input:-webkit-autofill:focus {
   --bs-accordion-active-bg: var(--grey-100);
   --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(167, 78, 40, 0.25);
 }
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
 /* accordion end */
+
+/* badge */
+.badge {
+  --bs-badge-padding-x: 24px;
+  --bs-badge-padding-y: 12px;
+  --bs-badge-font-weight: normal;
+  --bs-badge-color: var(--brown-700);
+  background-color: var(--brown-100);
+}
+
+.badge:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+/* badge end */
+
+/* dropdown */
+.dropdown-menu {
+  --bs-dropdown-link-active-color: var(--grey-600);
+  --bs-dropdown-link-active-bg: var(--grey-100);
+}
+/* dropdown end */
 
 /* navbar */
 .navbar {
   padding: 1rem 0 !important;
+}
+
+.navbar .navbar-brand {
+  color: var(--brown-700);
 }
 /* navbar end */
 

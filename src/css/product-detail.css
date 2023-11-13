@@ -1,17 +1,27 @@
-/* theme section */
-.theme {
-  padding: 5rem 0;
-  background: linear-gradient(
-    180deg,
-    rgba(246, 246, 246, 0) 0%,
-    var(--grey-50) 100%
-  );
+/* product detail section */
+.product-detail {
+  padding: 4rem 0;
 }
-/* theme section end */
+/* product detail section end */
+
+/* breadcrumb */
+nav .breadcrumb {
+  padding: 2rem 0;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: var(--brown-700);
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+/* breadcrumb end */
 
 /* guide section */
 .guide {
-  padding: 8rem 0;
+  padding: 5rem 0;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
