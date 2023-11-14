@@ -1,0 +1,14 @@
+/* success payment section */
+.submit-success {
+  padding: 8rem 0;
+}
+
+.submit-success .img-wrapper img {
+  width: 126px;
+}
+
+.submit-success .cta-wrapper a {
+  width: 100%;
+  max-width: 350px;
+}
+/* success payment section end */
