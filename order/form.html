@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Data Pernikahan | Wadda</title>
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="../src/css/global.css" />
+    <link rel="stylesheet" href="../src/css/form.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg border-bottom">
+      <div class="container wadda-navbar">
+        <a class="navbar-brand fw-bold" href="../index.html">Wadda.</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-4">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#fitur">Fitur</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Panduan
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../index.html#panduan"
+                    >Cara pemesanan?</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Cara buat link tamu?</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../tema.html">Tema</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#testimoni">Testimonial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#harga">Harga</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../kontak.html">Kontak Kami</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item d-flex">
+              <a
+                class="btn btn-primary flex-grow-1 flex-sm-grow-0"
+                href="https://wa.me/+628562376627?text=Halo,%20Saya%20%5Bnama%5D.%0AMau%20konsultasi%20soal%20undangan%20pernikahan%20digital."
+                target="_blank"
+                >Konsultasi Gratis</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar end -->
+
+    <main>
+      <!-- form section -->
+      <section class="form">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="text-wrapper text-center">
+                <h1>Form Data Pernikahan</h1>
+              </div>
+              <!-- forms -->
+              <form id="form" class="mt-5">
+                <!-- pemesan undangan -->
+                <div class="form-wrapper card rounded-4 p-3 p-lg-4">
+                  <h5 class="mb-4 text-center text-lg-start">
+                    Pemesan Undangan
+                  </h5>
+                  <div class="mb-3">
+                    <label for="inputText" class="form-label"
+                      >Nama Pemesan</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputText"
+                      placeholder="Nama Lengkap"
+                    />
+                  </div>
+                  <div class="input-group d-flex gap-0 gap-sm-4">
+                    <div class="mb-3 flex-grow-1">
+                      <label for="inputEmail" class="form-label">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="inputEmail"
+                        placeholder="nama@email.com"
+                      />
+                    </div>
+                    <div class="mb-3 flex-grow-1">
+                      <label for="inputNumber" class="form-label"
+                        >No. Whatsapp</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="inputNumber"
+                        placeholder="+62 812 3456 7890"
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="basic-url" class="form-label"
+                      >Custom link undangan</label
+                    >
+                    <div class="input-group">
+                      <span class="input-group-text" id="basic-addon3"
+                        >wadda.me/</span
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="basic-url"
+                        aria-describedby="basic-addon3 basic-addon4"
+                        placeholder="fulanah-fulan"
+                      />
+                    </div>
+                    <div class="form-text mt-3" id="basic-addon4">
+                      Contoh ketika undangan sudah aktif link akan menjadi
+                      seperti berikut:
+                      <strong>https://wadda.me/fulanah-fulan</strong>
+                    </div>
+                  </div>
+                </div>
+                <!-- mempelai wanita -->
+                <div class="form-wrapper card rounded-4 p-3 p-lg-4 mt-3">
+                  <h5 class="mb-4 text-center text-lg-start">
+                    Mempelai Wanita
+                  </h5>
+                  <div class="mb-3">
+                    <label for="inputText" class="form-label">Nama</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputText"
+                      placeholder="Nama Lengkap"
+                    />
+                  </div>
+                  <div class="input-group d-flex gap-0 gap-sm-4">
+                    <div class="mb-3 flex-grow-1">
+                      <label for="inputText" class="form-label"
+                        >Nama Panggilan</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="Fulanah"
+                      />
+                    </div>
+                    <div class="mb-3 flex-grow-1">
+                      <label for="inputText" class="form-label">Domisili</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="Kota tempat tinggal"
+                      />
+                    </div>
+                  </div>
+                  <div class="input-group d-flex gap-0 gap-sm-4">
+                    <div class="mb-3 flex-grow-1">
+                      <label for="inputText" class="form-label"
+                        >Nama Ayah</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="Nama lengkap"
+                      />
+                    </div>
+                    <div class="mb-3 flex-grow-1">
+                      <label for="inputText" class="form-label">Nama Ibu</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="Nama lengkap"
+                      />
+                    </div>
+                  </div>
+                  <div class="input-group d-flex gap-0 gap-sm-4">
+                    <div class="mb-3 flex-grow-1">
+                      <label for="inputNumber" class="form-label"
+                        >Anak ke-berapa?</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="inputNumber"
+                        placeholder="Putri ke- 3"
+                        pattern="/^-?\d+\.?\d*$/"
+                        onKeyPress="if(this.value.length==2) return false;"
+                      />
+                    </div>
+                    <div class="mb-3 flex-grow-1">
+                      <label for="inputText" class="form-label"
+                        >Akun Instagram</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="@username"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- mempelai pria -->
+                <div class="form-wrapper card rounded-4 p-3 p-lg-4 mt-3">
+                  <h5 class="mb-4 text-center text-lg-start">Mempelai Pria</h5>
+                  <div class="mb-3">
+                    <label for="inputText" class="form-label">Nama</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputText"
+                      placeholder="Nama Lengkap"
+                    />
+                  </div>
+                  <div class="input-group d-flex gap-0 gap-sm-4">
+                    <div class="mb-3 flex-grow-1">
+                      <label for="inputText" class="form-label"
+                        >Nama Panggilan</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="Fulan"
+                      />
+                    </div>
+                    <div class="mb-3 flex-grow-1">
+                      <label for="inputText" class="form-label">Domisili</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="Kota tempat tinggal"
+                      />
+                    </div>
+                  </div>
+                  <div class="input-group d-flex gap-0 gap-sm-4">
+                    <div class="mb-3 flex-grow-1">
+                      <label for="inputText" class="form-label"
+                        >Nama Ayah</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="Nama lengkap"
+                      />
+                    </div>
+                    <div class="mb-3 flex-grow-1">
+                      <label for="inputText" class="form-label">Nama Ibu</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="Nama lengkap"
+                      />
+                    </div>
+                  </div>
+                  <div class="input-group d-flex gap-0 gap-sm-4">
+                    <div class="mb-3 flex-grow-1">
+                      <label for="inputNumber" class="form-label"
+                        >Anak keberapa?</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="inputNumber"
+                        placeholder="Putra ke- 2"
+                        pattern="/^-?\d+\.?\d*$/"
+                        onKeyPress="if(this.value.length==2) return false;"
+                      />
+                    </div>
+
+                    <div class="mb-3 flex-grow-1">
+                      <label for="inputText" class="form-label"
+                        >Akun Instagram</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="@username"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- akad & resepsi -->
+                <div
+                  class="form-wrapper d-flex flex-column flex-lg-row gap-3 mt-3"
+                >
+                  <div class="form-groups card flex-grow-1 p-3 rounded-4">
+                    <h5 class="mb-4 text-center">Akad Nikah</h5>
+                    <div class="input-group d-flex gap-1 gap-sm-4 gap-lg-3">
+                      <div class="mb-3 flex-grow-1">
+                        <label for="startDate" class="form-label"
+                          >Tanggal Akad</label
+                        >
+                        <input
+                          id="startDate"
+                          class="form-control"
+                          type="date"
+                          placeholder="Pilih Tanggal"
+                        />
+                      </div>
+                      <div class="mb-3 flex-grow-1">
+                        <label for="inputText" class="form-label"
+                          >Waktu Akad</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputText"
+                          placeholder="08.00 - 10.00 WIB"
+                        />
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputText" class="form-label"
+                        >Nama Alamat</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="Nama Lokasi/Gedung"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="exampleFormControlTextarea1"
+                        class="form-label"
+                        >Alamat Detail</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea1"
+                        rows="3"
+                        placeholder="Tulis Detail Alamat disini"
+                      ></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputText" class="form-label"
+                        >Link Google Maps</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="Paste link google map disini"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-groups card flex-grow-1 p-3 rounded-4">
+                    <h5 class="mb-4 text-center">Resepsi Nikah</h5>
+                    <div class="input-group d-flex gap-1 gap-sm-4 gap-lg-3">
+                      <div class="mb-3 flex-grow-1">
+                        <label for="startDate" class="form-label"
+                          >Tanggal Resepsi</label
+                        >
+                        <input
+                          id="startDate"
+                          class="form-control"
+                          type="date"
+                          placeholder="Pilih Tanggal"
+                        />
+                      </div>
+                      <div class="mb-3 flex-grow-1">
+                        <label for="inputText" class="form-label"
+                          >Waktu Resepsi</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputText"
+                          placeholder="10.30 WIB - Selesai"
+                        />
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputText" class="form-label"
+                        >Nama Alamat</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="Nama Lokasi/Gedung"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="exampleFormControlTextarea1"
+                        class="form-label"
+                        >Alamat Detail</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea1"
+                        rows="3"
+                        placeholder="Tulis Detail Alamat disini"
+                      ></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputText" class="form-label"
+                        >Link Google Maps</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="Paste link google map disini"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- cta -->
+                <div class="form-check mb-3 mt-3">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="exampleCheck1"
+                    required
+                  />
+                  <label class="form-check-label ms-2 mb-0" for="exampleCheck1"
+                    >Apakah semua data yang di isi sudah benar? Harap periksa
+                    kembali sebelum disubmit</label
+                  >
+                </div>
+                <div
+                  class="button-wrapper d-flex flex-lg-row justify-content-between gap-3 mt-3"
+                >
+                  <button type="submit" class="btn btn-primary">
+                    Submit Form
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-link"
+                    onclick="confirmClear()"
+                  >
+                    Clear Form
+                  </button>
+                </div>
+              </form>
+              <!-- forms end -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- form section end -->
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <div class="row d-flex justify-content-between">
+          <div class="brand col-lg-4">
+            <h5 class="text-white">Wadda.</h5>
+            <p>
+              Wadda adalah jasa undangan digital yang dapat membantu Anda
+              membuat undangan pernikahan digital untuk pernikahan impian Anda.
+            </p>
+            <div class="d-flex gap-3">
+              <a href="https://instagram.com" target="_blank"
+                ><img src="../src/icons/ig.svg" alt="icon-social"
+              /></a>
+              <a href="https://twitter.com" target="_blank"
+                ><img src="../src/icons/twitter.svg" alt="icon-social"
+              /></a>
+              <a href="https://facebook.com" target="_blank"
+                ><img src="../src/icons/fb.svg" alt="icon-social"
+              /></a>
+            </div>
+          </div>
+          <div class="col d-md-flex justify-content-lg-end gap-5">
+            <div class="link-wrappe mt-5 mt-lg-0">
+              <p class="text-white">Produk</p>
+              <div class="d-flex flex-column gap-3">
+                <a href="../tema.html">Tema</a>
+                <a href="../index.html#harga">Harga</a>
+                <a href="../index.html#testimoni">Testimonial</a>
+              </div>
+            </div>
+            <div class="link-wrapper mt-5 mt-lg-0">
+              <p class="text-white">Info</p>
+              <div class="d-flex flex-column gap-3">
+                <a href="../index.html#panduan">Panduan</a>
+                <a href="../index.html#fitur">Fitur</a>
+                <a href="../index.html#faq">FAQ</a>
+              </div>
+            </div>
+            <div class="link-wrapper mt-5 mt-lg-0">
+              <p class="text-white">Dukungan</p>
+              <div class="d-flex flex-column gap-3">
+                <a href="#kebijakan-privasi">Kebijakan privasi</a>
+                <a href="#syarat-ketentuan">Syarat dan ketentuan</a>
+                <a href="../kontak.html">Kontak kami</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row text-center pt-5">
+          <hr class="border-2" />
+          <p class="text-white">&copy; 2023 Wadda - All right reserved</p>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- bootstrap js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function confirmClear() {
+        const alert = confirm(
+          'Apakah Anda yakin ingin menghapus semua data yang sudah anda isi pada form?'
+        );
+        if (alert) {
+          document.getElementById('form').reset();
+        }
+      }
+    </script>
+  </body>
+</html>

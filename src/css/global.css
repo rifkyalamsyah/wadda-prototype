@@ -72,6 +72,15 @@ body {
   --bs-btn-hover-bg: var(--brown-50);
   --bs-btn-active-bg: var(--grey-50);
 }
+
+/* link */
+.btn-link {
+  text-decoration: none;
+  --bs-btn-color: var(--brown-700);
+  --bs-btn-hover-color: var(--brown-400);
+  --bs-btn-active-color: var(--grey-300);
+}
+/* link end */
 /* buttons end */
 
 /* forms */
@@ -86,6 +95,36 @@ input:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--black);
   -webkit-box-shadow: 0 0 0px 1000px var(--white) inset;
 }
+
+/* hide input number count */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-control::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--grey-300);
+  /* opacity: 1; Firefox */
+}
+
+/* checkbox */
+.form-check-input {
+  width: 20px;
+  height: 20px;
+}
+
+.form-check-input:checked {
+  background-color: var(--brown-700);
+  border-color: var(--brown-200);
+}
+
+.form-check-input:focus {
+  border-color: var(--brown-700);
+  box-shadow: 0 0 0 0.2rem rgba(167, 78, 40, 0.25);
+}
+/* checkbox end */
 /* forms end */
 
 /* accordion */
@@ -127,6 +166,10 @@ input:-webkit-autofill:focus {
 /* dropdown end */
 
 /* navbar */
+nav {
+  background-color: var(--white);
+}
+
 .navbar {
   padding: 1rem 0 !important;
 }
