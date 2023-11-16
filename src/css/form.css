@@ -5,4 +5,8 @@ body {
 .form {
   padding: 8rem 0;
 }
+
+h5 {
+  color: var(--brown-700);
+}
 /* form section end */
