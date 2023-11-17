@@ -90,7 +90,7 @@ body {
       rgba(16, 16, 16, 0) 0%,
       rgba(16, 16, 16, 0.8) 100%
     ),
-    url(/src/img/sarah-angga/cover-sarah-angga.png);
+    url(/src/img/sarah-angga/cover-sarah-angga.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
