@@ -56,7 +56,7 @@ function enableScroll() {
   window.onscroll = function () {};
   rootElement.style.scrollBehavior = 'smooth';
   // run fullscreen mode
-  openFullscreen();
+  // openFullscreen();
   // play audio
   playAudio();
 }

@@ -77,6 +77,16 @@ body {
 }
 /* buttons end */
 
+/* text */
+.text-primary {
+  color: var(--brown-700) !important;
+}
+
+.text-tertiary {
+  color: var(--brown-900);
+}
+/* text end */
+
 /* cover */
 .cover::before {
   content: '';
@@ -185,8 +195,6 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* width: 100vw;
-  height: 100vh; */
 }
 
 .hero img {
@@ -197,7 +205,6 @@ body {
 .hero .couple-name {
   font-family: 'Sacramento', cursive;
   font-size: 64px;
-  color: #56412d;
   margin: 2rem 0;
 }
 /* hero section end */
@@ -224,7 +231,6 @@ body {
 .couple .nama {
   font-family: 'Sacramento', cursive;
   font-size: 48px;
-  color: #56412d;
   margin: 1rem 0;
 }
 
@@ -270,8 +276,12 @@ body {
 /* akad & resepsi */
 .info .card-akad,
 .card-resepsi {
+  background-image: url(/src/img/sarah-angga/bg-card-sweet-brown.svg);
+  background-position: center;
+  background-repeat: no-repeat;
   background-color: var(--brown-100);
 }
+
 .akad-resepsi {
   padding: 5rem 0;
 }
@@ -283,6 +293,103 @@ body {
 }
 /* akad & resepsi end */
 /* info section end */
+
+/* love story section */
+.story {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, rgba(232, 224, 217, 0) 0%, #e8e0d9 100%);
+}
+.story .nama {
+  font-family: 'Sacramento', cursive;
+  font-size: 48px;
+  margin: 1rem 0;
+}
+
+.story .timeline {
+  position: relative;
+  max-width: 1200ox;
+  margin: 5rem auto;
+}
+
+.story .card-wrapper {
+  padding: 1rem 4rem;
+  position: relative;
+  width: 50%;
+  /* background: rgba(0, 0, 0, 0.2); */
+}
+
+.story .card-timeline {
+  padding: 2rem;
+  background-color: var(--white);
+  position: relative;
+  border-radius: 1rem;
+}
+
+.story .left-card-timeline {
+  left: 0;
+}
+
+.story .right-card-timeline {
+  left: 50%;
+}
+
+.story .icon-timeline {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  padding: 8px;
+  border-radius: 100px;
+  right: -35px;
+  top: 32px;
+  z-index: 10;
+  background-color: var(--white);
+}
+
+.story .right-card-timeline .icon-timeline {
+  left: -29px;
+}
+
+.story .icon-timeline img {
+  width: 28px;
+}
+
+.story .timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--brown-300);
+  top: 0;
+  left: 50%;
+  margin-right: -3px;
+  z-index: -1;
+}
+
+.story .left-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 32px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid var(--white);
+  right: -15px;
+  z-index: 1;
+}
+
+.story .right-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 32px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid var(--white);
+  left: -15px;
+  z-index: 1;
+}
+/* love story section end */
 
 /* footer */
 footer {
@@ -378,6 +485,53 @@ footer a {
     padding-top: 0;
   }
   /* cover end */
+
+  /* love story section */
+  /* timeline */
+  .story .timeline {
+    margin: 3rem auto;
+  }
+
+  .story .timeline::after {
+    left: 32px;
+  }
+
+  .story .card-wrapper {
+    width: 100%;
+    padding-left: 5rem;
+    padding-right: 1.5rem;
+  }
+
+  .story .right-card-timeline {
+    left: 0;
+  }
+
+  .story .icon-timeline {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    border-radius: 100px;
+    right: -35px;
+    top: 42px;
+  }
+
+  .story .icon-timeline img {
+    width: 24px;
+  }
+
+  .story .left-card-timeline .icon-timeline,
+  .story .right-card-timeline .icon-timeline {
+    left: 10px;
+  }
+
+  .story .left-arrow,
+  .right-arrow {
+    border-right: 15px solid var(--white);
+    border-left: 0;
+    left: -15px;
+  }
+  /* love story section end */
 }
 
 /* Laptop */
