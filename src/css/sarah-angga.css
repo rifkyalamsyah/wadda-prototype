@@ -299,9 +299,9 @@ body {
   padding: 5rem 0;
   background: linear-gradient(180deg, rgba(232, 224, 217, 0) 0%, #e8e0d9 100%);
 }
-.story .nama {
+.story .couple-name {
   font-family: 'Sacramento', cursive;
-  font-size: 48px;
+  font-size: 3rem;
   margin: 1rem 0;
 }
 
@@ -396,6 +396,42 @@ body {
   padding: 5rem 0;
   background-color: var(--white);
 }
+
+.gallery .couple-name {
+  font-family: 'Sacramento', cursive;
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.gallery .img-wrapper img {
+  border-radius: 1rem;
+}
+
+/* custom border radius on modal lightbox */
+.lightbox
+  > .modal-dialog
+  > .modal-content
+  > .modal-body
+  > .lightbox-carousel
+  > .carousel-inner {
+  border-radius: 1.5rem;
+}
+
+.lightbox
+  > .modal-dialog
+  > .modal-content
+  > .modal-body
+  > .lightbox-carousel
+  > .carousel-inner
+  > .carousel-item
+  > .ratio {
+  border-radius: 1.5rem;
+}
+
+.gallery .video-wrapper img {
+  border-radius: 1rem;
+}
+
 /* gallery section end */
 
 /* footer */
