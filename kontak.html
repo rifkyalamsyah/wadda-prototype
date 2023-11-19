@@ -102,40 +102,47 @@
               <!-- contact info -->
               <div class="contact-wrapper d-flex flex-column gap-4 mt-5">
                 <div class="d-flex align-items-center">
-                  <div class="flex-shrink-0">
+                  <div class="img-wrapper flex-shrink-0">
                     <img
-                      src="src/img/contact-email.png"
+                      src="src/img/contact/email.svg"
                       class="rounded-4 border-3"
                       alt="img-contact"
-                      style="width: 80px"
                     />
                   </div>
                   <div class="flex-grow-1 ms-3">
                     <h6>Email</h6>
-                    <p class="text-secondary mb-0">waddadigital@gmail.com</p>
+                    <a
+                      href="mailto:waddadigital@gmail.com"
+                      class="text-secondary text-decoration-none mb-0"
+                      target="_blank"
+                      >waddadigital@gmail.com</a
+                    >
                   </div>
                 </div>
                 <div class="d-flex align-items-center">
-                  <div class="flex-shrink-0">
+                  <div class="img-wrapper flex-shrink-0">
                     <img
-                      src="src/img/contact-phone.png"
+                      src="src/img/contact/phone.svg"
                       class="rounded-4 border-3"
                       alt="img-contact"
-                      style="width: 80px"
                     />
                   </div>
                   <div class="flex-grow-1 ms-3">
                     <h6>Phone</h6>
-                    <p class="text-secondary mb-0">+62 856 2376 627</p>
+                    <a
+                      href="https://wa.me/+628562376627"
+                      class="text-secondary text-decoration-none mb-0"
+                      target="_blank"
+                      >+62 856 2376 627</a
+                    >
                   </div>
                 </div>
                 <div class="d-flex align-items-center">
-                  <div class="flex-shrink-0">
+                  <div class="img-wrapper flex-shrink-0">
                     <img
-                      src="src/img/contact-address.png"
+                      src="src/img/contact/map.svg"
                       class="rounded-4 border-3"
                       alt="img-contact"
-                      style="width: 80px"
                     />
                   </div>
                   <div class="flex-grow-1 ms-3">
@@ -154,46 +161,42 @@
               <form class="card rounded-4 p-3 p-lg-4">
                 <div class="input-group d-flex gap-2">
                   <div class="flex-grow-1 mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"
-                      >Nama</label
-                    >
+                    <label for="textInputName" class="form-label">Nama</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="exampleFormControlInput1"
+                      id="textInputName"
                       placeholder="Nama Lengkap"
                     />
                   </div>
                   <div class="flex-grow-1 mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"
-                      >Email</label
-                    >
+                    <label for="textInputEmail" class="form-label">Email</label>
                     <input
                       type="email"
                       class="form-control"
-                      id="exampleFormControlInput1"
+                      id="textInputEmail"
                       placeholder="Alamat Email"
                     />
                   </div>
                 </div>
                 <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label"
+                  <label for="textInputSubject" class="form-label"
                     >Subjek</label
                   >
                   <input
                     type="text"
                     class="form-control"
-                    id="exampleFormControlInput1"
+                    id="textInputSubject"
                     placeholder="Tulis subjek anda disini"
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label"
+                  <label for="inputTextarea" class="form-label"
                     >Apa yang bisa kami bantu?</label
                   >
                   <textarea
                     class="form-control"
-                    id="exampleFormControlTextarea1"
+                    id="inputTextarea"
                     rows="5"
                     placeholder="Tulis pesan anda disini. . ."
                   ></textarea>

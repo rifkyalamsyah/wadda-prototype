@@ -100,7 +100,7 @@ body {
       rgba(16, 16, 16, 0) 0%,
       rgba(16, 16, 16, 0.8) 100%
     ),
-    url(/src/img/sarah-angga/cover-sarah-angga.webp);
+    url(/src/img/sarah-angga/cover-img.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -138,7 +138,7 @@ body {
 
 .cover a {
   color: var(--brown-700);
-  background-color: white;
+  background-color: var(--white);
   box-shadow: var(--shadow);
 }
 
@@ -172,14 +172,14 @@ body {
 
 .mynavbar .nav .nav-item i {
   font-size: 36px;
-  background-color: white;
+  background-color: var(--white);
   padding-left: 4px;
   padding-right: 4px;
   border-radius: 8px;
 }
 
 .mynavbar .logo {
-  background-color: white;
+  background-color: var(--white);
   color: var(--brown-700) !important;
   font-weight: 600;
   border-radius: 8px;
@@ -190,7 +190,7 @@ body {
 /* hero section */
 .hero {
   padding: 5rem 0;
-  background-image: url(/src/img/sarah-angga/bg-sweet-brown.svg);
+  background-image: url(/src/img/sarah-angga/svg/bg-sweet-brown.svg);
   background-color: #e8e0d9;
   background-size: cover;
   background-position: center;
@@ -204,8 +204,8 @@ body {
 
 .hero .couple-name {
   font-family: 'Sacramento', cursive;
-  font-size: 64px;
-  margin: 2rem 0;
+  font-size: 4rem;
+  margin: 1rem 0;
 }
 /* hero section end */
 
@@ -276,7 +276,7 @@ body {
 /* akad & resepsi */
 .info .card-akad,
 .card-resepsi {
-  background-image: url(/src/img/sarah-angga/bg-card-sweet-brown.svg);
+  background-image: url(/src/img/sarah-angga/svg/bg-card-sweet-brown.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-color: var(--brown-100);
@@ -390,6 +390,13 @@ body {
   z-index: 1;
 }
 /* love story section end */
+
+/* gallery section */
+.gallery {
+  padding: 5rem 0;
+  background-color: var(--white);
+}
+/* gallery section end */
 
 /* footer */
 footer {

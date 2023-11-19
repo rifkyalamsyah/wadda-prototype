@@ -21,6 +21,19 @@
 .feature .card:hover {
   box-shadow: 0 0 16px rgba(33, 33, 33, 0.2);
 }
+
+.feature .card .img-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  border-radius: 1rem;
+  height: 128px;
+  background-color: var(--grey-50);
+}
+
+.feature .card .img-wrapper img {
+  width: 84px;
+}
 /* feature section end */
 
 /* guide section */
@@ -66,6 +79,14 @@
     var(--grey-50) 100%
   );
 }
+
+.testimoni .card {
+  transition: box-shadow 1s;
+}
+
+.testimoni .card:hover {
+  box-shadow: 0 0 16px rgba(33, 33, 33, 0.2);
+}
 /* testimonial section end */
 
 /* pricing section */
@@ -76,6 +97,14 @@
     var(--brown-100) 0%,
     rgba(232, 224, 217, 0) 100%
   );
+}
+
+.pricing .card {
+  transition: box-shadow 1s;
+}
+
+.pricing .card:hover {
+  box-shadow: 0 0 16px rgba(33, 33, 33, 0.2);
 }
 /* pricing section end */
 
