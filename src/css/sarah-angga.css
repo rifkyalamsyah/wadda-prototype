@@ -450,6 +450,59 @@ body {
 }
 /* gift section end */
 
+/* rsvp section */
+.rsvp {
+  padding: 10rem 0;
+}
+
+.rsvp .form-wrapper {
+  background-color: var(--brown-100);
+}
+
+/* forms */
+.form-control:focus {
+  border-color: var(--brown-700);
+  box-shadow: 0 0 0 0.2rem rgba(167, 78, 40, 0.25);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--black);
+  -webkit-box-shadow: 0 0 0px 1000px var(--white) inset;
+}
+
+.form-control::placeholder {
+  color: var(--grey-300);
+  
+}
+
+/* checkbox */
+.form-check-input {
+  width: 20px;
+  height: 20px;
+}
+
+.form-check-input:checked {
+  background-color: var(--brown-700);
+  border-color: var(--brown-200);
+}
+
+.form-check-input:focus {
+  border-color: var(--brown-700);
+  box-shadow: 0 0 0 0.2rem rgba(167, 78, 40, 0.25);
+}
+/* checkbox end */
+
+/* select */
+.form-select:focus {
+  border-color: var(--brown-700);
+  box-shadow: 0 0 0 0.2rem rgba(167, 78, 40, 0.25);
+}
+/* select end*/
+/* forms end */
+/* rsvp section end */
+
 /* footer */
 footer {
   padding: 2rem;
