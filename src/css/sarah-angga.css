@@ -439,6 +439,10 @@ body {
   background-color: var(--brown-100);
 }
 
+.gift .card-gift {
+  width: 100%;
+}
+
 .gift .icon-wrapper {
   width: 5rem;
   height: 5rem;
@@ -521,8 +525,8 @@ input:-webkit-autofill:focus {
 .surah .surah-wrapper {
   padding: 6rem 0;
   background-image: url(/src/img/sarah-angga/svg/bg-img-surah.svg);
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: contain;
 }
 
@@ -530,6 +534,16 @@ input:-webkit-autofill:focus {
   font-family: 'Noto Sans Arabic', sans-serif;
 }
 /* surah section end */
+
+/* family section */
+.family {
+  padding: 3rem 0;
+  background-image: url(/src/img/sarah-angga/bg-floral.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/* family section end */
 
 /* footer */
 footer {
@@ -583,14 +597,13 @@ footer a {
     font-size: 60%;
   }
 
-  .simply-countdown > .simply-section {
-    padding: 45px;
-    margin: 3px;
-  }
-
   /* cover */
   .cover-wrapper {
     padding-top: 0;
+  }
+
+  .cover h1 {
+    font-size: 3rem;
   }
   /* cover end */
 
@@ -599,6 +612,37 @@ footer a {
     width: 250px !important;
   }
   /* end offcanvas 2 */
+
+  /* hero section */
+  .hero img {
+    width: 250px;
+  }
+
+  .hero .couple-name {
+    font-size: 2.5rem;
+  }
+  /* hero section end */
+
+  /* couple section */
+  .couple .img-wrapper img {
+    width: 232px;
+  }
+  /* couple section end*/
+
+  /* info section */
+  .info .simply-countdown > .simply-section {
+    padding: 2.5rem;
+    border-radius: 1rem;
+  }
+
+  .simply-countdown > .simply-section .simply-amount {
+    font-size: 2rem;
+  }
+
+  .simply-countdown > .simply-section .simply-word {
+    font-size: 1rem;
+  }
+  /* info section end */
 }
 
 /* Tablet */
