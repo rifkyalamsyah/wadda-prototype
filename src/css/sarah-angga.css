@@ -513,6 +513,24 @@ input:-webkit-autofill:focus {
 }
 /* live section end */
 
+/* surah section */
+.surah {
+  padding: 5rem 0;
+}
+
+.surah .surah-wrapper {
+  padding: 6rem 0;
+  background-image: url(/src/img/sarah-angga/svg/bg-img-surah.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.surah .surah-wrapper h2 {
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+/* surah section end */
+
 /* footer */
 footer {
   padding: 2rem;
