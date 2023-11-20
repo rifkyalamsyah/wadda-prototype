@@ -39,8 +39,9 @@
         </div>
         <a
           href="#hero"
-          class="btn btn-lg mt-4"
-          onclick="enableScroll(), this.innerHTML = 'Scroll ke bawah!';"
+          id="btn-cover"
+          class="btn btn-lg btn-primary mt-4"
+          onclick="enableScroll(), changeButton()"
           >Buka undangan</a
         >
       </div>
@@ -211,7 +212,7 @@
                     <p class="text-primary my-4">Hitung Mundur Acara Resepsi Pernikahan:</p>
                     <div class="simply-countdown d-flex justify-content-center flex-wrap"></div>
                     <div class="btn-wrapper mt-4">
-                    <button id="my-default-button" class="btn btn-lg btn-primary">+ Tambahkan ke kalender</button>
+                    <button id="my-default-button" class="btn btn-lg btn-primary"><i class="bi bi-calendar-plus"></i> Tambahkan ke kalender</button>
                     </div>
                 </div>
             </div>
@@ -231,7 +232,7 @@
                             <p class="text-secondary">Alun-Alun Keraton, Jl. Kauman, Ngupasan, Kec. Gondomanan, Kota Yogyakarta, Daerah Istimewa Yogyakarta.</p>
                         </div>
                         <div class="btn-wrapper">
-                            <a href="https://maps.app.goo.gl/FFUDm73uLpKWA9DB8" class="btn btn-primary" target="_blank">Lihat via Google Maps</a>
+                            <a href="https://maps.app.goo.gl/FFUDm73uLpKWA9DB8" class="btn btn-primary" target="_blank">Lihat via Google Maps <i class="bi bi-box-arrow-up-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -250,7 +251,7 @@
                             <p class="text-secondary">Jl. Magelang Km 4.5, Depan TVRI Yogyakarta, Kutu Asem, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta.</p>
                         </div>
                         <div class="btn-wrapper">
-                            <a href="https://maps.app.goo.gl/v9E3XvV5JTDDCrCP6" class="btn btn-primary" target="_blank">Lihat via Google Maps</a>
+                            <a href="https://maps.app.goo.gl/v9E3XvV5JTDDCrCP6" class="btn btn-primary" target="_blank">Lihat via Google Maps <i class="bi bi-box-arrow-up-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -358,7 +359,7 @@
               <img src="/src/img/sarah-angga/Prewedding-thumbnail.webp" data-toggle="lightbox" style="cursor: pointer;" data-src="https://youtu.be/MLpWrANjFbI?si=rFgULcSuriG4r9-6" class="img-fluid">
             </div>
             <div class="btn-wrapper d-flex justify-content-center mt-4">
-              <a href="https://youtu.be/MLpWrANjFbI?si=rFgULcSuriG4r9-6" class="btn btn-primary" data-toggle="lightbox">Lihat Video Prewedding</a>
+              <a href="https://youtu.be/MLpWrANjFbI?si=rFgULcSuriG4r9-6" class="btn btn-primary" data-toggle="lightbox"><i class="bi bi-play-btn"></i> Lihat Video Prewedding</a>
             </div>
             <!-- hidden video -->
             <div data-toggle="lightbox" data-gallery="hidden-images" data-src="https://youtu.be/MLpWrANjFbI?si=rFgULcSuriG4r9-6" data-title="Hidden item"></div>
@@ -379,7 +380,7 @@
               </div>
             </div>
             <div class="col d-flex align-items-center justify-content-end d-none d-lg-inline-flex">
-              <a href="https://wa.me/+628562376627?text=Hai%20%5Bnama%20pengantin%5D,%0A%0ASelamat%20atas%20pernikahanmu.%20Semoga%20pernikahanmu%20langgeng%20dan%20penuh%20cinta.%0A%0AAku%20sudah%20transfer%20uang%20sebesar%20%5Bjumlah%20uang%5D%20ke%20rekeningmu.%20Semoga%20bermanfaat.%0Aatau,%0AAku%20sudah%20mengirimkan%20kado%20fisik%20untukmu.%20Semoga%20sampai%20dengan%20selamat.%0A%0ASalam,%0A%5BNama%20Anda%5D%0A%20" class="btn btn-primary" target="_blank">Kirim Bukti Gift</a>
+              <a href="https://wa.me/+628562376627?text=Hai%20%5Bnama%20pengantin%5D,%0A%0ASelamat%20atas%20pernikahanmu.%20Semoga%20pernikahanmu%20langgeng%20dan%20penuh%20cinta.%0A%0AAku%20sudah%20transfer%20uang%20sebesar%20%5Bjumlah%20uang%5D%20ke%20rekeningmu.%20Semoga%20bermanfaat.%0Aatau,%0AAku%20sudah%20mengirimkan%20kado%20fisik%20untukmu.%20Semoga%20sampai%20dengan%20selamat.%0A%0ASalam,%0A%5BNama%20Anda%5D%0A%20" class="btn btn-primary" target="_blank"><i class="bi bi-send"></i> Kirim Bukti Gift</a>
             </div>
           </div>
           <!-- card gift -->
@@ -448,7 +449,7 @@
           </div>
           <!-- card gift end -->
           <div class="col d-flex align-items-center justify-content-center mt-5 d-lg-none">
-            <a href="https://wa.me/+628562376627?text=Hai%20%5Bnama%20pengantin%5D,%0A%0ASelamat%20atas%20pernikahanmu.%20Semoga%20pernikahanmu%20langgeng%20dan%20penuh%20cinta.%0A%0AAku%20sudah%20transfer%20uang%20sebesar%20%5Bjumlah%20uang%5D%20ke%20rekeningmu.%20Semoga%20bermanfaat.%0Aatau,%0AAku%20sudah%20mengirimkan%20kado%20fisik%20untukmu.%20Semoga%20sampai%20dengan%20selamat.%0A%0ASalam,%0A%5BNama%20Anda%5D%0A%20" class="btn btn-primary" target="_blank">Kirim Bukti Gift</a>
+            <a href="https://wa.me/+628562376627?text=Hai%20%5Bnama%20pengantin%5D,%0A%0ASelamat%20atas%20pernikahanmu.%20Semoga%20pernikahanmu%20langgeng%20dan%20penuh%20cinta.%0A%0AAku%20sudah%20transfer%20uang%20sebesar%20%5Bjumlah%20uang%5D%20ke%20rekeningmu.%20Semoga%20bermanfaat.%0Aatau,%0AAku%20sudah%20mengirimkan%20kado%20fisik%20untukmu.%20Semoga%20sampai%20dengan%20selamat.%0A%0ASalam,%0A%5BNama%20Anda%5D%0A%20" class="btn btn-primary" target="_blank"><i class="bi bi-send"></i> Kirim Bukti Gift</a>
           </div>
         </div>
       </section>
@@ -507,7 +508,7 @@
               <img src="/src/img/sarah-angga/live-thumbnail.webp" data-toggle="lightbox" style="cursor: pointer;" data-src="https://youtu.be/MLpWrANjFbI?si=rFgULcSuriG4r9-6" class="img-fluid">
             </div>
             <div class="btn-wrapper d-flex justify-content-center mt-4">
-              <a href="https://youtu.be/MLpWrANjFbI?si=rFgULcSuriG4r9-6" class="btn btn-primary" data-toggle="lightbox">Tonton Live Streaming</a>
+              <a href="https://youtu.be/MLpWrANjFbI?si=rFgULcSuriG4r9-6" class="btn btn-primary" data-toggle="lightbox"><i class="bi bi-play-btn"></i> Tonton Live Streaming</a>
             </div>
           </div>
         </div>

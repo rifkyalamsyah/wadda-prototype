@@ -136,15 +136,15 @@ body {
   font-size: 1.4rem;
 }
 
-.cover a {
-  color: var(--brown-700);
-  background-color: var(--white);
+.cover .btn-primary {
+  color: var(--white);
+  background-color: var(--brown-700);
   box-shadow: var(--shadow);
 }
 
-.cover a:hover {
-  background-color: var(--brown-700);
-  color: white;
+.cover .btn-primary:hover {
+  color: var(--brown-700);
+  background-color: var(--brown-200);
 }
 /* cover end */
 

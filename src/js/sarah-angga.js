@@ -56,7 +56,7 @@ function enableScroll() {
   window.onscroll = function () {};
   rootElement.style.scrollBehavior = 'smooth';
   // run fullscreen mode
-  // openFullscreen();
+  openFullscreen();
   // play audio
   playAudio();
 }
@@ -129,3 +129,23 @@ namaContainer.innerText = `${pronoun}, ${nama}`;
 
 document.querySelector('#nama').value = nama;
 //  end custom guest name
+
+// change button & scroll
+function changeButton() {
+  var btn = document.getElementById('btn-cover');
+  btn.innerHTML = "Scroll ke bawah! <br> <i class='bi bi-mouse fs-1'></i>";
+  btn.style.backgroundColor = 'transparent';
+  btn.style.color = 'var(--grey-100)';
+  btn.style.boxShadow = 'none';
+  btn.style.position = 'absolute';
+  btn.style.bottom = '50px';
+  btn.style.left = '50%';
+  btn.style.transform = 'translateX(-50%)';
+  btn.className = 'btn btn-lg btn-primary';
+
+  // Animasi scroll
+  setTimeout(function () {
+    var heroSection = document.getElementById('hero');
+    heroSection.scrollIntoView({ behavior: 'smooth' });
+  }, 1500);
+}
