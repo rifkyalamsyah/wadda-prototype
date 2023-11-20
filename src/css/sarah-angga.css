@@ -431,8 +431,24 @@ body {
 .gallery .video-wrapper img {
   border-radius: 1rem;
 }
-
 /* gallery section end */
+
+/* gift section */
+.gift {
+  padding: 5rem 0;
+  background-color: var(--brown-100);
+}
+
+.gift .icon-wrapper {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1rem;
+  background-color: var(--brown-100);
+}
+.gift .icon-wrapper img {
+  width: 2rem;
+}
+/* gift section end */
 
 /* footer */
 footer {
