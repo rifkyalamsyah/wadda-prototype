@@ -73,6 +73,14 @@ body {
   --bs-btn-active-bg: var(--grey-50);
 }
 
+/* disable button */
+.btn.disabled,
+.btn:disabled,
+fieldset:disabled .btn {
+  background-color: var(--brown-700);
+  border-color: var(--brown-700);
+}
+
 /* link */
 .btn-link {
   text-decoration: none;

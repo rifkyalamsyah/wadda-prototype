@@ -68,7 +68,7 @@ body {
   border-radius: 16px;
 }
 
-/* dsable button */
+/* disable button */
 .btn.disabled,
 .btn:disabled,
 fieldset:disabled .btn {
