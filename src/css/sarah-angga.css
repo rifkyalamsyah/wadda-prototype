@@ -452,6 +452,10 @@ body {
 .gift .icon-wrapper img {
   width: 2rem;
 }
+
+.swal-modal {
+  border-radius: 1.5rem;
+}
 /* gift section end */
 
 /* rsvp section */

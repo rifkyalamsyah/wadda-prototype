@@ -220,7 +220,7 @@ checkboxLive.addEventListener('change', () => {
   }
 });
 // disable form live steraming end
- 
+
 // reset form disabled
 forms.addEventListener('reset', () => {
   // love story

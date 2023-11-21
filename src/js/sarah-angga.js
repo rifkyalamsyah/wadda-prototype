@@ -20,6 +20,26 @@ simplyCountdown('.simply-countdown', {
 });
 //  End Simply countdown
 
+// change button & auto scroll
+function changeButton() {
+  var btn = document.getElementById('btn-cover');
+  btn.innerHTML = "Scroll ke bawah! <br> <i class='bi bi-mouse fs-1'></i>";
+  btn.style.backgroundColor = 'transparent';
+  btn.style.color = 'var(--grey-100)';
+  btn.style.boxShadow = 'none';
+  btn.style.position = 'absolute';
+  btn.style.bottom = '12px';
+  btn.style.left = '50%';
+  btn.style.transform = 'translateX(-50%)';
+  btn.className = 'btn btn-lg btn-primary';
+
+  // Animasi scroll
+  setTimeout(function () {
+    var heroSection = document.getElementById('hero');
+    heroSection.scrollIntoView({ behavior: 'smooth' });
+  }, 1500);
+}
+
 // fix bug offcanvas
 const stickyTop = document.querySelector('.sticky-top');
 const offcanvas = document.querySelector('.offcanvas');
@@ -103,49 +123,77 @@ function openFullscreen() {
 // end fullscreen mode
 
 disableScroll();
-
 //  End Disable scroll cover
 
-// form
-window.addEventListener('load', function () {
-  const form = document.getElementById('my-form');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    const action = e.target.action;
-    fetch(action, { method: 'POST', body: data }).then(() => {
-      alert('Konfirmasi Kehadiran Berhasil Terkirim!');
-    });
-  });
-});
-// end form
-
 //  custom guest name
+// const urlParams = new URLSearchParams(window.location.search);
+// const nama = urlParams.get('n') || '';
+// const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
+// const namaContainer = document.querySelector('.cover .text-guest h4');
+// namaContainer.innerText = `${pronoun}, ${nama}`;
+
+// document.querySelector('#nama').value = nama;
+
 const urlParams = new URLSearchParams(window.location.search);
 const nama = urlParams.get('n') || '';
 const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
 const namaContainer = document.querySelector('.cover .text-guest h4');
-namaContainer.innerText = `${pronoun}, ${nama}`;
+
+if (nama && pronoun !== 'Bapak/Ibu/Saudara/i') {
+  // Jika kedua parameter 'n' dan 'p' diberikan
+  namaContainer.innerText = `${pronoun}, ${nama}`;
+} else if (nama) {
+  // Jika hanya parameter 'n' yang diberikan
+  namaContainer.innerText = `${nama}`;
+} else {
+  // Jika kedua parameter tidak diberikan, tampilkan default
+  namaContainer.innerText = `Bapak/Ibu/Saudara/i`;
+}
 
 document.querySelector('#nama').value = nama;
 //  end custom guest name
 
-// change button & scroll
-function changeButton() {
-  var btn = document.getElementById('btn-cover');
-  btn.innerHTML = "Scroll ke bawah! <br> <i class='bi bi-mouse fs-1'></i>";
-  btn.style.backgroundColor = 'transparent';
-  btn.style.color = 'var(--grey-100)';
-  btn.style.boxShadow = 'none';
-  btn.style.position = 'absolute';
-  btn.style.bottom = '50px';
-  btn.style.left = '50%';
-  btn.style.transform = 'translateX(-50%)';
-  btn.className = 'btn btn-lg btn-primary';
+// copy to clipboard
+function copyToClipboard(elementId, successMessage) {
+  // copy text
+  var textToCopy = document.getElementById(elementId).innerText;
 
-  // Animasi scroll
-  setTimeout(function () {
-    var heroSection = document.getElementById('hero');
-    heroSection.scrollIntoView({ behavior: 'smooth' });
-  }, 1500);
+  // creat temp
+  var tempTextArea = document.createElement('textarea');
+  tempTextArea.value = textToCopy;
+
+  // hide element
+  tempTextArea.style.position = 'absolute';
+  tempTextArea.style.left = '-9999px';
+
+  // add element
+  document.body.appendChild(tempTextArea);
+
+  // select text on element
+  tempTextArea.select();
+
+  // copy to clipboard
+  document.execCommand('copy');
+
+  // remove temp
+  document.body.removeChild(tempTextArea);
+
+  // show alert
+  swal({
+    title: 'Copied!',
+    text: successMessage,
+    icon: 'success',
+    button: false,
+    timer: 2000,
+  });
+}
+
+// copy nomor rekening
+function copyRekening() {
+  copyToClipboard('nomorRekening', 'Nomor rekening berhasil dicopy!');
+}
+
+// copy address
+function copyAddress() {
+  copyToClipboard('address', 'Alamat berhasil dicopy!');
 }
