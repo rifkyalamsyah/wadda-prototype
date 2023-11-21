@@ -474,25 +474,33 @@
             </div>
             <div class="col col-sm-7 col-lg-5 col-xl-6">
               <div class="form-wrapper card rounded-4 p-3 p-sm-4">
-                <form action="" method="">
-                  <h3 class="text-primary text-center">RSVP</h3>
+                <form name="submit-rsvp">
+                  <h3 class="text-primary text-center mb-3">RSVP</h3>
+                    <div id="alert-done" class="alert alert-success alert-dismissible fade show d-none" role="alert">
+                      Terima Kasih, Pesan anda sudah kami terima.
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                   <div class="my-3">
                     <label for="inputName" class="form-label text-primary">Nama</label>
-                    <input type="text" class="form-control" id="inputName" placeholder="Nama Lengkap">
+                    <input name="Nama" type="text" class="form-control" id="inputName" placeholder="Nama Lengkap" required>
                   </div>
                   <div class="mb-3">
                     <label for="textareaDoa" class="form-label text-primary">Ucapan/Doa</label>
-                    <textarea class="form-control" id="textareaDoa" rows="3" placeholder="Tulis ucapan/Doa disini"></textarea>
+                    <textarea name="Ucapan/Doa" class="form-control" id="textareaDoa" rows="3" placeholder="Tulis ucapan/Doa disini" required></textarea>
                   </div>
                   <div class="mb-3">
-                    <select id="selectRSVP" class="form-select" aria-label="select-rsvp">
+                    <select name="Status" id="selectRSVP" class="form-select" aria-label="select-rsvp" required>
                       <option selected value="" disabled>Konfirmasi Kehadiran</option>
-                      <option value="Hadir">Hadir</option>
+                      <option value="Akan Hadir">Akan Hadir</option>
                       <option value="Maaf, tidak bisa hadir">Maaf, tidak bisa hadir</option>
                     </select>
                   </div>
                   <div class="btn-wrapper">
-                    <button type="submit" class="btn btn-primary">Kirim</button>
+                    <button id="btn-submit" type="submit" class="btn btn-primary">Kirim</button>
+                    <button id="btn-loading" class="btn btn-primary d-none" type="button" disabled>
+                      <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                      <span role="status">Mengirim...</span>
+                    </button>
                   </div>
                 </form>
               </div>

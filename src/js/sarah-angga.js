@@ -75,8 +75,10 @@ function disableScroll() {
 function enableScroll() {
   window.onscroll = function () {};
   rootElement.style.scrollBehavior = 'smooth';
+
   // run fullscreen mode
   openFullscreen();
+
   // play audio
   playAudio();
 }
@@ -123,34 +125,24 @@ function openFullscreen() {
 // end fullscreen mode
 
 disableScroll();
+
 //  End Disable scroll cover
 
 //  custom guest name
-// const urlParams = new URLSearchParams(window.location.search);
-// const nama = urlParams.get('n') || '';
-// const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
-// const namaContainer = document.querySelector('.cover .text-guest h4');
-// namaContainer.innerText = `${pronoun}, ${nama}`;
-
-// document.querySelector('#nama').value = nama;
-
 const urlParams = new URLSearchParams(window.location.search);
 const nama = urlParams.get('n') || '';
 const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
 const namaContainer = document.querySelector('.cover .text-guest h4');
 
 if (nama && pronoun !== 'Bapak/Ibu/Saudara/i') {
-  // Jika kedua parameter 'n' dan 'p' diberikan
   namaContainer.innerText = `${pronoun}, ${nama}`;
 } else if (nama) {
-  // Jika hanya parameter 'n' yang diberikan
   namaContainer.innerText = `${nama}`;
 } else {
-  // Jika kedua parameter tidak diberikan, tampilkan default
   namaContainer.innerText = `Bapak/Ibu/Saudara/i`;
 }
 
-document.querySelector('#nama').value = nama;
+// document.querySelector('#nama').value = nama;
 //  end custom guest name
 
 // copy to clipboard
@@ -197,3 +189,35 @@ function copyRekening() {
 function copyAddress() {
   copyToClipboard('address', 'Alamat berhasil dicopy!');
 }
+
+// form
+const scriptURL =
+  'https://script.google.com/macros/s/AKfycbxWD3oOpbeQKe328sQEY2Vm63pkzJ9YE_Seh8WfYSY8RZ4EVMJSMXP5mdI8X7iB7h3IsA/exec';
+const form = document.forms['submit-rsvp'];
+const alert = document.getElementById('alert-done');
+const btnSubmit = document.getElementById('btn-submit');
+const btnLoading = document.getElementById('btn-loading');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // change button
+  btnLoading.classList.toggle('d-none');
+  btnSubmit.classList.toggle('d-none');
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) }).then(
+    (response) => {
+      btnLoading.classList.toggle('d-none');
+      btnSubmit.classList.toggle('d-none');
+
+      // show alert
+      alert.classList.toggle('d-none');
+      // reset forms
+      form.reset();
+
+      // console.log('Success!', response);
+    }
+  );
+  // .catch((error) => console.error('Error!', error.message));
+});
+// form end
