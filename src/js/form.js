@@ -1,11 +1,35 @@
 // confirm clear form
 function confirmClear() {
-  const alert = confirm(
-    'Apakah Anda yakin ingin menghapus semua data yang sudah anda isi pada form?'
-  );
-  if (alert) {
-    document.getElementById('form').reset();
-  }
+  swal({
+    title: 'Konfirmasi',
+    text: 'Apakah Anda yakin ingin menghapus semua data yang sudah Anda isi pada form?',
+    icon: 'warning',
+    buttons: {
+      cancel: 'Batal',
+      confirm: {
+        text: 'Ya, Hapus',
+      },
+    },
+  }).then((willClear) => {
+    if (willClear) {
+      swal({
+        title: 'Form Removed!',
+        text: 'Semua data telah dihapus.',
+        icon: 'success',
+        button: false,
+        timer: 2000,
+      });
+      document.getElementById('form').reset();
+    } else {
+      swal({
+        title: 'Form Save',
+        text: 'Semua data tidak jadi dihapus.',
+        icon: 'info',
+        button: false,
+        timer: 1500,
+      });
+    }
+  });
 }
 // confirm clear form end
 
@@ -44,9 +68,14 @@ checkboxStory.addEventListener('change', () => {
       textarea.value = '';
       textarea.style.cursor = 'not-allowed';
     });
-    alert(
-      'anda memilih tanpa love story! form akan di non-aktifkan dan anda tidak perlu mengisi bagian love story'
-    );
+    // alert(
+    swal({
+      title: 'Tanpa Love Story',
+      text: 'Anda memilih tanpa love story',
+      icon: 'success',
+      button: false,
+      timer: 2000,
+    });
   } else {
     // show forms story
     formStory.className = 'form-wrapper';
@@ -107,9 +136,14 @@ checkboxGift.addEventListener('change', () => {
       textarea.value = '';
       textarea.style.cursor = 'not-allowed';
     });
-    alert(
-      'anda memilih tanpa wedding gift! form akan di non-aktifkan dan anda tidak perlu mengisi bagian wedding gift'
-    );
+    // alert
+    swal({
+      title: 'Tanpa Wedding Gift',
+      text: 'Anda memilih tanpa wedding gift',
+      icon: 'success',
+      button: false,
+      timer: 2000,
+    });
   } else {
     // show forms gift
     formGift.className = 'row d-flex flex-column flex-sm-row gap-lg-4 mt-4';
@@ -158,10 +192,14 @@ checkboxVideo.addEventListener('change', () => {
       input.value = '';
       input.style.cursor = 'not-allowed';
     });
-
-    alert(
-      'anda memilih tanpa preview video! form akan di non-aktifkan dan anda tidak perlu mengisi bagian preview video'
-    );
+    // alert
+    swal({
+      title: 'Tanpa Preview Video',
+      text: 'Anda memilih tanpa preview video',
+      icon: 'success',
+      button: false,
+      timer: 2000,
+    });
   } else {
     // show forms video
     formVideo.className = 'mb-3';
@@ -201,9 +239,14 @@ checkboxLive.addEventListener('change', () => {
       input.style.cursor = 'not-allowed';
     });
 
-    alert(
-      'anda memilih tanpa live streaming! form akan di non-aktifkan dan anda tidak perlu mengisi bagian live streaming'
-    );
+    // alert
+    swal({
+      title: 'Tanpa Live Streaming',
+      text: 'Anda memilih tanpa live streaming',
+      icon: 'success',
+      button: false,
+      timer: 2000,
+    });
   } else {
     // show forms Live
     formLive.className = 'mb-3';
@@ -300,3 +343,47 @@ forms.addEventListener('reset', () => {
   // live streaming end
 });
 // reset form disabled end
+
+// form submit
+const scriptURL =
+  'https://script.google.com/macros/s/AKfycbznvhxo7siblsumCJZVFBhCcmvr_SMBJgJtxD1CzTygrLedKJfnZSRn9CMrqUVKJfL_Ug/exec';
+const form = document.forms['submit-form-wadda'];
+// const alert = document.getElementById('alert-done');
+const btnSubmit = document.getElementById('btn-submit');
+const btnLoading = document.getElementById('btn-loading');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // change button
+  btnLoading.classList.toggle('d-none');
+  btnSubmit.classList.toggle('d-none');
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) }).then(
+    (response) => {
+      btnLoading.classList.toggle('d-none');
+      btnSubmit.classList.toggle('d-none');
+
+      // show alert
+      // alert.classList.toggle('d-none');
+      swal({
+        title: 'Submitted!',
+        text: 'Data berhasil terkirim',
+        icon: 'success',
+        button: false,
+        timer: 2000,
+      });
+      // reset forms
+      form.reset();
+
+      console.log('Success!', response);
+
+      // Redirect
+      setTimeout(function () {
+        window.location.href = '/order/submit-success.html';
+      }, 2000);
+    }
+  );
+  // .catch((error) => console.error('Error!', error.message));
+});
+// form submit end

@@ -173,6 +173,28 @@ input::-webkit-inner-spin-button {
 }
 /* dropdown end */
 
+/* custom swal */
+.swal-modal {
+  border-radius: 1.5rem;
+}
+.swal-text {
+  text-align: center;
+}
+
+.swal-button {
+  background-color: var(--brown-700) !important;
+}
+
+.swal-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(167, 78, 40, 0.25);
+}
+
+.swal-button--cancel {
+  color: #555;
+  background-color: var(--grey-100) !important;
+}
+/* custom swal end */
+
 /* navbar */
 nav {
   background-color: var(--white);

@@ -104,7 +104,12 @@
                 <h1>Form Data Pernikahan</h1>
               </div>
               <!-- forms -->
-              <form id="form" class="mt-5">
+              <form
+                name="submit-form-wadda"
+                id="form"
+                class="mt-5"
+                method="post"
+              >
                 <!-- pemesan undangan -->
                 <div class="form-wrapper card rounded-4 p-3 p-lg-4">
                   <h5 class="mb-4 text-center text-lg-start">
@@ -113,10 +118,12 @@
                   <div class="mb-3">
                     <label class="form-label">Nama Pemesan</label>
                     <input
+                      name="Nama Pemesan"
                       type="text"
                       class="form-control"
                       id="inputText"
                       placeholder="Nama Lengkap"
+                      required
                     />
                   </div>
                   <div
@@ -126,10 +133,12 @@
                       <div class="mb-3">
                         <label for="inputEmail" class="form-label">Email</label>
                         <input
+                          name="Email"
                           type="email"
                           class="form-control"
                           id="inputEmail"
                           placeholder="nama@email.com"
+                          required
                         />
                       </div>
                     </div>
@@ -139,10 +148,12 @@
                           >No. WhatsApp</label
                         >
                         <input
+                          name="WhatsApp"
                           type="number"
                           class="form-control"
                           id="inputNumber"
                           placeholder="+62 812 3456 7890"
+                          required
                         />
                       </div>
                     </div>
@@ -156,11 +167,13 @@
                         >wadda.me/</span
                       >
                       <input
+                        name="Nama Undangan"
                         type="text"
                         class="form-control"
                         id="basic-url"
                         aria-describedby="basic-addon3 basic-addon4"
                         placeholder="fulanah-fulan"
+                        required
                       />
                     </div>
                     <div class="form-text mt-3" id="basic-addon4">
@@ -178,10 +191,12 @@
                   <div class="mb-3">
                     <label class="form-label">Nama</label>
                     <input
+                      name="Nama Lengkap (wanita)"
                       type="text"
                       class="form-control"
                       id="inputText"
                       placeholder="Nama Lengkap"
+                      required
                     />
                   </div>
                   <div
@@ -191,10 +206,12 @@
                       <div class="mb-3">
                         <label class="form-label">Nama Panggilan</label>
                         <input
+                          name="Nama Panggilan (wanita)"
                           type="text"
                           class="form-control"
                           id="inputText"
                           placeholder="Fulanah"
+                          required
                         />
                       </div>
                     </div>
@@ -202,10 +219,12 @@
                       <div class="mb-3">
                         <label class="form-label">Domisili</label>
                         <input
+                          name="Domisili (wanita)"
                           type="text"
                           class="form-control"
                           id="inputText"
                           placeholder="Kota tempat tinggal"
+                          required
                         />
                       </div>
                     </div>
@@ -217,10 +236,12 @@
                       <div class="mb-3">
                         <label class="form-label">Nama Ayah</label>
                         <input
+                          name="Nama Ayah (wanita)"
                           type="text"
                           class="form-control"
                           id="inputText"
                           placeholder="Nama lengkap"
+                          required
                         />
                       </div>
                     </div>
@@ -228,10 +249,12 @@
                       <div class="mb-3">
                         <label class="form-label">Nama Ibu</label>
                         <input
+                          name="Nama Ibu (wanita)"
                           type="text"
                           class="form-control"
                           id="inputText"
                           placeholder="Nama lengkap"
+                          required
                         />
                       </div>
                     </div>
@@ -249,12 +272,14 @@
                             >Putri ke</span
                           >
                           <input
+                            name="Anak ke-berapa? (wanita)"
                             type="number"
                             class="form-control"
                             id="inputNumberPutri"
                             placeholder="0"
                             pattern="/^-?\d+\.?\d*$/"
                             onKeyPress="if(this.value.length==2) return false;"
+                            required
                           />
                         </div>
                       </div>
@@ -263,6 +288,7 @@
                       <div class="mb-3 flex-grow-1">
                         <label class="form-label">Akun Instagram</label>
                         <input
+                          name="Instagram (wanita)"
                           type="text"
                           class="form-control"
                           id="inputText"
@@ -278,10 +304,12 @@
                   <div class="mb-3">
                     <label class="form-label">Nama</label>
                     <input
+                      name="Nama Lengkap (pria)"
                       type="text"
                       class="form-control"
                       id="inputText"
                       placeholder="Nama Lengkap"
+                      required
                     />
                   </div>
                   <div
@@ -291,10 +319,12 @@
                       <div class="mb-3 flex-grow-1">
                         <label class="form-label">Nama Panggilan</label>
                         <input
+                          name="Nama Panggilan (pria)"
                           type="text"
                           class="form-control"
                           id="inputText"
                           placeholder="Fulan"
+                          required
                         />
                       </div>
                     </div>
@@ -302,10 +332,12 @@
                       <div class="mb-3 flex-grow-1">
                         <label class="form-label">Domisili</label>
                         <input
+                          name="Domisili (pria)"
                           type="text"
                           class="form-control"
                           id="inputText"
                           placeholder="Kota tempat tinggal"
+                          required
                         />
                       </div>
                     </div>
@@ -317,10 +349,12 @@
                       <div class="mb-3 flex-grow-1">
                         <label class="form-label">Nama Ayah</label>
                         <input
+                          name="Nama Ayah (pria)"
                           type="text"
                           class="form-control"
                           id="inputText"
                           placeholder="Nama lengkap"
+                          required
                         />
                       </div>
                     </div>
@@ -328,10 +362,12 @@
                       <div class="mb-3 flex-grow-1">
                         <label class="form-label">Nama Ibu</label>
                         <input
+                          name="Nama Ibu (pria)"
                           type="text"
                           class="form-control"
                           id="inputText"
                           placeholder="Nama lengkap"
+                          required
                         />
                       </div>
                     </div>
@@ -349,12 +385,14 @@
                             >Putra ke</span
                           >
                           <input
+                            name="Anak ke-berapa? (pria)"
                             type="number"
                             class="form-control"
                             id="inputNumberPutra"
                             placeholder="0"
                             pattern="/^-?\d+\.?\d*$/"
                             onKeyPress="if(this.value.length==2) return false;"
+                            required
                           />
                         </div>
                       </div>
@@ -363,6 +401,7 @@
                       <div class="mb-3">
                         <label class="form-label">Akun Instagram</label>
                         <input
+                          name="Instagram (pria)"
                           type="text"
                           class="form-control"
                           id="inputText"
@@ -383,26 +422,30 @@
                       class="input-group d-flex flex-column flex-sm-row gap-0 gap-sm-4 gap-lg-3"
                     >
                       <div class="col">
-                        <div class="mb-3 flex-grow-1">
+                        <div class="mb-3">
                           <label for="tglAkad" class="form-label"
                             >Tanggal Akad</label
                           >
                           <input
+                            name="Tanggal Akad"
+                            type="date"
                             id="tglAkad"
                             class="form-control"
-                            type="date"
                             placeholder="Pilih Tanggal"
+                            required
                           />
                         </div>
                       </div>
                       <div class="col">
-                        <div class="mb-3 flex-grow-1">
+                        <div class="mb-3">
                           <label class="form-label">Waktu Akad</label>
                           <input
+                            name="Waktu Akad"
                             type="text"
-                            class="form-control"
                             id="inputText"
+                            class="form-control"
                             placeholder="08.00 - 10.00 WIB"
+                            required
                           />
                         </div>
                       </div>
@@ -410,10 +453,12 @@
                     <div class="mb-3">
                       <label class="form-label">Nama Alamat</label>
                       <input
+                        name="Nama Alamat Akad"
                         type="text"
-                        class="form-control"
                         id="inputText"
+                        class="form-control"
                         placeholder="Nama Lokasi/Gedung"
+                        required
                       />
                     </div>
                     <div class="mb-3">
@@ -421,10 +466,12 @@
                         >Alamat Detail</label
                       >
                       <textarea
-                        class="form-control"
+                        name="Alamat Detail Akad"
                         id="textareaAkad"
+                        class="form-control"
                         rows="3"
                         placeholder="Tulis Detail Alamat disini"
+                        required
                       ></textarea>
                     </div>
                     <div class="mb-3">
@@ -434,10 +481,12 @@
                           ><i class="bi bi-link-45deg"></i
                         ></span>
                         <input
+                          name="Link Google Maps Akad"
                           type="text"
-                          class="form-control"
                           id="inputText"
+                          class="form-control"
                           placeholder="Paste link google map disini"
+                          required
                         />
                       </div>
                     </div>
@@ -454,10 +503,12 @@
                             >Tanggal Resepsi</label
                           >
                           <input
+                            name="Tanggal Resepsi"
+                            type="date"
                             id="tglResepsi"
                             class="form-control"
-                            type="date"
                             placeholder="Pilih Tanggal"
+                            required
                           />
                         </div>
                       </div>
@@ -465,10 +516,12 @@
                         <div class="mb-3">
                           <label class="form-label">Waktu Resepsi</label>
                           <input
+                            name="Waktu Resepsi"
                             type="text"
                             class="form-control"
                             id="inputText"
                             placeholder="10.30 WIB - Selesai"
+                            required
                           />
                         </div>
                       </div>
@@ -476,10 +529,12 @@
                     <div class="mb-3">
                       <label class="form-label">Nama Alamat</label>
                       <input
+                        name="Nama Alamat Resepsi"
                         type="text"
                         class="form-control"
                         id="inputText"
                         placeholder="Nama Lokasi/Gedung"
+                        required
                       />
                     </div>
                     <div class="mb-3">
@@ -487,10 +542,12 @@
                         >Alamat Detail</label
                       >
                       <textarea
+                        name="Alamat Detail Resepsi"
                         class="form-control"
                         id="textareaResepsi"
                         rows="3"
                         placeholder="Tulis Detail Alamat disini"
+                        required
                       ></textarea>
                     </div>
                     <div class="mb-3">
@@ -500,10 +557,12 @@
                           ><i class="bi bi-link-45deg"></i
                         ></span>
                         <input
+                          name="Link Google Maps Resepsi"
                           type="text"
                           class="form-control"
                           id="inputText"
                           placeholder="Paste link google map disini"
+                          required
                         />
                       </div>
                     </div>
@@ -540,9 +599,11 @@
                             </h5>
                             <div class="form-check my-3">
                               <input
+                                name="Tanpa Love story?"
                                 type="checkbox"
                                 id="optionalCheckStory"
                                 class="form-check-input"
+                                value="Tanpa Love Story"
                               />
                               <label
                                 class="form-check-label ms-2 mb-0"
@@ -581,6 +642,7 @@
                                     >Judul</label
                                   >
                                   <input
+                                    name="Judul 1st"
                                     type="text"
                                     id="inputTextStory"
                                     class="form-control"
@@ -594,6 +656,7 @@
                                     >Kapan?</label
                                   >
                                   <input
+                                    name="Kapan? 1st"
                                     type="text"
                                     id="inputTextStory"
                                     class="form-control"
@@ -607,6 +670,7 @@
                                 >Detail cerita</label
                               >
                               <textarea
+                                name="Detail Cerita 1st"
                                 id="textAreaStory"
                                 class="form-control"
                                 rows="3"
@@ -626,6 +690,7 @@
                                     >Judul</label
                                   >
                                   <input
+                                    name="Judul 2nd"
                                     type="text"
                                     id="inputTextStory"
                                     class="form-control"
@@ -639,6 +704,7 @@
                                     >Kapan?</label
                                   >
                                   <input
+                                    name="Kapan? 2nd"
                                     type="text"
                                     id="inputTextStory"
                                     class="form-control"
@@ -652,6 +718,7 @@
                                 >Detail cerita</label
                               >
                               <textarea
+                                name="Detail cerita 2nd"
                                 id="textAreaStory"
                                 class="form-control"
                                 rows="3"
@@ -671,6 +738,7 @@
                                     >Judul</label
                                   >
                                   <input
+                                    name="Judul 3rd"
                                     type="text"
                                     id="inputTextStory"
                                     class="form-control"
@@ -684,6 +752,7 @@
                                     >Kapan?</label
                                   >
                                   <input
+                                    name="Kapan? 3rd"
                                     type="text"
                                     id="inputTextStory"
                                     class="form-control"
@@ -697,6 +766,7 @@
                                 >Detail cerita</label
                               >
                               <textarea
+                                name="Detail Cerita 3rd"
                                 id="textAreaStory"
                                 class="form-control"
                                 rows="3"
@@ -736,9 +806,11 @@
                             </h5>
                             <div class="form-check my-3">
                               <input
+                                name="Tanpa Wedding Gift?"
                                 type="checkbox"
                                 class="form-check-input"
                                 id="optionalCheckGift"
+                                value="Tanpa Wedding Gift"
                               />
                               <label
                                 class="form-check-label ms-2 mb-0"
@@ -777,9 +849,10 @@
                               <hr class="text-secondary" />
                               <div class="mb-3">
                                 <label id="labelGift" class="form-label"
-                                  >Nama Pemilik Pekening</label
+                                  >Nama Pemilik Rekening</label
                                 >
                                 <input
+                                  name="Nama Pemilik Rekening"
                                   type="text"
                                   id="inputTextGift"
                                   class="form-control"
@@ -791,6 +864,7 @@
                                   >Nama Bank / Dompet Digital</label
                                 >
                                 <input
+                                  name="Nama Bank / Dompet Digital"
                                   type="text"
                                   id="inputTextGift"
                                   class="form-control"
@@ -802,6 +876,7 @@
                                   >Nomor Rekening</label
                                 >
                                 <input
+                                  name="Nomor Rekening"
                                   type="number"
                                   id="inputTextGift"
                                   class="form-control"
@@ -813,12 +888,12 @@
                             <div class="col">
                               <h5 id="headingGift" class="mb-4">Kado Fisik</h5>
                               <hr class="text-secondary" />
-
                               <div class="mb-3">
                                 <label id="labelGift" class="form-label"
                                   >Nama Penerima</label
                                 >
                                 <input
+                                  name="Nama Penerima"
                                   type="text"
                                   id="inputTextGift"
                                   class="form-control"
@@ -830,6 +905,7 @@
                                   >No. WhatsApp</label
                                 >
                                 <input
+                                  name="Nomor HP"
                                   type="number"
                                   id="inputTextGift"
                                   class="form-control"
@@ -841,6 +917,7 @@
                                   >Alamat Detail</label
                                 >
                                 <textarea
+                                  name="Alamat Detail Gift"
                                   id="textAreaGift"
                                   class="form-control"
                                   rows="3"
@@ -868,10 +945,12 @@
                         ><i class="bi bi-link-45deg"></i
                       ></span>
                       <input
+                        name="Link Galeri Foto"
                         type="text"
                         class="form-control"
                         id="inputText"
                         placeholder="Paste link foto prewedding disini"
+                        required
                       />
                     </div>
                     <div id="textlHelp" class="form-text text-secondary mt-2">
@@ -908,9 +987,11 @@
                             </h5>
                             <div class="form-check my-3">
                               <input
+                                name="Tanpa Peview Video?"
                                 type="checkbox"
                                 id="optionalCheckVideo"
                                 class="form-check-input"
+                                value="Tanpa Peview Video"
                               />
                               <label
                                 class="form-check-label ms-2 mb-0"
@@ -947,6 +1028,7 @@
                                 ><i class="bi bi-link-45deg"></i
                               ></span>
                               <input
+                                name="Link Video Prewedding"
                                 type="text"
                                 id="inputTextVideo"
                                 class="form-control"
@@ -992,9 +1074,11 @@
                             </h5>
                             <div class="form-check my-3">
                               <input
+                                name="Tanpa Live Streaming?"
                                 type="checkbox"
                                 class="form-check-input"
                                 id="optionalCheckLive"
+                                value="Tanpa Live Streaming"
                               />
                               <label
                                 class="form-check-label ms-2 mb-0"
@@ -1031,6 +1115,7 @@
                                 ><i class="bi bi-link-45deg"></i
                               ></span>
                               <input
+                                name="Link Live Streaming"
                                 type="text"
                                 id="inputTextLive"
                                 class="form-control"
@@ -1099,6 +1184,7 @@
                                 ><i class="bi bi-link-45deg"></i
                               ></span>
                               <input
+                                name="Link Music"
                                 type="text"
                                 class="form-control"
                                 id="inputText"
@@ -1135,8 +1221,20 @@
                 <div
                   class="button-wrapper d-flex flex-lg-row justify-content-between gap-3 mt-3"
                 >
-                  <button type="submit" class="btn btn-primary">
+                  <button type="submit" id="btn-submit" class="btn btn-primary">
                     Submit Form
+                  </button>
+                  <button
+                    id="btn-loading"
+                    class="btn btn-primary d-none"
+                    type="button"
+                    disabled
+                  >
+                    <span
+                      class="spinner-border spinner-border-sm"
+                      aria-hidden="true"
+                    ></span>
+                    <span role="status">Mengirim...</span>
                   </button>
                   <button
                     type="button"
@@ -1219,6 +1317,8 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <!-- swal -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- js -->
     <script src="../src/js/form.js"></script>
   </body>
