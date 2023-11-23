@@ -1,52 +1,40 @@
-// forms
-var submitted = false;
-var actionUrl =
-  'https://docs.google.com/forms/u/0/d/e/1FAIpQLSfNC72u3BgcL2O0I_taQttsqmDOBctjSsjHPMYl6gzmK7m3pA/formResponse';
+// form submit
+const scriptURL =
+  'https://script.google.com/macros/s/AKfycbzHaQg7__CLu1tdAT_NWWzn-Ac2o7Dr-k3I2t5mePM-YtNfDhSylPyX4N0JIUStwG65/exec';
+const form = document.forms['submit-form-contact'];
+const alert = document.getElementById('alert-done');
+const btnSubmit = document.getElementById('btn-submit');
+const btnLoading = document.getElementById('btn-loading');
 
-// Buat elemen iframe dan tambahkan ke dalam DOM
-var iframeWrapper = document.getElementById('iframe-wrapper');
-var iframe = document.createElement('iframe');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-iframe.setAttribute('name', 'hiddenConfirm');
-iframe.setAttribute('id', 'hiddenConfirm');
-iframe.style.display = 'none';
-iframe.onload = onLoad; // Set fungsi onLoad sebagai callback onload
-iframeWrapper.appendChild(iframe);
-
-function onSubmit() {
   // change button
-  var submitButton = document.querySelector('button[type="submit"]');
-  submitButton.disabled = true;
-  submitButton.innerHTML = 'Mengirim...';
+  btnLoading.classList.toggle('d-none');
+  btnSubmit.classList.toggle('d-none');
 
-  submitted = true;
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) }).then(
+    (response) => {
+      btnLoading.classList.toggle('d-none');
+      btnSubmit.classList.toggle('d-none');
 
-  // add delay
-  setTimeout(function () {
-    // change button to default
-    submitButton.disabled = false;
-    submitButton.innerHTML = 'Submit form';
-  }, 2000);
-}
+      // reset forms
+      form.reset();
 
-function onLoad() {
-  if (submitted) {
-    // Show alert
-    swal({
-      title: 'Submitted!',
-      text: 'Data berhasil terkirim',
-      icon: 'success',
-      button: false,
-      timer: 2000,
-    });
+      // show alert
+      swal({
+        title: 'Submitted!',
+        text: 'Pesan anda berhasil terkirim',
+        icon: 'success',
+        button: false,
+        timer: 2000,
+      });
 
-    // Redirect
-    setTimeout(function () {
-      window.location.href = 'kontak.html';
-    }, 2000);
-  }
-}
+      // console.log('Success!', response);
 
-// Set the action URL for the form
-document.querySelector('form').action = actionUrl;
-// forms end
+      alert.classList.toggle('d-none');
+    }
+  );
+  // .catch((error) => console.error('Error!', error.message));
+});
+// form submit end

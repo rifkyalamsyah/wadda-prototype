@@ -348,7 +348,6 @@ forms.addEventListener('reset', () => {
 const scriptURL =
   'https://script.google.com/macros/s/AKfycbznvhxo7siblsumCJZVFBhCcmvr_SMBJgJtxD1CzTygrLedKJfnZSRn9CMrqUVKJfL_Ug/exec';
 const form = document.forms['submit-form-wadda'];
-// const alert = document.getElementById('alert-done');
 const btnSubmit = document.getElementById('btn-submit');
 const btnLoading = document.getElementById('btn-loading');
 
@@ -365,7 +364,6 @@ form.addEventListener('submit', (e) => {
       btnSubmit.classList.toggle('d-none');
 
       // show alert
-      // alert.classList.toggle('d-none');
       swal({
         title: 'Submitted!',
         text: 'Data berhasil terkirim',
@@ -376,7 +374,7 @@ form.addEventListener('submit', (e) => {
       // reset forms
       form.reset();
 
-      console.log('Success!', response);
+      // console.log('Success!', response);
 
       // Redirect
       setTimeout(function () {

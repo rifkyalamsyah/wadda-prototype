@@ -62,6 +62,7 @@ const song = document.querySelector('#song');
 let isPlaying = false;
 // end audio
 
+// disable scroll
 function disableScroll() {
   scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
@@ -72,6 +73,7 @@ function disableScroll() {
   rootElement.style.scrollBehavior = 'auto';
 }
 
+// enable scroll
 function enableScroll() {
   window.onscroll = function () {};
   rootElement.style.scrollBehavior = 'smooth';
@@ -91,6 +93,7 @@ function playAudio() {
   isPlaying = true;
 }
 
+// icon audio
 audioIconWrapper.onclick = function () {
   if (isPlaying) {
     song.pause();
@@ -142,7 +145,6 @@ if (nama && pronoun !== 'Bapak/Ibu/Saudara/i') {
   namaContainer.innerText = `Bapak/Ibu/Saudara/i`;
 }
 
-// document.querySelector('#nama').value = nama;
 //  end custom guest name
 
 // copy to clipboard
@@ -210,11 +212,19 @@ form.addEventListener('submit', (e) => {
       btnLoading.classList.toggle('d-none');
       btnSubmit.classList.toggle('d-none');
 
-      // show alert
-      alert.classList.toggle('d-none');
       // reset forms
       form.reset();
 
+      // show alert
+      swal({
+        title: 'Submitted!',
+        text: 'Pesan Anda berhasil terkirim',
+        icon: 'success',
+        button: false,
+        timer: 2000,
+      });
+
+      alert.classList.toggle('d-none');
       // console.log('Success!', response);
     }
   );
