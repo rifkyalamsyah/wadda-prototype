@@ -1,0 +1,23 @@
+/* success payment section */
+.submit-success {
+  padding: 8rem 0;
+}
+
+.submit-success .img-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: var(--grey-50);
+  width: 176px;
+  height: 176px;
+  border-radius: 100px;
+}
+
+.submit-success .img-wrapper img {
+  width: 112px;
+}
+
+.submit-success .cta-wrapper a {
+  width: 100%;
+  max-width: 350px;
+}
+/* success payment section end */

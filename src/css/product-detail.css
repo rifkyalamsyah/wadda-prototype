@@ -1,0 +1,43 @@
+/* product detail section */
+.product-detail {
+  padding: 4rem 0;
+}
+/* product detail section end */
+
+/* breadcrumb */
+nav .breadcrumb {
+  padding: 2rem 0;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: var(--brown-700);
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+/* breadcrumb end */
+
+/* guide section */
+.guide {
+  padding: 5rem 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    var(--grey-50) 100%
+  );
+}
+
+.guide .card h6 {
+  color: var(--brown-700);
+}
+
+.guide .card {
+  transition: box-shadow 1s;
+}
+
+.guide .card:hover {
+  box-shadow: 0 0 16px rgba(33, 33, 33, 0.2);
+}
+/* guide section end */

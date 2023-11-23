@@ -1,0 +1,19 @@
+/* contact section */
+.contact {
+  padding: 5rem 0;
+}
+
+.contact .contact-wrapper .img-wrapper {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: var(--grey-50);
+}
+
+.contact .contact-wrapper .img-wrapper img {
+  width: 32px;
+}
+
+form {
+  background-color: var(--grey-50) !important;
+}
+/* contact section end */

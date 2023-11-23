@@ -1,0 +1,13 @@
+body {
+  background-color: var(--grey-50);
+}
+
+/* form section */
+.form {
+  padding: 5rem 0;
+}
+
+h5 {
+  color: var(--brown-700);
+}
+/* form section end */
