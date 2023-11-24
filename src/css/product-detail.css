@@ -1,12 +1,12 @@
 /* product detail section */
 .product-detail {
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 /* product detail section end */
 
 /* breadcrumb */
 nav .breadcrumb {
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .breadcrumb a {
@@ -41,3 +41,22 @@ nav .breadcrumb {
   box-shadow: 0 0 16px rgba(33, 33, 33, 0.2);
 }
 /* guide section end */
+
+/* --- Media Query --- */
+/* mobile device */
+@media (max-width: 576px) {
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  /* product detail section */
+  .product-detail {
+    padding: 1rem 0;
+  }
+  /* product detail section end */
+  /* breadcrumb */
+  nav .breadcrumb {
+    padding: 1rem 0;
+  }
+  /* breadcrumb end */
+}

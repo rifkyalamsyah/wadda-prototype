@@ -31,3 +31,16 @@
   box-shadow: 0 0 16px rgba(33, 33, 33, 0.2);
 }
 /* guide section end */
+
+
+/* --- Media Query --- */
+/* mobile device */
+@media (max-width: 576px) {
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  .theme {
+    padding: 3rem 0;
+  }
+}

@@ -92,6 +92,16 @@ fieldset:disabled .btn {
 /* buttons end */
 
 /* forms */
+.form-control {
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+}
+
+.form-select {
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+}
+
 .form-control:focus {
   border-color: var(--brown-700);
   box-shadow: 0 0 0 0.2rem rgba(167, 78, 40, 0.25);
