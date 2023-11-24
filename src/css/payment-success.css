@@ -21,3 +21,15 @@
   max-width: 350px;
 }
 /* success payment section end */
+
+/* --- Media Query --- */
+/* mobile device */
+@media (max-width: 576px) {
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  .success-payment {
+    padding: 5rem 0;
+  }
+}

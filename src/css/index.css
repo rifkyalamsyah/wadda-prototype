@@ -121,4 +121,9 @@
 
 /* tablet */
 @media (max-width: 768px) {
+  /* hero section */
+  .hero-section {
+    padding: 2rem 0;
+  }
+  /* hero section end */
 }
