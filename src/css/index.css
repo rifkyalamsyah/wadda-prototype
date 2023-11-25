@@ -115,12 +115,8 @@
 /* FAQ section end */
 
 /* --- Media Query --- */
-/* mobile device */
-@media (max-width: 576px) {
-}
-
 /* tablet */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   /* hero section */
   .hero-section {
     padding: 2rem 0;

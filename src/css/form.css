@@ -13,12 +13,8 @@ h5 {
 /* form section end */
 
 /* --- Media Query --- */
-/* mobile device */
-@media (max-width: 576px) {
-}
-
 /* tablet */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .form {
     padding: 3rem 0;
   }

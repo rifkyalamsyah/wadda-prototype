@@ -43,10 +43,6 @@ nav .breadcrumb {
 /* guide section end */
 
 /* --- Media Query --- */
-/* mobile device */
-@media (max-width: 576px) {
-}
-
 /* tablet */
 @media (max-width: 768px) {
   /* product detail section */

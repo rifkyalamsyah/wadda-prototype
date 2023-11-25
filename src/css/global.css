@@ -35,6 +35,7 @@ html {
 
 body {
   font-family: 'DM Sans', sans-serif !important;
+  scroll-behavior: smooth;
 }
 
 /* buttons */
@@ -73,6 +74,16 @@ body {
   --bs-btn-active-bg: var(--grey-50);
 }
 
+.btn-success {
+  padding: 12px 24px;
+  border-radius: 16px;
+}
+
+.btn-outline-danger {
+  padding: 12px 24px;
+  border-radius: 16px;
+}
+
 /* disable button */
 .btn.disabled,
 .btn:disabled,
@@ -107,6 +118,11 @@ fieldset:disabled .btn {
   box-shadow: 0 0 0 0.2rem rgba(167, 78, 40, 0.25);
 }
 
+.form-select:focus {
+  border-color: var(--brown-700);
+  box-shadow: 0 0 0 0.2rem rgba(167, 78, 40, 0.25);
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
@@ -125,6 +141,10 @@ input::-webkit-inner-spin-button {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--grey-300);
   /* opacity: 1; Firefox */
+}
+
+.input-group-text {
+  border-radius: 0.75rem;
 }
 
 /* checkbox */
