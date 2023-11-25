@@ -1,0 +1,18 @@
+body {
+  background-color: var(--grey-50);
+}
+
+.guest-link {
+  padding: 4rem 0 10rem 0;
+}
+.swal-modal {
+  border-radius: 1.5rem;
+}
+
+/* Media Query */
+/* tablet */
+@media (max-width: 992px) {
+  .guest-link {
+    padding: 1rem 0;
+  }
+}

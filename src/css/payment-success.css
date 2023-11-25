@@ -3,7 +3,7 @@
   padding: 8rem 0;
 }
 
-.success-payment .img-wrapper{
+.success-payment .img-wrapper {
   display: flex;
   justify-content: center;
   background-color: var(--grey-50);
@@ -23,13 +23,17 @@
 /* success payment section end */
 
 /* --- Media Query --- */
-/* mobile device */
-@media (max-width: 576px) {
-}
-
 /* tablet */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .success-payment {
-    padding: 5rem 0;
+    padding: 2rem 0 8rem 0;
+  }
+
+  .success-payment .img-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+  .success-payment .img-wrapper img {
+    width: 48px;
   }
 }

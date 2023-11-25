@@ -22,15 +22,18 @@
 }
 /* success payment section end */
 
-
 /* --- Media Query --- */
-/* mobile device */
-@media (max-width: 576px) {
-}
-
 /* tablet */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .submit-success {
-    padding: 5rem 0;
+    padding: 2rem 0 8rem 0;
+  }
+
+  .submit-success .img-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+  .submit-success .img-wrapper img {
+    width: 48px;
   }
 }
