@@ -560,7 +560,7 @@ input:-webkit-autofill:focus {
 /* family section */
 .family {
   padding: 3rem 0;
-  background-image: url(/src/img/sarah-angga/bg-floral.png);
+  background-image: url(/src/img/sarah-angga/bg-floral.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
