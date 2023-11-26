@@ -167,7 +167,8 @@
                 name="submit-form-contact"
                 id="form"
                 method="post"
-                class="card rounded-4 p-3 p-lg-4"
+                class="card rounded-4 p-3 p-lg-4 needs-validation"
+                novalidate
               >
                 <div class="text-wraper text-center mb-3">
                   <h4>Hubungi Kami</h4>
@@ -196,6 +197,9 @@
                       placeholder="Nama Lengkap"
                       required
                     />
+                    <div class="invalid-feedback">
+                      Harap masukan nama lengkap.
+                    </div>
                   </div>
                   <div class="flex-grow-1 mb-3">
                     <label for="textInputEmail" class="form-label">Email</label>
@@ -207,6 +211,9 @@
                       placeholder="Alamat Email"
                       required
                     />
+                    <div class="invalid-feedback">
+                      Harap masukan email yang valid.
+                    </div>
                   </div>
                 </div>
                 <div class="mb-3">
@@ -221,6 +228,7 @@
                     placeholder="Tulis subjek anda disini"
                     required
                   />
+                  <div class="invalid-feedback">Subjek wajib di isi.</div>
                 </div>
                 <div class="mb-3">
                   <label for="inputTextarea" class="form-label"
@@ -234,6 +242,7 @@
                     placeholder="Tulis pesan anda disini. . ."
                     required
                   ></textarea>
+                  <div class="invalid-feedback">Pesan wajib di isi.</div>
                 </div>
                 <div class="d-flex">
                   <button
@@ -333,6 +342,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- custom js -->
-    <script src="/src/js/contact.js"></script>
+    <!-- <script src="/src/js/contact.js"></script> -->
+    <script src="/src/js/kontak.js"></script>
   </body>
 </html>

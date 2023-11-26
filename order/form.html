@@ -110,8 +110,9 @@
               <form
                 name="submit-form-wadda"
                 id="form"
-                class="mt-5"
+                class="mt-5 needs-validation"
                 method="post"
+                novalidate
               >
                 <!-- pemesan undangan -->
                 <div class="form-wrapper card rounded-4 p-3 p-lg-4">
@@ -119,15 +120,24 @@
                     Pemesan Undangan
                   </h5>
                   <div class="mb-3">
-                    <label class="form-label">Nama Pemesan</label>
+                    <label for="inputNameCustomer" class="form-label"
+                      >Nama Pemesan</label
+                    >
                     <input
                       name="Nama Pemesan"
                       type="text"
                       class="form-control"
-                      id="inputText"
+                      id="inputNameCustomer"
                       placeholder="Nama Lengkap"
+                      pattern="^[A-Za-z\s]+$"
+                      title="Hanya diizinkan menggunakan huruf dan spasi, tanpa angka"
+                      maxlength="50"
+                      onKeyPress="if(this.value.length==50) return false;"
                       required
                     />
+                    <div class="invalid-feedback">
+                      Nama pemesan harus di isi, tanpa angka!
+                    </div>
                   </div>
                   <div
                     class="input-group d-flex flex-column flex-sm-row gap-0 gap-sm-4"
@@ -141,31 +151,41 @@
                           class="form-control"
                           id="inputEmail"
                           placeholder="nama@email.com"
+                          onKeyPress="if(this.value.length==64) return false;"
                           required
                         />
+                        <div class="invalid-feedback">
+                          Harap masukan email yang valid!
+                        </div>
                       </div>
                     </div>
                     <div class="col">
                       <div class="mb-3">
-                        <label for="inputNumber" class="form-label"
+                        <label for="inputWa" class="form-label"
                           >No. WhatsApp</label
                         >
                         <input
                           name="WhatsApp"
                           type="number"
                           class="form-control"
-                          id="inputNumber"
-                          placeholder="+62 812 3456 7890"
+                          id="inputWa"
+                          placeholder="+6281234567890"
+                          pattern="[0-9]{11,14}"
+                          title="Hanya diizinkan menggunakan angka, minimal 11 dan maksimal 14 digit"
+                          onKeyPress="if(this.value.length==15) return false;"
                           required
                         />
+                        <div class="invalid-feedback">
+                          No. WhatsApp harus di isi! max. 14 digit angka
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div class="mb-3">
-                    <label for="basic-url" class="form-label"
+                    <label for="inputTitleLink" class="form-label"
                       >Custom link undangan</label
                     >
-                    <div class="input-group">
+                    <div class="input-group has-validation">
                       <span class="input-group-text" id="basic-addon3"
                         >wadda.me/</span
                       >
@@ -173,11 +193,14 @@
                         name="Nama Undangan"
                         type="text"
                         class="form-control"
-                        id="basic-url"
+                        id="inputTitleLink"
                         aria-describedby="basic-addon3 basic-addon4"
                         placeholder="fulanah-fulan"
                         required
                       />
+                      <div class="invalid-feedback">
+                        Judul undangan harus di isi!
+                      </div>
                     </div>
                     <div class="form-text mt-3" id="basic-addon4">
                       Contoh ketika undangan sudah aktif link akan menjadi
@@ -192,43 +215,68 @@
                     Mempelai Wanita
                   </h5>
                   <div class="mb-3">
-                    <label class="form-label">Nama</label>
+                    <label for="inputNameWoman" class="form-label">Nama</label>
                     <input
                       name="Nama Lengkap (wanita)"
                       type="text"
                       class="form-control"
-                      id="inputText"
+                      id="inputNameWoman"
                       placeholder="Nama Lengkap"
+                      pattern="^[A-Za-z\s]+$"
+                      title="Hanya diizinkan menggunakan huruf dan spasi, tanpa angka"
+                      maxlength="50"
+                      onKeyPress="if(this.value.length==50) return false;"
                       required
                     />
+                    <div class="invalid-feedback">
+                      Nama mempelai wanita harus di isi! tanpa angka
+                    </div>
                   </div>
                   <div
                     class="input-group d-flex flex-column flex-sm-row gap-0 gap-sm-4"
                   >
                     <div class="col">
                       <div class="mb-3">
-                        <label class="form-label">Nama Panggilan</label>
+                        <label for="inputChildnameWoman" class="form-label"
+                          >Nama Panggilan</label
+                        >
                         <input
                           name="Nama Panggilan (wanita)"
                           type="text"
                           class="form-control"
-                          id="inputText"
+                          id="inputChildnameWoman"
                           placeholder="Fulanah"
+                          pattern="^[A-Za-z\s]+$"
+                          title="Hanya diizinkan menggunakan huruf dan spasi, tanpa angka"
+                          maxlength="35"
+                          onKeyPress="if(this.value.length==35) return false;"
                           required
                         />
+                        <div class="invalid-feedback">
+                          Nama panggilan harus di isi! tanpa angka
+                        </div>
                       </div>
                     </div>
                     <div class="col">
                       <div class="mb-3">
-                        <label class="form-label">Domisili</label>
+                        <label for="inputCityWoman" class="form-label"
+                          >Domisili</label
+                        >
                         <input
                           name="Domisili (wanita)"
                           type="text"
                           class="form-control"
-                          id="inputText"
+                          id="inputCityWoman"
                           placeholder="Kota tempat tinggal"
+                          pattern="^[A-Za-z\s]+$"
+                          title="Hanya diizinkan menggunakan huruf dan spasi, tanpa angka"
+                          maxlength="50"
+                          onKeyPress="if(this.value.length==50) return false;"
                           required
                         />
+                        <div class="invalid-feedback">
+                          Domisili harus di isi! tanpa angka
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -237,28 +285,46 @@
                   >
                     <div class="col">
                       <div class="mb-3">
-                        <label class="form-label">Nama Ayah</label>
+                        <label for="inputDadWoman" class="form-label"
+                          >Nama Ayah</label
+                        >
                         <input
                           name="Nama Ayah (wanita)"
                           type="text"
                           class="form-control"
-                          id="inputText"
+                          id="inputDadWoman"
                           placeholder="Nama lengkap"
+                          pattern="^[A-Za-z\s]+$"
+                          title="Hanya diizinkan menggunakan huruf dan spasi, tanpa angka"
+                          maxlength="50"
+                          onKeyPress="if(this.value.length==50) return false;"
                           required
                         />
+                        <div class="invalid-feedback">
+                          Nama ayah harus di isi! tanpa angka
+                        </div>
                       </div>
                     </div>
                     <div class="col">
                       <div class="mb-3">
-                        <label class="form-label">Nama Ibu</label>
+                        <label for="inputMomWoman" class="form-label"
+                          >Nama Ibu</label
+                        >
                         <input
                           name="Nama Ibu (wanita)"
                           type="text"
                           class="form-control"
-                          id="inputText"
+                          id="inputMomWoman"
                           placeholder="Nama lengkap"
+                          pattern="^[A-Za-z\s]+$"
+                          title="Hanya diizinkan menggunakan huruf dan spasi, tanpa angka"
+                          maxlength="50"
+                          onKeyPress="if(this.value.length==50) return false;"
                           required
                         />
+                        <div class="invalid-feedback">
+                          Nama ibu harus di isi! tanpa angka
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -267,10 +333,10 @@
                   >
                     <div class="col">
                       <div class="mb-3 flex-grow-1">
-                        <label for="inputNumberPutri" class="form-label"
+                        <label for="inputNumberWoman" class="form-label"
                           >Anak ke-berapa?</label
                         >
-                        <div class="input-group">
+                        <div class="input-group has-validation">
                           <span class="input-group-text" id="basic-addon3"
                             >Putri ke</span
                           >
@@ -278,23 +344,28 @@
                             name="Anak ke-berapa? (wanita)"
                             type="number"
                             class="form-control"
-                            id="inputNumberPutri"
+                            id="inputNumberWoman"
                             placeholder="0"
                             pattern="/^-?\d+\.?\d*$/"
                             onKeyPress="if(this.value.length==2) return false;"
                             required
                           />
+                          <div class="invalid-feedback">
+                            harus di isi! maksimal 2 digit angka
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div class="col">
                       <div class="mb-3 flex-grow-1">
-                        <label class="form-label">Akun Instagram</label>
+                        <label for="inputIgWoman" class="form-label"
+                          >Akun Instagram</label
+                        >
                         <input
                           name="Instagram (wanita)"
                           type="text"
                           class="form-control"
-                          id="inputText"
+                          id="inputIgWoman"
                           placeholder="@username"
                         />
                       </div>
@@ -305,43 +376,68 @@
                 <div class="form-wrapper card rounded-4 p-3 p-lg-4 mt-3">
                   <h5 class="mb-4 text-center text-lg-start">Mempelai Pria</h5>
                   <div class="mb-3">
-                    <label class="form-label">Nama</label>
+                    <label for="inputNameMan" class="form-label">Nama</label>
                     <input
                       name="Nama Lengkap (pria)"
                       type="text"
                       class="form-control"
-                      id="inputText"
+                      id="inputNameMan"
                       placeholder="Nama Lengkap"
+                      pattern="^[A-Za-z\s]+$"
+                      title="Hanya diizinkan menggunakan huruf dan spasi, tanpa angka"
+                      maxlength="50"
+                      onKeyPress="if(this.value.length==50) return false;"
                       required
                     />
+                    <div class="invalid-feedback">
+                      Nama mempelai pria harus di isi! tanpa angka
+                    </div>
                   </div>
                   <div
                     class="input-group d-flex flex-column flex-sm-row gap-0 gap-sm-4"
                   >
                     <div class="col">
                       <div class="mb-3 flex-grow-1">
-                        <label class="form-label">Nama Panggilan</label>
+                        <label for="inputChildNameMan" class="form-label"
+                          >Nama Panggilan</label
+                        >
                         <input
                           name="Nama Panggilan (pria)"
                           type="text"
                           class="form-control"
-                          id="inputText"
+                          id="inputChildNameMan"
                           placeholder="Fulan"
+                          pattern="^[A-Za-z\s]+$"
+                          title="Hanya diizinkan menggunakan huruf dan spasi, tanpa angka"
+                          maxlength="35"
+                          onKeyPress="if(this.value.length==35) return false;"
                           required
                         />
+                        <div class="invalid-feedback">
+                          Nama panggilan harus di isi! tanpa angka
+                        </div>
                       </div>
                     </div>
                     <div class="col">
                       <div class="mb-3 flex-grow-1">
-                        <label class="form-label">Domisili</label>
+                        <label for="inputCityMan" class="form-label"
+                          >Domisili</label
+                        >
                         <input
                           name="Domisili (pria)"
                           type="text"
                           class="form-control"
-                          id="inputText"
+                          id="inputCityMan"
                           placeholder="Kota tempat tinggal"
+                          pattern="^[A-Za-z\s]+$"
+                          title="Hanya diizinkan menggunakan huruf dan spasi, tanpa angka"
+                          maxlength="50"
+                          onKeyPress="if(this.value.length==50) return false;"
                           required
                         />
+                        <div class="invalid-feedback">
+                          Domisili harus di isi! tanpa angka
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -350,28 +446,46 @@
                   >
                     <div class="col">
                       <div class="mb-3 flex-grow-1">
-                        <label class="form-label">Nama Ayah</label>
+                        <label for="inputDadMan" class="form-label"
+                          >Nama Ayah</label
+                        >
                         <input
                           name="Nama Ayah (pria)"
                           type="text"
                           class="form-control"
-                          id="inputText"
+                          id="inputDadMan"
                           placeholder="Nama lengkap"
+                          pattern="^[A-Za-z\s]+$"
+                          title="Hanya diizinkan menggunakan huruf dan spasi, tanpa angka"
+                          maxlength="50"
+                          onKeyPress="if(this.value.length==50) return false;"
                           required
                         />
+                        <div class="invalid-feedback">
+                          Nama ayah harus di isi! tanpa angka
+                        </div>
                       </div>
                     </div>
                     <div class="col">
                       <div class="mb-3 flex-grow-1">
-                        <label class="form-label">Nama Ibu</label>
+                        <label for="inputMomMan" class="form-label"
+                          >Nama Ibu</label
+                        >
                         <input
                           name="Nama Ibu (pria)"
                           type="text"
                           class="form-control"
-                          id="inputText"
+                          id="inputMomMan"
                           placeholder="Nama lengkap"
+                          pattern="^[A-Za-z\s]+$"
+                          title="Hanya diizinkan menggunakan huruf dan spasi, tanpa angka"
+                          maxlength="50"
+                          onKeyPress="if(this.value.length==50) return false;"
                           required
                         />
+                        <div class="invalid-feedback">
+                          Nama ibu harus di isi! tanpa angka
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -380,10 +494,10 @@
                   >
                     <div class="col">
                       <div class="mb-3">
-                        <label for="inputNumberPutra" class="form-label"
+                        <label for="inputNumberman" class="form-label"
                           >Anak keberapa?</label
                         >
-                        <div class="input-group">
+                        <div class="input-group has-validation">
                           <span class="input-group-text" id="basic-addon3"
                             >Putra ke</span
                           >
@@ -391,23 +505,28 @@
                             name="Anak ke-berapa? (pria)"
                             type="number"
                             class="form-control"
-                            id="inputNumberPutra"
+                            id="inputNumberman"
                             placeholder="0"
                             pattern="/^-?\d+\.?\d*$/"
                             onKeyPress="if(this.value.length==2) return false;"
                             required
                           />
+                          <div class="invalid-feedback">
+                            Harus di isi! maksimal 2 digit angaka
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div class="col">
                       <div class="mb-3">
-                        <label class="form-label">Akun Instagram</label>
+                        <label for="inputIgMan" class="form-label"
+                          >Akun Instagram</label
+                        >
                         <input
                           name="Instagram (pria)"
                           type="text"
                           class="form-control"
-                          id="inputText"
+                          id="inputIgMan"
                           placeholder="@username"
                         />
                       </div>
@@ -437,32 +556,45 @@
                             placeholder="Pilih Tanggal"
                             required
                           />
+                          <div class="invalid-feedback">
+                            Tanggal akad harus di isi!
+                          </div>
                         </div>
                       </div>
                       <div class="col">
                         <div class="mb-3">
-                          <label class="form-label">Waktu Akad</label>
+                          <label for="inputTimeAkad" class="form-label"
+                            >Waktu Akad</label
+                          >
                           <input
                             name="Waktu Akad"
                             type="text"
-                            id="inputText"
+                            id="inputTimeAkad"
                             class="form-control"
                             placeholder="08.00 - 10.00 WIB"
                             required
                           />
+                          <div class="invalid-feedback">
+                            Waktu akad harus di isi!
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div class="mb-3">
-                      <label class="form-label">Nama Alamat</label>
+                      <label for="inputNameAddress" class="form-label"
+                        >Nama Alamat</label
+                      >
                       <input
                         name="Nama Alamat Akad"
                         type="text"
-                        id="inputText"
+                        id="inputNameAddress"
                         class="form-control"
                         placeholder="Nama Lokasi/Gedung"
                         required
                       />
+                      <div class="invalid-feedback">
+                        Nama alamat akad harus di isi!
+                      </div>
                     </div>
                     <div class="mb-3">
                       <label for="textareaAkad" class="form-label"
@@ -476,21 +608,29 @@
                         placeholder="Tulis Detail Alamat disini"
                         required
                       ></textarea>
+                      <div class="invalid-feedback">
+                        Detail alamat akad harus di isi!
+                      </div>
                     </div>
                     <div class="mb-3">
-                      <label class="form-label">Link Google Maps</label>
-                      <div class="input-group">
+                      <label for="inputLinkMapsAkad" class="form-label"
+                        >Link Google Maps</label
+                      >
+                      <div class="input-group has-validation">
                         <span class="input-group-text" id="basic-addon1"
                           ><i class="bi bi-link-45deg"></i
                         ></span>
                         <input
                           name="Link Google Maps Akad"
-                          type="text"
-                          id="inputText"
+                          type="url"
+                          id="inputLinkMapsAkad"
                           class="form-control"
                           placeholder="Paste link google map disini"
                           required
                         />
+                        <div class="invalid-feedback">
+                          Link google maps akad harus di isi! dengan https://
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -513,32 +653,45 @@
                             placeholder="Pilih Tanggal"
                             required
                           />
+                          <div class="invalid-feedback">
+                            Tanggal resepsi harus di isi!
+                          </div>
                         </div>
                       </div>
                       <div class="col">
                         <div class="mb-3">
-                          <label class="form-label">Waktu Resepsi</label>
+                          <label for="inputTimeResepsi" class="form-label"
+                            >Waktu Resepsi</label
+                          >
                           <input
                             name="Waktu Resepsi"
                             type="text"
                             class="form-control"
-                            id="inputText"
+                            id="inputTimeResepsi"
                             placeholder="10.30 WIB - Selesai"
                             required
                           />
+                          <div class="invalid-feedback">
+                            Waktu resepsi harus di isi!
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div class="mb-3">
-                      <label class="form-label">Nama Alamat</label>
+                      <label for="inputNameResepsi" class="form-label"
+                        >Nama Alamat</label
+                      >
                       <input
                         name="Nama Alamat Resepsi"
                         type="text"
                         class="form-control"
-                        id="inputText"
+                        id="inputNameResepsi"
                         placeholder="Nama Lokasi/Gedung"
                         required
                       />
+                      <div class="invalid-feedback">
+                        Nama alamat resepsi harus di isi!
+                      </div>
                     </div>
                     <div class="mb-3">
                       <label for="textareaResepsi" class="form-label"
@@ -552,21 +705,29 @@
                         placeholder="Tulis Detail Alamat disini"
                         required
                       ></textarea>
+                      <div class="invalid-feedback">
+                        Detail alamat resepsi harus di isi!
+                      </div>
                     </div>
                     <div class="mb-3">
-                      <label class="form-label">Link Google Maps</label>
-                      <div class="input-group">
+                      <label for="inputLinkMapsResepsi" class="form-label"
+                        >Link Google Maps</label
+                      >
+                      <div class="input-group has-validation">
                         <span class="input-group-text" id="basic-addon1"
                           ><i class="bi bi-link-45deg"></i
                         ></span>
                         <input
                           name="Link Google Maps Resepsi"
-                          type="text"
+                          type="url"
                           class="form-control"
-                          id="inputText"
+                          id="inputLinkMapsResepsi"
                           placeholder="Paste link google map disini"
                           required
                         />
+                        <div class="invalid-feedback">
+                          Link google maps resepsi harus di isi! dengan https://
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -650,6 +811,7 @@
                                     id="inputTextStory"
                                     class="form-control"
                                     placeholder="Awal bertemu"
+                                    required
                                   />
                                 </div>
                               </div>
@@ -664,6 +826,7 @@
                                     id="inputTextStory"
                                     class="form-control"
                                     placeholder="Tanggal/Bulan/Tahun"
+                                    required
                                   />
                                 </div>
                               </div>
@@ -678,6 +841,7 @@
                                 class="form-control"
                                 rows="3"
                                 placeholder="Ceritakan disini. . ."
+                                required
                               ></textarea>
                             </div>
 
@@ -698,6 +862,7 @@
                                     id="inputTextStory"
                                     class="form-control"
                                     placeholder="Tunangan"
+                                    required
                                   />
                                 </div>
                               </div>
@@ -712,6 +877,7 @@
                                     id="inputTextStory"
                                     class="form-control"
                                     placeholder="Tanggal/Bulan/Tahun"
+                                    required
                                   />
                                 </div>
                               </div>
@@ -726,6 +892,7 @@
                                 class="form-control"
                                 rows="3"
                                 placeholder="Ceritakan disini. . ."
+                                required
                               ></textarea>
                             </div>
 
@@ -746,6 +913,7 @@
                                     id="inputTextStory"
                                     class="form-control"
                                     placeholder="Menikah"
+                                    required
                                   />
                                 </div>
                               </div>
@@ -760,6 +928,7 @@
                                     id="inputTextStory"
                                     class="form-control"
                                     placeholder="Tanggal/Bulan/Tahun"
+                                    required
                                   />
                                 </div>
                               </div>
@@ -774,6 +943,7 @@
                                 class="form-control"
                                 rows="3"
                                 placeholder="Ceritakan disini. . ."
+                                required
                               ></textarea>
                             </div>
                           </div>
@@ -860,6 +1030,10 @@
                                   id="inputTextGift"
                                   class="form-control"
                                   placeholder="Nama Lengkap"
+                                  pattern="^[A-Za-z\s]+$"
+                                  title="Hanya diizinkan menggunakan huruf dan spasi, tanpa angka"
+                                  onKeyPress="if(this.value.length==35) return false;"
+                                  required
                                 />
                               </div>
                               <div class="mb-3">
@@ -872,6 +1046,7 @@
                                   id="inputTextGift"
                                   class="form-control"
                                   placeholder="Bank BCA / Gopay"
+                                  required
                                 />
                               </div>
                               <div class="mb-3">
@@ -884,6 +1059,8 @@
                                   id="inputTextGift"
                                   class="form-control"
                                   placeholder="123 456 7890"
+                                  onKeyPress="if(this.value.length==20) return false;"
+                                  required
                                 />
                               </div>
                             </div>
@@ -901,6 +1078,10 @@
                                   id="inputTextGift"
                                   class="form-control"
                                   placeholder="Nama Lengkap"
+                                  pattern="^[A-Za-z\s]+$"
+                                  title="Hanya diizinkan menggunakan huruf dan spasi, tanpa angka"
+                                  onKeyPress="if(this.value.length==35) return false;"
+                                  required
                                 />
                               </div>
                               <div class="mb-3">
@@ -912,7 +1093,9 @@
                                   type="number"
                                   id="inputTextGift"
                                   class="form-control"
-                                  placeholder="+62 812 3456 7890"
+                                  placeholder="+6281234567890"
+                                  onKeyPress="if(this.value.length==15) return false;"
+                                  required
                                 />
                               </div>
                               <div class="mb-3">
@@ -925,6 +1108,7 @@
                                   class="form-control"
                                   rows="3"
                                   placeholder="Tulis Detail Alamat disini"
+                                  required
                                 ></textarea>
                               </div>
                             </div>
@@ -939,22 +1123,25 @@
                 <div class="accordion-wrapper card p-3 p-lg-4 rounded-4 mt-4">
                   <h5 class="mb-4 text-center">Data lainnya</h5>
                   <div class="mb-4">
-                    <label class="form-label fs-5"
+                    <label for="inputUrlFoto" class="form-label fs-5"
                       >Galeri Foto
-                      <span class="text-secondary fs-6">(Wajib di isi)</span>
+                      <span class="text-secondary fs-6">(Harus di isi)</span>
                     </label>
-                    <div class="input-group">
+                    <div class="input-group has-validation">
                       <span class="input-group-text" id="basic-addon3"
                         ><i class="bi bi-link-45deg"></i
                       ></span>
                       <input
                         name="Link Galeri Foto"
-                        type="text"
+                        type="url"
                         class="form-control"
-                        id="inputText"
+                        id="inputUrlFoto"
                         placeholder="Paste link foto prewedding disini"
                         required
                       />
+                      <div class="invalid-feedback">
+                        Link foto prewedding harus di isi! dengan https://
+                      </div>
                     </div>
                     <div id="textlHelp" class="form-text text-secondary mt-2">
                       *anda bisa membagikan link folder foto dengan (google
@@ -1026,17 +1213,22 @@
                             <label id="labelVideo" class="form-label">
                               Link Video Prewedding</label
                             >
-                            <div class="input-group">
+                            <div class="input-group has-validation">
                               <span class="input-group-text" id="basic-addon3"
                                 ><i class="bi bi-link-45deg"></i
                               ></span>
                               <input
                                 name="Link Video Prewedding"
-                                type="text"
+                                type="url"
                                 id="inputTextVideo"
                                 class="form-control"
                                 placeholder="Paste link video prewedding disini"
                               />
+
+                              <div class="invalid-feedback">
+                                Link video prewedding harus di isi! dengan
+                                https://
+                              </div>
                             </div>
                             <div
                               id="textlHelp"
@@ -1113,17 +1305,22 @@
                             <label id="labelLive" class="form-label"
                               >Link Live Streaming</label
                             >
-                            <div class="input-group">
+                            <div class="input-group has-validation">
                               <span class="input-group-text" id="basic-addon3"
                                 ><i class="bi bi-link-45deg"></i
                               ></span>
                               <input
                                 name="Link Live Streaming"
-                                type="text"
+                                type="url"
                                 id="inputTextLive"
                                 class="form-control"
                                 placeholder="Paste link live streaming disini"
+                                aria-required="false"
                               />
+                              <div class="invalid-feedback">
+                                Link live streaming harus di isi! dengan
+                                https://
+                              </div>
                             </div>
                             <div
                               id="textlHelp"
@@ -1182,17 +1379,20 @@
 
                           <div class="mb-3">
                             <label class="form-label">Link Music</label>
-                            <div class="input-group">
+                            <div class="input-group has-validation">
                               <span class="input-group-text" id="basic-addon3"
                                 ><i class="bi bi-link-45deg"></i
                               ></span>
                               <input
                                 name="Link Music"
-                                type="text"
+                                type="url"
                                 class="form-control"
                                 id="inputText"
                                 placeholder="Paste link music disini"
                               />
+                              <div class="invalid-feedback">
+                                Link music harus di isi! dengan https://
+                              </div>
                             </div>
                             <div
                               id="textlHelp"
@@ -1209,17 +1409,19 @@
                 </div>
                 <!-- acordion end -->
                 <!-- cta -->
-                <div class="form-check mb-3 mt-3">
+                <div class="form-check mb-3 mt-3 has-validation">
                   <input
                     type="checkbox"
                     class="form-check-input"
                     id="exampleCheck1"
                     required
                   />
+
                   <label class="form-check-label ms-2 mb-0" for="exampleCheck1"
-                    >Apakah semua data yang di isi sudah benar? Harap periksa
-                    kembali sebelum disubmit</label
+                    >Semua data yang saya isi sudah benar dan sesuai dengan data
+                    pernikahan saya.</label
                   >
+                  <div class="invalid-feedback">harus di cheklist!</div>
                 </div>
                 <div
                   class="button-wrapper d-flex flex-lg-row justify-content-between gap-3 mt-3"
@@ -1322,6 +1524,7 @@
     ></script>
     <!-- swal -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!-- js -->
     <script src="../src/js/form.js"></script>
   </body>
