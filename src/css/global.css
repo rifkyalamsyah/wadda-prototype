@@ -29,13 +29,10 @@
   --brown-900: #4d3936;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
-  font-family: 'DM Sans', sans-serif !important;
   scroll-behavior: smooth;
+  font-family: 'DM Sans', sans-serif !important;
 }
 
 /* buttons */
@@ -230,9 +227,13 @@ nav {
   background-color: var(--white);
 }
 
+#navbar {
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+}
+
 .navbar {
   padding: 1rem 0 !important;
-  transition: 0.5s;
 }
 
 .navbar .navbar-brand {
