@@ -266,6 +266,8 @@ checkboxLive.addEventListener('change', () => {
 
 // reset form disabled
 forms.addEventListener('reset', () => {
+  // hide validation
+  resetFormValidation();
   // love story
   // show form story
   formStory.className = 'form-wrapper';
@@ -342,6 +344,18 @@ forms.addEventListener('reset', () => {
   checkboxLive.checked = false;
   // live streaming end
 });
+
+function resetFormValidation() {
+  // clear all validation
+  const inputs = form.querySelectorAll('input');
+  inputs.forEach((input) => {
+    input.classList.remove('is-invalid', 'is-valid');
+  });
+
+  form.classList.remove('was-validated');
+  // Reset form
+  form.reset();
+}
 // reset form disabled end
 
 // form submit
@@ -351,37 +365,84 @@ const form = document.forms['submit-form-wadda'];
 const btnSubmit = document.getElementById('btn-submit');
 const btnLoading = document.getElementById('btn-loading');
 
+// add event listener when form onsubmit
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  // change button
-  btnLoading.classList.toggle('d-none');
-  btnSubmit.classList.toggle('d-none');
+  // check validatin
+  if (form.checkValidity()) {
+    // change button
+    btnLoading.classList.toggle('d-none');
+    btnSubmit.classList.toggle('d-none');
 
-  fetch(scriptURL, { method: 'POST', body: new FormData(form) }).then(
-    (response) => {
-      btnLoading.classList.toggle('d-none');
-      btnSubmit.classList.toggle('d-none');
+    // send data
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) }).then(
+      (response) => {
+        // change button
+        btnLoading.classList.toggle('d-none');
+        btnSubmit.classList.toggle('d-none');
 
-      // show alert
-      swal({
-        title: 'Submitted!',
-        text: 'Data berhasil terkirim',
-        icon: 'success',
-        button: false,
-        timer: 2000,
-      });
-      // reset forms
-      form.reset();
+        // alert
+        swal({
+          title: 'Submitted!',
+          text: 'Data berhasil terkirim',
+          icon: 'success',
+          button: false,
+          timer: 2000,
+        });
 
-      // console.log('Success!', response);
+        // reset form & validation
+        form.reset();
+        form.classList.remove('was-validated');
 
-      // Redirect
-      setTimeout(function () {
-        window.location.href = '/order/submit-success.html';
-      }, 2000);
+        // Redirect
+        setTimeout(function () {
+          window.location.href = '/order/submit-success.html';
+        }, 2000);
+      }
+    );
+  } else {
+    // Update classes for input fields
+    const inputs = form.querySelectorAll('input');
+    let isFormValid = true;
+
+    for (const input of inputs) {
+      // Remove existing validation classes
+      input.classList.remove('is-invalid', 'is-valid');
+
+      // Check if the input has a 'required' attribute
+      if (input.hasAttribute('required')) {
+        // Use browser's validation by adding 'is-invalid' if invalid
+        if (!input.checkValidity()) {
+          input.classList.add('is-valid');
+          isFormValid = true;
+        } else {
+          input.classList.add('is-valid');
+          isFormValid = true;
+        }
+      } else {
+        // If not 'required', check if the input has a value
+        if (input.value.trim() === '') {
+        } else {
+          input.classList.add('is-valid');
+        }
+      }
     }
-  );
-  // .catch((error) => console.error('Error!', error.message));
+
+    // check validation
+    if (isFormValid) {
+      form.classList.add('was-validated');
+    } else {
+      form.classList.remove('was-validated');
+    }
+
+    // alert
+    swal({
+      title: 'Please Check Form!',
+      text: 'Form yang anda isi belum benar/ada yang belum lengkap! Harap periksa kembali',
+      icon: 'warning',
+      button: 'Ok',
+    });
+  }
 });
 // form submit end
