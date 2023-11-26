@@ -2,6 +2,12 @@ body {
   background-color: var(--grey-50);
 }
 
+/* navbar */
+.navbar {
+  transition: 0.5s;
+}
+/* navbar end */
+
 /* form section */
 .form {
   padding: 5rem 0;

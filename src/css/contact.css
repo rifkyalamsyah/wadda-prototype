@@ -1,3 +1,9 @@
+/* navbar */
+.navbar {
+  transition: 0.5s;
+}
+/* navbar end */
+
 /* contact section */
 .contact {
   padding: 5rem 0;

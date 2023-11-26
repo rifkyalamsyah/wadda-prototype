@@ -232,6 +232,7 @@ nav {
 
 .navbar {
   padding: 1rem 0 !important;
+  transition: 0.5s;
 }
 
 .navbar .navbar-brand {
