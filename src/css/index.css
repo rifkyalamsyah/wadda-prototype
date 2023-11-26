@@ -1,3 +1,9 @@
+/* navbar */
+.navbar {
+  transition: 0.5s;
+}
+/* navbar end */
+
 /* hero section */
 .hero-section {
   padding: 5rem 0;
