@@ -1,11 +1,6 @@
 body {
   background-color: var(--grey-50);
 }
-/* navbar */
-.navbar {
-  transition: 0.5s;
-}
-/* navbar end */
 
 .guest-link {
   padding: 4rem 0 10rem 0;
