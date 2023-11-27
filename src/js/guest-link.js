@@ -23,7 +23,7 @@ function generateLink() {
   const btnDelete = document.getElementById('btn-reset');
 
   // result
-  cardLinks.className = 'card-wrapper card rounded-4 p-3 p-sm-4 mt-5';
+  cardLinks.className = 'card-wrapper card rounded-4 p-3 p-sm-4 mt-3';
   // show link & button
   document.querySelector('#result').href = link;
   document.querySelector('#result').innerHTML = link;
