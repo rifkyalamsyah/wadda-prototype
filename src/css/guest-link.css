@@ -2,9 +2,42 @@ body {
   background-color: var(--grey-50);
 }
 
+/* guest link section */
 .guest-link {
-  padding: 4rem 0 10rem 0;
+  padding: 4rem 0;
 }
+
+/* card links */
+.guest-link #card-links {
+  transition: box-shadow 1s;
+}
+
+.guest-link #card-links:hover {
+  box-shadow: 0 0 16px rgba(33, 33, 33, 0.2);
+}
+/* card links end */
+/* guest link section end */
+
+/* guide section */
+.guide {
+  padding: 5rem 0;
+  background-color: var(--white);
+}
+
+.guide .card h6 {
+  color: var(--brown-700);
+}
+
+.guide .card {
+  transition: box-shadow 1s;
+}
+
+.guide .card:hover {
+  box-shadow: 0 0 16px rgba(33, 33, 33, 0.2);
+}
+/* guide section end */
+
+/* swal */
 .swal-modal {
   border-radius: 1.5rem;
 }
