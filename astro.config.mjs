@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import mdx from "@astrojs/mdx";
 import playformCompress from "@playform/compress";
-
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
