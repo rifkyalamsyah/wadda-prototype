@@ -1,0 +1,76 @@
+---
+import CardGuide from '@components/guide/CardGuide.astro';
+
+// icons-guide
+import iImages from '@assets/icons/Images.svg';
+import iCard from '@assets/icons/Card.svg';
+import iDoc from '@assets/icons/Doc.svg';
+import iWaiting from '@assets/icons/Waiting.svg';
+import iConfetti from '@assets/icons/Confetti.svg';
+import iShare from '@assets/icons/Share.svg';
+---
+
+<section id='panduan' class='guide'>
+  <div class='container'>
+    <div class='row text-center'>
+      <h3>Cara Memesan Undangan</h3>
+      <p class='text-secondary'>
+        Hanya butuh beberapa langkah hingga undangan anda siap dibagikan
+      </p>
+    </div>
+    <!-- card-wrapper -->
+    <!-- row 1st -->
+    <div class='row mt-4'>
+      <div class='col d-flex flex-column flex-sm-row gap-3'>
+        <CardGuide
+          src={iImages}
+          alt='icon-guide'
+          subTitle='Langkah 1'
+          title='Pilih tema'
+          desc='Pilih tema sesuai dengan yang anda suka. Terdapat berbagai tema menarik siap pakai.'
+        />
+        <CardGuide
+          src={iCard}
+          alt='icon-guide'
+          subTitle='Langkah 2'
+          title='Pesan & bayar undangan'
+          desc='Mengisi data diri, kontak dan melakukan pembayaran.'
+        />
+        <CardGuide
+          src={iDoc}
+          alt='icon-guide'
+          subTitle='Langkah 3'
+          title='Isi formulir'
+          desc='Isi data pernikahan seperti data mempelai, lokasi dan lain-lain.'
+        />
+      </div>
+    </div>
+    <!-- row 2nd -->
+    <div class='row mt-3'>
+      <div class='col d-flex flex-column flex-sm-row gap-3'>
+        <CardGuide
+          src={iWaiting}
+          alt='icon-guide'
+          subTitle='Langkah 4'
+          title='Pesanan diperoses'
+          desc='Setelah anda mengisi formulir data pernikahan. kami akan membuat undangan anda dalam 1x24 jam.'
+        />
+        <CardGuide
+          src={iConfetti}
+          alt='icon-guide'
+          subTitle='Yeay!'
+          title='Undangan selesai'
+          desc='Setelah undangan selesai dibuat, anda akan diberi link undangan melalui kontak anda.'
+        />
+        <CardGuide
+          src={iShare}
+          alt='icon-guide'
+          subTitle='Share'
+          title='Sebar Undangan'
+          desc='Undangan telah jadi dan anda dapat sebarkan link undangan kepada teman dan kerabat.'
+        />
+      </div>
+    </div>
+  </div>
+</section>
+

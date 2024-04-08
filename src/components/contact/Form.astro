@@ -1,0 +1,95 @@
+<div class='col mt-4 mt-lg-0'>
+  <form
+    name='submit-form-contact'
+    id='form'
+    method='post'
+    class='card rounded-4 p-3 p-lg-4 needs-validation'
+    novalidate
+  >
+    <div class='text-wraper text-center mb-3'>
+      <h4>Hubungi Kami</h4>
+    </div>
+    <div
+      id='alert-done'
+      class='alert alert-success alert-dismissible fade show d-none'
+      role='alert'
+    >
+      Pesan berhasil terkirim. Kami akan segera menghubungi Anda
+      <button
+        type='button'
+        class='btn-close'
+        data-bs-dismiss='alert'
+        aria-label='Close'></button>
+    </div>
+    <div class='input-group d-flex gap-2'>
+      <div class='flex-grow-1 mb-3'>
+        <label for='textInputName' class='form-label'>Nama</label>
+        <input
+          name='Name'
+          type='text'
+          class='form-control'
+          id='textInputName'
+          placeholder='Nama Lengkap'
+          required
+        />
+        <div class='invalid-feedback'>Harap masukan nama lengkap.</div>
+      </div>
+      <div class='flex-grow-1 mb-3'>
+        <label for='textInputEmail' class='form-label'>Email</label>
+        <input
+          name='Email'
+          type='email'
+          class='form-control'
+          id='textInputEmail'
+          placeholder='Alamat Email'
+          required
+        />
+        <div class='invalid-feedback'>Harap masukan email yang valid.</div>
+      </div>
+    </div>
+    <div class='mb-3'>
+      <label for='textInputSubject' class='form-label'>Subjek</label>
+      <input
+        name='Subject'
+        type='text'
+        class='form-control'
+        id='textInputSubject'
+        placeholder='Tulis subjek anda disini'
+        required
+      />
+      <div class='invalid-feedback'>Subjek wajib di isi.</div>
+    </div>
+    <div class='mb-3'>
+      <label for='inputTextarea' class='form-label'
+        >Apa yang bisa kami bantu?</label
+      >
+      <textarea
+        name='Message'
+        class='form-control'
+        id='inputTextarea'
+        rows='5'
+        placeholder='Tulis pesan anda disini. . .'
+        required></textarea>
+      <div class='invalid-feedback'>Pesan wajib di isi.</div>
+    </div>
+    <div class='d-flex'>
+      <button
+        id='btn-submit'
+        type='submit'
+        class='btn btn-primary flex-grow-1 flex-lg-grow-0'
+      >
+        Submit form
+      </button>
+      <button
+        id='btn-loading'
+        class='btn btn-primary d-none'
+        type='button'
+        disabled
+      >
+        <span class='spinner-border spinner-border-sm' aria-hidden='true'
+        ></span>
+        <span role='status'>Mengirim...</span>
+      </button>
+    </div>
+  </form>
+</div>

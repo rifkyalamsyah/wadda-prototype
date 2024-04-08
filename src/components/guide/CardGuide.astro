@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+const { src, alt, title, subTitle, desc } = Astro.props;
+---
+
+<div class='card w-100 rounded-4'>
+  <div class='card-body'>
+    <div class='d-flex align-items-center justify-content-between mb-2'>
+      <h6 class='card-subtitle'>{subTitle}</h6>
+      <span><Image src={src} alt={alt} /></span>
+    </div>
+    <h5 class='card-title'>{title}</h5>
+    <p class='card-text text-secondary'>{desc}</p>
+  </div>
+</div>

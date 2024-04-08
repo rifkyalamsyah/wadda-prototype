@@ -1,0 +1,529 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+// compoents
+import Navbar from '@components/navbar/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import OrderDataForm from '@components/forms/OrderDataForm.astro';
+import WomanForm from '@components/forms/WomanForm.astro';
+import ManForm from '@components/forms/ManForm.astro';
+import AkadResepsiForm from '@components/forms/AkadResepsiForm.astro';
+import StoryGiftForm from '@components/forms/StoryGiftForm.astro';
+import OtherDataForm from '@components/forms/OtherDataForm.astro';
+import CTAForm from '@components/forms/CTAForm.astro';
+// css
+import '@styles/form.css';
+// seo
+import { FORM_PAGE } from '@data/seo';
+---
+
+<Layout
+  title={FORM_PAGE.title}
+  desc={FORM_PAGE.desc}
+  image={FORM_PAGE.image}
+  domain={FORM_PAGE.domain}
+  url={FORM_PAGE.url}
+>
+  <Navbar />
+  <main>
+    <!-- form section -->
+    <section class='form'>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-lg-10 mx-auto'>
+            <div class='text-wrapper text-center'>
+              <h1>Form Data Pernikahan</h1>
+            </div>
+            <!-- forms -->
+            <form
+              name='submit-form-wadda'
+              id='form'
+              class='mt-5 needs-validation'
+              method='post'
+              novalidate
+            >
+              <!-- pemesan undangan -->
+              <OrderDataForm />
+              <!-- mempelai wanita -->
+              <WomanForm />
+              <!-- mempelai pria -->
+              <ManForm />
+              <!-- akad & resepsi -->
+              <AkadResepsiForm />
+              <!-- story & gift -->
+              <StoryGiftForm />
+              <!-- other data -->
+              <OtherDataForm />
+              <!-- acordion end -->
+              <!-- cta -->
+              <CTAForm />
+              <!-- cta end -->
+            </form>
+            <!-- forms end -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- form section end -->
+  </main>
+  <Footer />
+  <!-- swal -->
+  <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+  <!-- js -->
+  <script is:inline>
+    // confirm clear form
+    function confirmClear() {
+      swal({
+        title: 'Konfirmasi',
+        text: 'Apakah Anda yakin ingin menghapus semua data yang sudah Anda isi pada form?',
+        icon: 'warning',
+        buttons: {
+          cancel: 'Batal',
+          confirm: {
+            text: 'Ya, Hapus',
+          },
+        },
+      }).then((willClear) => {
+        if (willClear) {
+          swal({
+            title: 'Form Removed!',
+            text: 'Semua data telah dihapus.',
+            icon: 'success',
+            button: false,
+            timer: 2000,
+          });
+          document.getElementById('form').reset();
+        } else {
+          swal({
+            title: 'Form Save',
+            text: 'Semua data tidak jadi dihapus.',
+            icon: 'info',
+            button: false,
+            timer: 1500,
+          });
+        }
+      });
+    }
+
+    const clearForm = document.querySelectorAll('.btn-clear-forms');
+    clearForm.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        confirmClear();
+      });
+    });
+    // confirm clear form end
+
+    // form
+    const forms = document.getElementById('form');
+    // disable form love story
+    const formStory = document.getElementById('formStory');
+    const checkboxStory = document.getElementById('optionalCheckStory');
+    const headingStory = document.querySelectorAll('#headingStory');
+    const labelStory = document.querySelectorAll('#labelStory');
+    const inputStory = document.querySelectorAll('#inputTextStory');
+    const textAreaStory = document.querySelectorAll('#textAreaStory');
+
+    // checkbox without love story
+    checkboxStory.addEventListener('change', () => {
+      if (checkboxStory.checked) {
+        // hide forms story
+        formStory.className = 'd-none';
+
+        headingStory.forEach((heading) => {
+          heading.className = 'text-secondary mb-4';
+        });
+
+        labelStory.forEach((label) => {
+          label.className = 'text-secondary mb-2';
+        });
+
+        inputStory.forEach((input) => {
+          input.disabled = true;
+          input.value = '';
+          input.style.cursor = 'not-allowed';
+        });
+
+        textAreaStory.forEach((textarea) => {
+          textarea.disabled = true;
+          textarea.value = '';
+          textarea.style.cursor = 'not-allowed';
+        });
+        // alert(
+        swal({
+          title: 'Tanpa Love Story',
+          text: 'Anda memilih tanpa love story',
+          icon: 'success',
+          button: false,
+          timer: 2000,
+        });
+      } else {
+        // show forms story
+        formStory.className = 'form-wrapper';
+
+        headingStory.forEach((heading) => {
+          heading.className = 'mb-4';
+        });
+
+        labelStory.forEach((label) => {
+          label.className = 'mb-2';
+        });
+
+        inputStory.forEach((input) => {
+          input.disabled = false;
+          input.value = '';
+          input.style.cursor = '';
+        });
+
+        textAreaStory.forEach((textarea) => {
+          textarea.disabled = false;
+          textarea.value = '';
+          textarea.style.cursor = '';
+        });
+      }
+    });
+    // disable form love story end
+
+    // disable form wedding gift
+    const formGift = document.getElementById('formGift');
+    const checkboxGift = document.getElementById('optionalCheckGift');
+    const headingGift = document.querySelectorAll('#headingGift');
+    const labelGift = document.querySelectorAll('#labelGift');
+    const inputGift = document.querySelectorAll('#inputTextGift');
+    const textAreaGift = document.querySelectorAll('#textAreaGift');
+
+    // checkbox without wedding gift
+    checkboxGift.addEventListener('change', () => {
+      if (checkboxGift.checked) {
+        // hide forms gift
+        formGift.className = 'd-none';
+
+        headingGift.forEach((heading) => {
+          heading.className = 'text-secondary mb-4';
+        });
+
+        labelGift.forEach((label) => {
+          label.className = 'text-secondary mb-2';
+        });
+
+        inputGift.forEach((input) => {
+          input.disabled = true;
+          input.value = '';
+          input.style.cursor = 'not-allowed';
+        });
+
+        textAreaGift.forEach((textarea) => {
+          textarea.disabled = true;
+          textarea.value = '';
+          textarea.style.cursor = 'not-allowed';
+        });
+        // alert
+        swal({
+          title: 'Tanpa Wedding Gift',
+          text: 'Anda memilih tanpa wedding gift',
+          icon: 'success',
+          button: false,
+          timer: 2000,
+        });
+      } else {
+        // show forms gift
+        formGift.className = 'row d-flex flex-column flex-sm-row gap-lg-4 mt-4';
+
+        headingGift.forEach((heading) => {
+          heading.className = 'mb-4';
+        });
+
+        labelGift.forEach((label) => {
+          label.className = 'mb-2';
+        });
+
+        inputGift.forEach((input) => {
+          input.disabled = false;
+          input.value = '';
+          input.style.cursor = '';
+        });
+
+        textAreaGift.forEach((textarea) => {
+          textarea.disabled = false;
+          textarea.value = '';
+          textarea.style.cursor = '';
+        });
+      }
+    });
+    // disable form wedding gift end
+
+    // disable form video
+    const formVideo = document.getElementById('formVideo');
+    const checkboxVideo = document.getElementById('optionalCheckVideo');
+    const labelVideo = document.querySelectorAll('#labelVideo');
+    const inputVideo = document.querySelectorAll('#inputTextVideo');
+
+    // checkbox without preview video
+    checkboxVideo.addEventListener('change', () => {
+      if (checkboxVideo.checked) {
+        // hide forms video
+        formVideo.className = 'd-none';
+
+        labelVideo.forEach((label) => {
+          label.className = 'text-secondary mb-2';
+        });
+
+        inputVideo.forEach((input) => {
+          input.disabled = true;
+          input.value = '';
+          input.style.cursor = 'not-allowed';
+        });
+        // alert
+        swal({
+          title: 'Tanpa Preview Video',
+          text: 'Anda memilih tanpa preview video',
+          icon: 'success',
+          button: false,
+          timer: 2000,
+        });
+      } else {
+        // show forms video
+        formVideo.className = 'mb-3';
+
+        labelVideo.forEach((label) => {
+          label.className = 'mb-2';
+        });
+
+        inputVideo.forEach((input) => {
+          input.disabled = false;
+          input.value = '';
+          input.style.cursor = '';
+        });
+      }
+    });
+    // disable form video end
+
+    // disable form live steraming
+    const formLive = document.getElementById('formLive');
+    const checkboxLive = document.getElementById('optionalCheckLive');
+    const labelLive = document.querySelectorAll('#labelLive');
+    const inputLive = document.querySelectorAll('#inputTextLive');
+
+    // checkbox without live streaming
+    checkboxLive.addEventListener('change', () => {
+      if (checkboxLive.checked) {
+        // hide forms Live
+        formLive.className = 'd-none';
+
+        labelLive.forEach((label) => {
+          label.className = 'text-secondary mb-2';
+        });
+
+        inputLive.forEach((input) => {
+          input.disabled = true;
+          input.value = '';
+          input.style.cursor = 'not-allowed';
+        });
+
+        // alert
+        swal({
+          title: 'Tanpa Live Streaming',
+          text: 'Anda memilih tanpa live streaming',
+          icon: 'success',
+          button: false,
+          timer: 2000,
+        });
+      } else {
+        // show forms Live
+        formLive.className = 'mb-3';
+
+        labelLive.forEach((label) => {
+          label.className = 'mb-2';
+        });
+
+        inputLive.forEach((input) => {
+          input.disabled = false;
+          input.value = '';
+          input.style.cursor = '';
+        });
+      }
+    });
+    // disable form live steraming end
+
+    // reset form disabled
+    forms.addEventListener('reset', () => {
+      // hide validation
+      resetFormValidation();
+      // love story
+      // show form story
+      formStory.className = 'form-wrapper';
+
+      labelStory.forEach((label) => {
+        label.className = 'mb-2';
+      });
+
+      inputStory.forEach((input) => {
+        input.disabled = false;
+        input.value = '';
+      });
+
+      textAreaStory.forEach((textarea) => {
+        textarea.disabled = false;
+        textarea.value = '';
+      });
+
+      checkboxStory.checked = false;
+      // love story end
+
+      // wedding gift
+      // show form gift
+      formGift.className = 'row d-flex flex-column flex-sm-row gap-lg-4 mt-4';
+
+      labelGift.forEach((label) => {
+        label.className = 'mb-2';
+      });
+
+      inputGift.forEach((input) => {
+        input.disabled = false;
+        input.value = '';
+      });
+
+      textAreaGift.forEach((textarea) => {
+        textarea.disabled = false;
+        textarea.value = '';
+      });
+
+      checkboxGift.checked = false;
+      // wedding gift end
+
+      // preview video
+      // show forms video
+      formVideo.className = 'mb-3';
+
+      labelVideo.forEach((label) => {
+        label.className = 'mb-2';
+      });
+
+      inputVideo.forEach((input) => {
+        input.disabled = false;
+        input.value = '';
+        input.style.cursor = '';
+      });
+
+      checkboxVideo.checked = false;
+      // preview video
+
+      // live streaming
+      // show forms live streaming
+      formLive.className = 'mb-3';
+
+      labelLive.forEach((label) => {
+        label.className = 'mb-2';
+      });
+
+      inputLive.forEach((input) => {
+        input.disabled = false;
+        input.value = '';
+        input.style.cursor = '';
+      });
+
+      checkboxLive.checked = false;
+      // live streaming end
+    });
+
+    function resetFormValidation() {
+      // clear all validation
+      const inputs = form.querySelectorAll('input');
+      inputs.forEach((input) => {
+        input.classList.remove('is-invalid', 'is-valid');
+      });
+
+      form.classList.remove('was-validated');
+      // Reset form
+      form.reset();
+    }
+    // reset form disabled end
+
+    // form submit
+    const scriptURL =
+      'https://script.google.com/macros/s/AKfycbznvhxo7siblsumCJZVFBhCcmvr_SMBJgJtxD1CzTygrLedKJfnZSRn9CMrqUVKJfL_Ug/exec';
+    const form = document.forms['submit-form-wadda'];
+    const btnSubmit = document.getElementById('btn-submit');
+    const btnLoading = document.getElementById('btn-loading');
+
+    // add event listener when form onsubmit
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // check validatin
+      if (form.checkValidity()) {
+        // change button
+        btnLoading.classList.toggle('d-none');
+        btnSubmit.classList.toggle('d-none');
+
+        // send data
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) }).then(
+          () => {
+            // change button
+            btnLoading.classList.toggle('d-none');
+            btnSubmit.classList.toggle('d-none');
+
+            // alert
+            swal({
+              title: 'Submitted!',
+              text: 'Data berhasil terkirim',
+              icon: 'success',
+              button: false,
+              timer: 2000,
+            });
+
+            // reset form & validation
+            form.reset();
+            form.classList.remove('was-validated');
+
+            // Redirect
+            setTimeout(function () {
+              window.location.href = '/order/submit-success';
+            }, 2000);
+          }
+        );
+      } else {
+        // Update classes for input fields
+        const inputs = form.querySelectorAll('input');
+        let isFormValid = true;
+
+        for (const input of inputs) {
+          // Remove existing validation classes
+          input.classList.remove('is-invalid', 'is-valid');
+
+          // Check if the input has a 'required' attribute
+          if (input.hasAttribute('required')) {
+            // Use browser's validation by adding 'is-invalid' if invalid
+            if (!input.checkValidity()) {
+              input.classList.add('is-valid');
+              isFormValid = true;
+            } else {
+              input.classList.add('is-valid');
+              isFormValid = true;
+            }
+          } else {
+            // If not 'required', check if the input has a value
+            if (input.value.trim() === '') {
+            } else {
+              input.classList.add('is-valid');
+            }
+          }
+        }
+
+        // check validation
+        if (isFormValid) {
+          form.classList.add('was-validated');
+        } else {
+          form.classList.remove('was-validated');
+        }
+
+        // alert
+        swal({
+          title: 'Please Check Form!',
+          text: 'Form yang anda isi belum benar/ada yang belum lengkap! Harap periksa kembali',
+          icon: 'warning',
+          button: 'Ok',
+        });
+      }
+    });
+    // form submit end
+  </script>
+</Layout>

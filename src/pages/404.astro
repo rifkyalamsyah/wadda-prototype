@@ -1,0 +1,52 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+// components
+import BtnPrimary from '@components/button/Primary.astro';
+---
+
+<Layout title='404 - Not found' desc='Maaf, halaman yang Anda cari tidak ditemukan.'>
+  
+  <main>
+    <section class='404'>
+      <div class='container'>
+        <div class='row d-flex justify-content-center'>
+          <div class='col'>
+            <div class='text-wrapper text-center p-5'>
+              <div class='icon-wrapper fs-1'>
+                <span class='text-secondary mb-4'>
+                  <i class='bi bi-exclamation-triangle-fill'></i>
+                </span>
+              </div>
+              <h1>404 Not Found</h1>
+              <p class='text-secondary mb-4'>
+                Maaf, halaman yang Anda cari tidak ditemukan.
+              </p>
+              <BtnPrimary href='/' text='Kembali ke Home' style='' target='' />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+</Layout>
+
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+  }
+
+  main {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+  }
+
+  .text-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+</style>

@@ -1,0 +1,263 @@
+<div class='accordion-wrapper card p-3 p-lg-4 rounded-4 mt-4'>
+  <h5 class='mb-4 text-center'>Data lainnya</h5>
+  <div class='mb-4'>
+    <label for='inputUrlFoto' class='form-label fs-5'
+      >Galeri Foto
+      <span class='text-secondary fs-6'>(Harus di isi)</span>
+    </label>
+    <div class='input-group has-validation'>
+      <span class='input-group-text' id='urlGallery'
+        ><i class='bi bi-link-45deg'></i></span
+      >
+      <input
+        name='Link Galeri Foto'
+        type='url'
+        class='form-control'
+        id='inputUrlFoto'
+        placeholder='Paste link foto prewedding disini'
+        required
+      />
+      <div class='invalid-feedback'>
+        Link foto prewedding harus di isi! dengan https://
+      </div>
+    </div>
+    <div id='textlHelp' class='form-text text-secondary mt-2'>
+      *anda bisa membagikan link folder foto dengan (google drive/icloud)
+    </div>
+  </div>
+  <div class='accordion' id='accordionPanelsStayOpenExample'>
+    <div class='accordion-item'>
+      <h2 class='accordion-header'>
+        <button
+          class='accordion-button fs-5'
+          type='button'
+          data-bs-toggle='collapse'
+          data-bs-target='#panelsStayOpen-collapseVideo'
+          aria-expanded='true'
+          aria-controls='panelsStayOpen-collapseVideo'
+        >
+          + Preview Video
+        </button>
+      </h2>
+      <div
+        id='panelsStayOpen-collapseVideo'
+        class='accordion-collapse collapse show'
+      >
+        <!-- preview video -->
+        <div class='accordion-body'>
+          <div
+            class='optional-wrapper d-flex align-items-center justify-content-sm-between flex-column flex-sm-row gap-sm-3'
+          >
+            <h5 class='mb-0'>
+              Preview Video
+              <span class='text-secondary'>(Optional)</span>
+            </h5>
+            <div class='form-check my-3'>
+              <input
+                name='Tanpa Peview Video?'
+                type='checkbox'
+                id='optionalCheckVideo'
+                class='form-check-input'
+                value='Tanpa Peview Video'
+              />
+              <label class='form-check-label ms-2 mb-0' for='optionalCheckVideo'
+                >Tanpa Preview video</label
+              >
+            </div>
+          </div>
+          <div
+            class='alert alert-secondary alert-dismissible fade show'
+            role='alert'
+          >
+            Anda dapat menambahkan video pre-wedding anda dengan pasangan,
+            <br class='d-none d-xl-block' />
+            namum jika tidak mau ada preview video, anda bisa mencentang checkbox
+            / pilihan Tanpa preview video.
+            <button
+              type='button'
+              class='btn-close'
+              data-bs-dismiss='alert'
+              aria-label='Close'></button>
+          </div>
+
+          <hr class='text-secondary' />
+
+          <div id='formVideo' class='mb-3'>
+            <label id='labelVideo' class='form-label'>
+              Link Video Prewedding</label
+            >
+            <div class='input-group has-validation'>
+              <span class='input-group-text' id='basic-addon3'
+                ><i class='bi bi-link-45deg'></i></span
+              >
+              <input
+                name='Link Video Prewedding'
+                type='url'
+                id='inputTextVideo'
+                class='form-control'
+                placeholder='Paste link video prewedding disini'
+              />
+
+              <div class='invalid-feedback'>
+                Link video prewedding harus di isi! dengan https://
+              </div>
+            </div>
+            <div id='textlHelp' class='form-text text-secondary mt-2'>
+              *hanya bisa link video youtube.
+            </div>
+          </div>
+        </div>
+        <!-- preview video end -->
+      </div>
+    </div>
+    <div class='accordion-item'>
+      <h2 class='accordion-header'>
+        <button
+          class='accordion-button fs-5'
+          type='button'
+          data-bs-toggle='collapse'
+          data-bs-target='#panelsStayOpen-collapseLive'
+          aria-expanded='true'
+          aria-controls='panelsStayOpen-collapseLive'
+        >
+          + Live Streaming
+        </button>
+      </h2>
+      <div
+        id='panelsStayOpen-collapseLive'
+        class='accordion-collapse collapse show'
+      >
+        <!-- live streaming -->
+        <div class='accordion-body'>
+          <div
+            class='optional-wrapper d-flex align-items-center justify-content-sm-between flex-column flex-sm-row gap-sm-3'
+          >
+            <h5 class='mb-0'>
+              Live Streaming Pernikahan
+              <span class='text-secondary'>(Optional)</span>
+            </h5>
+            <div class='form-check my-3'>
+              <input
+                name='Tanpa Live Streaming?'
+                type='checkbox'
+                class='form-check-input'
+                id='optionalCheckLive'
+                value='Tanpa Live Streaming'
+              />
+              <label class='form-check-label ms-2 mb-0' for='optionalCheckLive'
+                >Tanpa Live Streaming</label
+              >
+            </div>
+          </div>
+          <div
+            class='alert alert-secondary alert-dismissible fade show'
+            role='alert'
+          >
+            Anda dapat menambahkan live streaming pernikahan,
+            <br class='d-none d-xl-block' />
+            namum jika tidak mau ada preview live streaming, anda bisa mencentang
+            checkbox / pilihan Tanpa live streaming.
+            <button
+              type='button'
+              class='btn-close'
+              data-bs-dismiss='alert'
+              aria-label='Close'></button>
+          </div>
+
+          <hr class='text-secondary' />
+
+          <div id='formLive' class='mb-3'>
+            <label id='labelLive' class='form-label'>Link Live Streaming</label>
+            <div class='input-group has-validation'>
+              <span class='input-group-text' id='basic-addon3'
+                ><i class='bi bi-link-45deg'></i></span
+              >
+              <input
+                name='Link Live Streaming'
+                type='url'
+                id='inputTextLive'
+                class='form-control'
+                placeholder='Paste link live streaming disini'
+                aria-required='false'
+              />
+              <div class='invalid-feedback'>
+                Link live streaming harus di isi! dengan https://
+              </div>
+            </div>
+            <div id='textlHelp' class='form-text text-secondary mt-2'>
+              *link live streaming bisa dengan link (youtube live/zoom/instagram
+              live)
+            </div>
+          </div>
+        </div>
+        <!-- live streaming gift end -->
+      </div>
+    </div>
+    <div class='accordion-item'>
+      <h2 class='accordion-header'>
+        <button
+          class='accordion-button collapsed fs-5'
+          type='button'
+          data-bs-toggle='collapse'
+          data-bs-target='#panelsStayOpen-collapseMusic'
+          aria-expanded='false'
+          aria-controls='panelsStayOpen-collapseMusic'
+        >
+          + Custom Music
+        </button>
+      </h2>
+      <div
+        id='panelsStayOpen-collapseMusic'
+        class='accordion-collapse collapse'
+      >
+        <!-- custom music -->
+        <div class='accordion-body'>
+          <div
+            class='optional-wrapper d-flex align-items-center justify-content-sm-between flex-column flex-sm-row gap-sm-3'
+          >
+            <h5 class='mb-0'>
+              Request Background Music
+              <span class='text-secondary'>(Optional)</span>
+            </h5>
+          </div>
+          <div
+            class='alert alert-secondary alert-dismissible fade show mt-3'
+            role='alert'
+          >
+            Anda dapat mengganti background music, dengan music favorit anda!
+            <button
+              type='button'
+              class='btn-close'
+              data-bs-dismiss='alert'
+              aria-label='Close'></button>
+          </div>
+
+          <hr class='text-secondary' />
+
+          <div class='mb-3'>
+            <label class='form-label'>Link Music</label>
+            <div class='input-group has-validation'>
+              <span class='input-group-text' id='basic-addon3'
+                ><i class='bi bi-link-45deg'></i></span
+              >
+              <input
+                name='Link Music'
+                type='url'
+                class='form-control'
+                id='inputText'
+                placeholder='Paste link music disini'
+              />
+              <div class='invalid-feedback'>
+                Link music harus di isi! dengan https://
+              </div>
+            </div>
+            <div id='textlHelp' class='form-text text-secondary mt-2'>
+              *link music bisa dari youtube / spotify!
+            </div>
+          </div>
+        </div>
+        <!-- custom music -->
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,134 @@
+<div class='form-wrapper card rounded-4 p-3 p-lg-4 mt-3'>
+  <h5 class='mb-4 text-center text-lg-start'>Mempelai Pria</h5>
+  <div class='mb-3'>
+    <label for='inputNameMan' class='form-label'>Nama</label>
+    <input
+      name='Nama Lengkap (pria)'
+      type='text'
+      class='form-control'
+      id='inputNameMan'
+      placeholder='Nama Lengkap'
+      pattern='^[^0-9]+$'
+      title='Hanya diizinkan menggunakan huruf dan spasi, tanpa angka'
+      maxlength='50'
+      onkeypress='if(this.value.length==50) return false;'
+      required
+    />
+    <div class='invalid-feedback'>
+      Nama mempelai pria harus di isi! tanpa angka
+    </div>
+  </div>
+  <div class='input-group d-flex flex-column flex-sm-row gap-0 gap-sm-4'>
+    <div class='col'>
+      <div class='mb-3 flex-grow-1'>
+        <label for='inputChildNameMan' class='form-label'>Nama Panggilan</label>
+        <input
+          name='Nama Panggilan (pria)'
+          type='text'
+          class='form-control'
+          id='inputChildNameMan'
+          placeholder='Fulan'
+          pattern='^[^0-9]+$'
+          title='Hanya diizinkan menggunakan huruf dan spasi, tanpa angka'
+          maxlength='35'
+          onkeypress='if(this.value.length==35) return false;'
+          required
+        />
+        <div class='invalid-feedback'>
+          Nama panggilan harus di isi! tanpa angka
+        </div>
+      </div>
+    </div>
+    <div class='col'>
+      <div class='mb-3 flex-grow-1'>
+        <label for='inputCityMan' class='form-label'>Domisili</label>
+        <input
+          name='Domisili (pria)'
+          type='text'
+          class='form-control'
+          id='inputCityMan'
+          placeholder='Kota tempat tinggal'
+          pattern='^[^0-9]+$'
+          title='Hanya diizinkan menggunakan huruf dan spasi, tanpa angka'
+          maxlength='50'
+          onkeypress='if(this.value.length==50) return false;'
+          required
+        />
+        <div class='invalid-feedback'>Domisili harus di isi! tanpa angka</div>
+      </div>
+    </div>
+  </div>
+  <div class='input-group d-flex flex-column flex-sm-row gap-0 gap-sm-4'>
+    <div class='col'>
+      <div class='mb-3 flex-grow-1'>
+        <label for='inputDadMan' class='form-label'>Nama Ayah</label>
+        <input
+          name='Nama Ayah (pria)'
+          type='text'
+          class='form-control'
+          id='inputDadMan'
+          placeholder='Nama lengkap'
+          pattern='^[^0-9]+$'
+          title='Hanya diizinkan menggunakan huruf dan spasi, tanpa angka'
+          maxlength='50'
+          onkeypress='if(this.value.length==50) return false;'
+          required
+        />
+        <div class='invalid-feedback'>Nama ayah harus di isi! tanpa angka</div>
+      </div>
+    </div>
+    <div class='col'>
+      <div class='mb-3 flex-grow-1'>
+        <label for='inputMomMan' class='form-label'>Nama Ibu</label>
+        <input
+          name='Nama Ibu (pria)'
+          type='text'
+          class='form-control'
+          id='inputMomMan'
+          placeholder='Nama lengkap'
+          pattern='^[^0-9]+$'
+          title='Hanya diizinkan menggunakan huruf dan spasi, tanpa angka'
+          maxlength='50'
+          onkeypress='if(this.value.length==50) return false;'
+          required
+        />
+        <div class='invalid-feedback'>Nama ibu harus di isi! tanpa angka</div>
+      </div>
+    </div>
+  </div>
+  <div class='input-group d-flex flex-column flex-sm-row gap-0 gap-sm-4'>
+    <div class='col'>
+      <div class='mb-3'>
+        <label for='inputNumberman' class='form-label'>Anak keberapa?</label>
+        <div class='input-group has-validation'>
+          <span class='input-group-text' id='childMan'>Putra ke</span>
+          <input
+            name='Anak ke-berapa? (pria)'
+            type='number'
+            class='form-control'
+            id='inputNumberman'
+            placeholder='0'
+            pattern='/^-?\d+\.?\d*$/'
+            onkeypress='if(this.value.length==2) return false;'
+            required
+          />
+          <div class='invalid-feedback'>
+            Harus di isi! maksimal 2 digit angaka
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='col'>
+      <div class='mb-3'>
+        <label for='inputIgMan' class='form-label'>Akun Instagram</label>
+        <input
+          name='Instagram (pria)'
+          type='text'
+          class='form-control'
+          id='inputIgMan'
+          placeholder='@username'
+        />
+      </div>
+    </div>
+  </div>
+</div>

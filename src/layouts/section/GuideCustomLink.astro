@@ -1,0 +1,44 @@
+---
+import CardGuide from '@components/guide/CardGuide.astro';
+
+// icons-guide
+import iDoc from '@assets/icons/Doc.svg';
+import iShare from '@assets/icons/Share.svg';
+---
+
+<section class='guide'>
+  <div class='container'>
+    <div class='row text-center'>
+      <h2>Cara Membuat Custom Nama Tamu</h2>
+      <p class='text-secondary'>
+        Hanya butuh beberapa langkah hingga undangan anda siap dibagikan
+      </p>
+    </div>
+    <!-- card-wrapper -->
+    <div class='row mt-4'>
+      <div class='col d-flex flex-column flex-sm-row gap-3'>
+        <CardGuide
+          src={iDoc}
+          alt='icon-guide'
+          subTitle='Langkah 1'
+          title='Isi nama undangan'
+          desc='Pastikan anda sudah memesan dan memiliki undangan aktif di website wadda.'
+        />
+        <CardGuide
+          src={iDoc}
+          alt='icon-guide'
+          subTitle='Langkah 2'
+          title='Isi nama tamu'
+          desc='Masukan nama tamu yang ingin anda undang, kemudian generate link.'
+        />
+        <CardGuide
+          src={iShare}
+          alt='icon-guide'
+          subTitle='Yeay!'
+          title='Yeay! link berhasil dibuat'
+          desc='Anda dapat menyalin link dan share undangan ke tamu yang ingin anda undang melalui media sosial.'
+        />
+      </div>
+    </div>
+  </div>
+</section>
