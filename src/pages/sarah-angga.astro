@@ -1,0 +1,849 @@
+---
+import Layout from '@layouts/LayoutSweetBrown.astro';
+// components
+import Navbar from '@templates/SweetBrown/Navbar.astro';
+import Footer from '@templates/SweetBrown/Footer.astro';
+import Header from '@templates/SweetBrown/Header.astro';
+
+import Countdown from '@components/Countdown.astro';
+// css
+import '@styles/SweetBrown/sarah-angga.css';
+// images
+import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
+import heroImg from '../assets/SweetBrown/sarah-angga/hero-img.webp';
+import wImg from '../assets/SweetBrown/sarah-angga/woman-img.webp';
+import mImg from '../assets/SweetBrown/sarah-angga/man-img.webp';
+import bgImgRsvp from '@assets/SweetBrown/svg/bg-img-rsvp.svg';
+
+// images thumbnail
+import tImgOne from '@assets/SweetBrown/sarah-angga/thumbnail/t-jin-wedding-1.webp';
+import tImgTwo from '@assets/SweetBrown/sarah-angga/thumbnail/t-jin-wedding-2.webp';
+import tImgThree from '@assets/SweetBrown/sarah-angga/thumbnail/t-jin-wedding-3.webp';
+import tImgFour from '@assets/SweetBrown/sarah-angga/thumbnail/t-jin-wedding-4.webp';
+import tImgFive from '@assets/SweetBrown/sarah-angga/thumbnail/t-jin-wedding-5.webp';
+import tImgSix from '@assets/SweetBrown/sarah-angga/thumbnail/t-jin-wedding-6.webp';
+import tImgVideo from 'src/assets/SweetBrown/sarah-angga/prewedding-thumbnail.webp';
+import tLive from '@assets/SweetBrown/sarah-angga/live-thumbnail.webp';
+
+// images gallery
+import gImgOne from '@assets/SweetBrown/sarah-angga/gallery/jin-wedding-1.webp';
+import gImgTwo from '@assets/SweetBrown/sarah-angga/gallery/jin-wedding-2.webp';
+import gImgThree from '@assets/SweetBrown/sarah-angga/gallery/jin-wedding-3.webp';
+import gImgFour from '@assets/SweetBrown/sarah-angga/gallery/jin-wedding-4.webp';
+import gImgFive from '@assets/SweetBrown/sarah-angga/gallery/jin-wedding-5.webp';
+import gImgSix from '@assets/SweetBrown/sarah-angga/gallery/jin-wedding-6.webp';
+// icons
+import iIG from '@assets/SweetBrown/icons/icon-ig.svg';
+import iMaps from '@assets/SweetBrown/icons/icon-maps.svg';
+import iLove from '@assets/SweetBrown/icons/icon-love.svg';
+import iCard from '@assets/SweetBrown/icons/icon-card.svg';
+import iGift from '@assets/SweetBrown/icons/icon-gift.svg';
+
+// SEO
+import { SARAH_ANGGA } from '@data/sweet-brown';
+
+// data
+const coupleName = 'Sarah & Angga';
+const date = 'Rabu, 1 Januari  2025';
+const sortDate = '01/01/2025';
+const time = '09.00 WIB';
+// woman
+const wFullName = 'Sarah Putri';
+const wSortName = 'Sarah';
+const wFather = 'Fulan';
+const wMother = 'Fulanah';
+const wChild = 'ketiga';
+const wIG = '@sarah_putri';
+const wIGLink = 'https://instagram.com';
+// man
+const mFullName = 'Angga Putra';
+const mSortName = 'Angga';
+const mFather = 'Fulan';
+const mMother = 'Fulanah';
+const mChild = 'Pertama';
+const mIG = '@angga_putra';
+const mIGLink = 'https://instagram.com';
+// akad
+const dateAkad = 'Rabu, 1 Januari  2025';
+const timeAkad = '08.00 - 10.00 WIB';
+const aNameAkad = 'Masjid Gedhe Kauman';
+const aDetailAkad =
+  'Alun-Alun Keraton, Jl. Kauman, Ngupasan, Kec. Gondomanan, Kota Yogyakarta, Daerah Istimewa Yogyakarta.';
+const aLinkAkad = 'https://maps.app.goo.gl/FFUDm73uLpKWA9DB8';
+// resepsi
+const dateResepsi = 'Rabu, 1 Januari  2025';
+const timeResepsi = '10.30 WIB - Selesai';
+const aNameResepsi = 'Grand Pacific Hall';
+const aDetailResepsi =
+  'Jl. Magelang Km 4.5, Depan TVRI Yogyakarta, Kutu Asem, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta.';
+const aLinkResepsi = 'https://maps.app.goo.gl/v9E3XvV5JTDDCrCP6';
+// love story
+// 1st
+const sOneTitel = 'Awal Bertemu';
+const sOneDate = 'Januari 2024';
+const sOneDesc =
+  'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus ea blanditiis excepturi repellendus dolores. Aliquam molestias labore autem nam explicabo!';
+// 2nd
+const sTwoTitel = 'Mulai Serius';
+const sTwoDate = 'April 2024';
+const sTwoDesc =
+  'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus ea blanditiis excepturi repellendus dolores. Aliquam molestias labore autem nam explicabo!';
+// 3rd
+const sThreeTitel = 'Tunangan';
+const sThreeDate = 'Jui 2024';
+const sThreeDesc =
+  'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus ea blanditiis excepturi repellendus dolores. Aliquam molestias labore autem nam explicabo!';
+
+// video
+const linkVideo = 'https://youtu.be/MLpWrANjFbI?si=rFgULcSuriG4r9-6';
+
+// gift
+const gBankName = 'Bank Syariah Indonesia';
+const gBankNumber = '0123 456 789';
+const gNameCard = 'Fulan';
+// kado
+const kAddress =
+  'Jl. Pasar Kembang No. 49 Sosromenduran Gedong Tengen Yogyakarta Daerah Istimewa Yogyakarta.';
+const kName = 'Fulanah';
+const gLinkWA =
+  'https://wa.me/+628562376627?text=Hai%20%5Bnama%20pengantin%5D,%0A%0ASelamat%20atas%20pernikahanmu.%20Semoga%20pernikahanmu%20langgeng%20dan%20penuh%20cinta.%0A%0AAku%20sudah%20transfer%20uang%20sebesar%20%5Bjumlah%20uang%5D%20ke%20rekeningmu.%20Semoga%20bermanfaat.%0Aatau,%0AAku%20sudah%20mengirimkan%20kado%20fisik%20untukmu.%20Semoga%20sampai%20dengan%20selamat.%0A%0ASalam,%0A%5BNama%20Anda%5D%0A%20';
+
+// livestreaming
+const linkLive = 'https://youtu.be/MLpWrANjFbI?si=rFgULcSuriG4r9-6';
+---
+
+<Layout
+  title={SARAH_ANGGA.title}
+  desc={SARAH_ANGGA.desc}
+  image={SARAH_ANGGA.image}
+  domain={SARAH_ANGGA.domain}
+  url={SARAH_ANGGA.url}
+>
+  <Header />
+  <Navbar />
+  <main>
+    <!-- hero section -->
+    <section id='hero' class='hero'>
+      <div class='container'>
+        <div class='row'>
+          <div
+            class='d-flex flex-column justify-content-center align-items-center gap-3'
+          >
+            <p class='text-tertiary fs-3'>The Wedding of</p>
+            <Picture src={heroImg} class='img-fluid' alt='hero-img' />
+            <h1 class='couple-name text-primary'>{coupleName}</h1>
+            <p class='text-tertiary fs-4 mb-0'>
+              {date} - {time}
+            </p>
+            <div class='hr w-50'>
+              <hr />
+            </div>
+            <p class='text-center text-secondary'>
+              Terima kasih telah menjadi bagian di hari istimewa kami
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- hero section end -->
+    <!-- couple section -->
+    <section id='couple' class='couple'>
+      <div class='container'>
+        <div class='row'>
+          <div class='text-wrapper d-flex flex-column text-center'>
+            <h2 class='text-primary'>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
+            <h4 class='text-primary my-3'>
+              Assalamu'alaikum Warahmatullahi Wabarakatuh.
+            </h4>
+            <p class='text-secondary'>
+              Maha suci Allah yang telah menciptakan mahluk-Nya
+              berpasang-pasangan. <br />
+              Ya Allah, perkenankanlah kami merangkaikan kasih sayang yang Kau ciptakan
+              diantara kami untuk mengikuti Sunnah Rasul-Mu dalam rangka membentuk
+              keluarga yang sakinah, mawaddah, warahmah.
+            </p>
+          </div>
+        </div>
+        <div class='row d-flex flex-column flex-sm-row gap-5 py-5'>
+          <!-- woman -->
+          <div class='col d-flex flex-column align-items-center text-center'>
+            <div class='img-wrapper'>
+              <Picture src={wImg} alt='img-couple' class='couple-img' />
+            </div>
+            <div class='text-wrapper'>
+              <p class='nama text-primary'>{wSortName}</p>
+              <h3 class='text-primary'>{wFullName}</h3>
+              <p class='text-secondary'>
+                Putri {wChild} Dari Keluarga <br /> Bapak {wFather} & Ibu {
+                  wMother
+                }
+              </p>
+            </div>
+            <div
+              class='icon-wrapper'
+              data-bs-toggle='tooltip'
+              data-bs-placement='top'
+              data-bs-title={wIG}
+            >
+              <a href={wIGLink} target='_blank'
+                ><Image
+                  src={iIG}
+                  alt='icon-social-media'
+                  loading={'eager'}
+                  class='icon-social'
+                /></a
+              >
+            </div>
+          </div>
+          <!-- man -->
+          <div class='col d-flex flex-column align-items-center text-center'>
+            <div class='img-wrapper'>
+              <Picture src={mImg} alt='img-couple' class='couple-img' />
+            </div>
+            <div class='text-wrapper'>
+              <p class='nama text-primary'>{mSortName}</p>
+              <h3 class='text-primary'>{mFullName}</h3>
+              <p class='text-secondary'>
+                Putra {mChild} Dari Keluarga <br /> Bapak {mFather} & Ibu {
+                  mMother
+                }
+              </p>
+            </div>
+            <div
+              class='icon-wrapper'
+              data-bs-toggle='tooltip'
+              data-bs-placement='top'
+              data-bs-title={mIG}
+            >
+              <a href={mIGLink} target='_blank'
+                ><Image
+                  src={iIG}
+                  alt='icon-social-media'
+                  loading={'eager'}
+                  class='icon-social'
+                /></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- couple section end -->
+    <!-- info section -->
+    <section id='info' class='info'>
+      <div class='container'>
+        <div class='row d-flex flex-column justify-content-center'>
+          <div class='text-wrapper text-center date-info'>
+            <h2 class='text-primary'>Rangkaian Acara Akan Diselenggarakan</h2>
+            <h1 class='text-tertiary my-3'>{date}</h1>
+          </div>
+          <div
+            class='time-wrapper d-flex flex-column justify-content-center align-items-center text-center'
+          >
+            <p class='text-primary my-4'>
+              Hitung Mundur Acara Resepsi Pernikahan:
+            </p>
+            <Countdown />
+            <div class='btn-wrapper mt-4'>
+              <button id='my-default-button' class='btn btn-lg btn-primary'
+                ><i class='bi bi-calendar-plus'></i> Tambahkan ke kalender</button
+              >
+            </div>
+          </div>
+        </div>
+        <div class='row akad-resepsi d-flex flex-column flex-lg-row gap-4'>
+          <div class='col'>
+            <div
+              class='card-akad card d-flex flex-column align-items-center justify-content-between h-100 rounded-5 p-5'
+            >
+              <div class='text-wrapper text-center'>
+                <h3 class='text-primary mb-4'>Akad Nikah</h3>
+                <h4 class='text-tertiary'>{dateAkad}</h4>
+                <p class='text-secondary'>{timeAkad}</p>
+              </div>
+              <div class='icon-wrapper my-3'>
+                <Image src={iMaps} alt='icon-location' />
+              </div>
+              <div class='text-wrapper text-center mb-2'>
+                <h5>{aNameAkad}</h5>
+                <p class='text-secondary'>
+                  {aDetailAkad}
+                </p>
+              </div>
+              <div class='btn-wrapper'>
+                <a href={aLinkAkad} class='btn btn-primary' target='_blank'
+                  >Lihat via Google Maps <i class='bi bi-box-arrow-up-right'
+                  ></i></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class='col'>
+            <div
+              class='card-resepsi card d-flex flex-column align-items-center justify-content-between h-100 rounded-5 p-5'
+            >
+              <div class='text-wrapper text-center'>
+                <h3 class='text-primary mb-4'>Resepsi Nikah</h3>
+                <h4 class='text-tertiary'>{dateResepsi}</h4>
+                <p class='text-secondary'>{timeResepsi}</p>
+              </div>
+              <div class='icon-wrapper my-3'>
+                <Image src={iMaps} alt='icon-location' />
+              </div>
+              <div class='text-wrapper text-center mb-2'>
+                <h5>{aNameResepsi}</h5>
+                <p class='text-secondary'>
+                  {aDetailResepsi}
+                </p>
+              </div>
+              <div class='btn-wrapper'>
+                <a href={aLinkResepsi} class='btn btn-primary' target='_blank'
+                  >Lihat via Google Maps <i class='bi bi-box-arrow-up-right'
+                  ></i></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- info section end -->
+    <!-- love story section -->
+    <section id='story' class='story'>
+      <div class='container'>
+        <div class='row'>
+          <h2 class='text-primary text-center'>Love story</h2>
+          <h3 class='couple-name text-primary text-center mb-5'>
+            {coupleName}
+          </h3>
+          <div class='timeline'>
+            <div class='card-wrapper left-card-timeline'>
+              <div
+                class='icon-timeline d-flex justify-content-center align-items-center'
+              >
+                <Image src={iLove} alt='icon-love' loading={'eager'} />
+              </div>
+              <div class='card-timeline'>
+                <h3 class='text-primary'>{sOneTitel}</h3>
+                <span class='text-secondary fw-bold'>{sOneDate}</span>
+                <p class='text-secondary mt-3'>
+                  {sOneDesc}
+                </p>
+                <span class='left-arrow'></span>
+              </div>
+            </div>
+
+            <div class='card-wrapper right-card-timeline'>
+              <div
+                class='icon-timeline d-flex justify-content-center align-items-center'
+              >
+                <Image src={iLove} alt='icon-love' loading={'eager'} />
+              </div>
+              <div class='card-timeline'>
+                <h3 class='text-primary'>{sTwoTitel}</h3>
+                <span class='text-secondary fw-bold'>{sTwoDate}</span>
+                <p class='text-secondary mt-3'>
+                  {sTwoDesc}
+                </p>
+                <span class='right-arrow'></span>
+              </div>
+            </div>
+
+            <div class='card-wrapper left-card-timeline'>
+              <div
+                class='icon-timeline d-flex justify-content-center align-items-center'
+              >
+                <Image src={iLove} alt='icon-love' loading={'eager'} />
+              </div>
+              <div class='card-timeline'>
+                <h3 class='text-primary'>{sThreeTitel}</h3>
+                <span class='text-secondary fw-bold'>{sThreeDate}</span>
+                <p class='text-secondary mt-3'>
+                  {sThreeDesc}
+                </p>
+                <span class='left-arrow'></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- love story section end -->
+    <!-- gallery section -->
+    <section id='gallery' class='gallery'>
+      <div class='container'>
+        <div class='row'>
+          <h1 class='text-primary text-center'>Galeri Kami</h1>
+          <h2 class='couple-name text-primary text-center mb-5'>
+            {coupleName}
+          </h2>
+        </div>
+        <div class='row'>
+          <div
+            class='col d-flex justify-content-center align-items-center gap-2 gap-sm-4'
+          >
+            <div class='img-wrapper'>
+              <a href={gImgOne.src} class='glightbox col-sm-4'>
+                <Picture src={tImgOne} class='img-fluid' alt='image' />
+              </a>
+            </div>
+            <div class='img-wrapper'>
+              <a href={gImgTwo.src} class='glightbox col-sm-4'>
+                <Picture src={tImgTwo} class='img-fluid' alt='image' />
+              </a>
+            </div>
+            <div class='img-wrapper'>
+              <a href={gImgThree.src} class='glightbox col-sm-4'>
+                <Picture src={tImgThree} class='img-fluid' alt='image' />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class='row d-none d-sm-block mt-4'>
+          <div
+            class='col d-flex justify-content-center align-items-center gap-2 gap-sm-4'
+          >
+            <div class='img-wrapper'>
+              <a href={gImgFour.src} class='glightbox col-sm-4'>
+                <Picture src={tImgFour} class='img-fluid' alt='image' />
+              </a>
+            </div>
+            <div class='img-wrapper'>
+              <a href={gImgFive.src} class='glightbox col-sm-4'>
+                <Picture src={tImgFive} class='img-fluid' alt='img-gallery' />
+              </a>
+            </div>
+            <div class='img-wrapper'>
+              <a href={gImgSix.src} class='glightbox col-sm-4'>
+                <Picture src={tImgSix} class='img-fluid' alt='img-gallery' />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class='row mt-2 mt-sm-4'>
+          <div class='video-wrapper text-center'>
+            <Image
+              src={tImgVideo}
+              class='img-fluid'
+              alt='image'
+            />
+          </div>
+          <div class='btn-wrapper d-flex justify-content-center mt-4'>
+            <a href={linkVideo} class='glightbox btn btn-primary'
+              ><i class='bi bi-play-btn'></i> Lihat Video Prewedding</a
+            >
+          </div>
+          <!-- hidden video -->
+        </div>
+      </div>
+    </section>
+    <!-- gallery section end -->
+    <!-- wedding gift section -->
+    <section id='gift' class='gift'>
+      <div class='container'>
+        <div class='row d-flex justify-content-between'>
+          <div class='col-lg-9'>
+            <div class='text-wrapper text-center text-lg-start'>
+              <h2 class='text-primary'>Wedding Gift</h2>
+              <p class='text-secondary'>
+                Jika memberi adalah bentuk tanda kasih Anda, fitur ini dapat
+                memberikan Anda kemudahan.
+              </p>
+            </div>
+          </div>
+          <div
+            class='col d-flex align-items-center justify-content-end d-none d-lg-inline-flex'
+          >
+            <a href={gLinkWA} class='btn btn-primary' target='_blank'
+              ><i class='bi bi-send'></i> Kirim Bukti Gift</a
+            >
+          </div>
+        </div>
+        <!-- card gift -->
+        <div class='row mt-5'>
+          <div class='card-wrapper d-flex flex-column flex-lg-row gap-4'>
+            <!-- card 1st -->
+            <div class='card-gift card flex-grow-1 rounded-5 p-4'>
+              <div
+                class='d-flex justify-content-between align-items-center gap-2 gap-sm-5'
+              >
+                <div class='text-wrapper d-flex flex-column'>
+                  <p class='text-secondary mb-0'>Transfer</p>
+                  <h2 class='text-primary mb-0'>{gBankName}</h2>
+                </div>
+                <div
+                  class='icon-wrapper d-flex justify-content-center align-items-center'
+                >
+                  <Image src={iCard} alt='icon-card' loading={'eager'} />
+                </div>
+              </div>
+              <div
+                class='d-flex justify-content-between align-items-center flex-grow-1 gap-2 gap-sm-5 my-4'
+              >
+                <div class='text-wrapper d-flex flex-column'>
+                  <p class='text-secondary mb-0'>Nomor Rekening</p>
+                  <h2 id='nomorRekening' class='text-tertiary mb-0'>
+                    {gBankNumber}
+                  </h2>
+                </div>
+                <div class='btn-wrapper'>
+                  <button
+                    id='btn-copy-number'
+                    class='btn btn-primary btn-copy-number'>Copy</button
+                  >
+                </div>
+              </div>
+              <div class='d-flex justify-content-between align-items-center'>
+                <div class='text-wrapper d-flex flex-column'>
+                  <p class='text-secondary mb-0'>Atas Nama</p>
+                  <h5 class='text-tertiary mb-0'>{gNameCard}</h5>
+                </div>
+                <div class='text-wrapper d-flex flex-column'>
+                  <p class='text-secondary mb-0'>Pernikahan</p>
+                  <h5 class='text-tertiary mb-0'>{sortDate}</h5>
+                </div>
+              </div>
+            </div>
+            <!-- card 2nd -->
+            <div class='card-gift card rounded-5 p-4'>
+              <div class='d-flex justify-content-between align-items-center'>
+                <div class='text-wrapper d-flex flex-column'>
+                  <h5 class='text-secondary mb-0'>Kirim</h5>
+                  <h2 class='text-primary mb-0'>Kado Fisik</h2>
+                </div>
+                <div
+                  class='icon-wrapper d-flex justify-content-center align-items-center'
+                >
+                  <Image src={iGift} alt='icon-gift' loading={'eager'} />
+                </div>
+              </div>
+              <div
+                class='d-flex justify-content-between align-items-center gap-2 gap-sm-5 my-4'
+              >
+                <div class='text-wrapper d-flex flex-column'>
+                  <p class='text-secondary mb-0'>Alamat Pengiriman</p>
+                  <p id='address' class='text-tertiary fst-italic mb-0'>
+                    {kAddress}
+                  </p>
+                </div>
+                <div class='btn-wrapper'>
+                  <button
+                    id='btn-copy-address'
+                    class='btn btn-primary btn-copy-address'>Copy</button
+                  >
+                </div>
+              </div>
+              <div class='d-flex justify-content-between align-items-center'>
+                <div class='text-wrapper d-flex flex-column'>
+                  <p class='text-secondary mb-0'>Nama Penerima</p>
+                  <h5 class='text-tertiary mb-0'>{kName}</h5>
+                </div>
+                <div class='text-wrapper d-flex flex-column'>
+                  <p class='text-secondary mb-0'>Pernikahan</p>
+                  <h5 class='text-tertiary mb-0'>{sortDate}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card gift end -->
+        <div
+          class='col d-flex align-items-center justify-content-center mt-5 d-lg-none'
+        >
+          <a href={gLinkWA} class='btn btn-primary' target='_blank'
+            ><i class='bi bi-send'></i> Kirim Bukti Gift</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- wedding gift section end -->
+    <!-- rsvp section -->
+    <section id='rsvp' class='rsvp'>
+      <div class='container'>
+        <div
+          class='row d-flex flex-column flex-lg-row align-items-center gap-4'
+        >
+          <div class='col d-flex flex-column align-items-center'>
+            <div class='text-wrapper text-center'>
+              <h2 class='text-primary'>Buku Tamu</h2>
+              <p class='text-secondary'>
+                Berikan Ucapan/Doa <br class='d-none d-lg-block' /> Terbaik Anda
+                Kepada Kedua Mempelai
+              </p>
+            </div>
+            <div class='img-wrapper d-none d-lg-block mt-3'>
+              <Image src={bgImgRsvp} alt='img-bg' loading={'eager'} />
+            </div>
+          </div>
+          <div class='col col-sm-7 col-lg-5 col-xl-6'>
+            <div class='form-wrapper card rounded-4 p-3 p-sm-4'>
+              <!-- forms -->
+              <form name='submit-rsvp'>
+                <h3 class='text-primary text-center mb-3'>RSVP</h3>
+                <div
+                  id='alert-done'
+                  class='alert alert-success alert-dismissible fade show d-none'
+                  role='alert'
+                >
+                  Terima Kasih, Pesan anda sudah kami terima.
+                  <button
+                    type='button'
+                    class='btn-close'
+                    data-bs-dismiss='alert'
+                    aria-label='Close'></button>
+                </div>
+                <div class='my-3'>
+                  <label for='inputName' class='form-label text-primary'
+                    >Nama</label
+                  >
+                  <input
+                    name='Nama'
+                    type='text'
+                    class='form-control'
+                    id='inputName'
+                    placeholder='Nama Lengkap'
+                    required
+                  />
+                </div>
+                <div class='mb-3'>
+                  <label for='textareaDoa' class='form-label text-primary'
+                    >Ucapan/Doa</label
+                  >
+                  <textarea
+                    name='Ucapan/Doa'
+                    class='form-control'
+                    id='textareaDoa'
+                    rows='3'
+                    placeholder='Tulis ucapan/Doa disini'
+                    required></textarea>
+                </div>
+                <div class='mb-3'>
+                  <select
+                    name='Status'
+                    id='selectRSVP'
+                    class='form-select'
+                    aria-label='select-rsvp'
+                    required
+                  >
+                    <option selected value='' disabled
+                      >Konfirmasi Kehadiran</option
+                    >
+                    <option value='Akan Hadir'>Akan Hadir</option>
+                    <option value='Maaf, tidak bisa hadir'
+                      >Maaf, tidak bisa hadir</option
+                    >
+                  </select>
+                </div>
+                <div class='btn-wrapper'>
+                  <button id='btn-submit' type='submit' class='btn btn-primary'
+                    >Kirim</button
+                  >
+                  <button
+                    id='btn-loading'
+                    class='btn btn-primary d-none'
+                    type='button'
+                    disabled
+                  >
+                    <span
+                      class='spinner-border spinner-border-sm'
+                      aria-hidden='true'></span>
+                    <span role='status'>Mengirim...</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- rsvp section end -->
+    <!-- live streaming section -->
+    <section id='live' class='live'>
+      <div class='container'>
+        <div class='row'>
+          <h2 class='text-primary text-center'>Live Streaming</h2>
+          <div class='video-wrapper text-center mt-4'>
+            <Image
+              src={tLive}
+              class='img-fluid'
+              alt='img-live'
+            />
+          </div>
+          <div class='btn-wrapper d-flex justify-content-center mt-4'>
+            <a href={linkLive} class='btn btn-primary' target='_blank'
+              ><i class='bi bi-play-btn'></i> Tonton Live Streaming</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- live streaming section end -->
+    <!-- surah section -->
+    <section id='surah' class='surah'>
+      <div class='container'>
+        <row>
+          <div class='surah-wrapper'>
+            <div class='text-wrapper text-center'>
+              <h3 class='text-primary'>QS Az-Zariyat: 49</h3>
+              <h2 class='text-tertiary my-4'>
+                وَمِنْ كُلِّ شَيْءٍ خَلَقْنَا زَوْجَيْنِ لَعَلَّكُمْ
+                تَذَكَّرُونَ
+              </h2>
+              <p class='text-secondary fst-italic'>
+                “Dan segala sesuatu Kami ciptakan berpasang-pasangan supaya <br
+                  class='d-none d-sm-block'
+                /> kamu mengingat kebesaran Allah.”
+              </p>
+            </div>
+          </div>
+        </row>
+      </div>
+    </section>
+    <!-- surah section end -->
+    <!-- family section -->
+    <section id='family' class='family'>
+      <div class='container'>
+        <div class='row'>
+          <h2 class='text-primary text-center'>Kami Yang Berbahagia</h2>
+        </div>
+        <div class='row d-flex flex-column flex-sm-row gap-4 mt-3'>
+          <div class='col'>
+            <div class='text-wrapper text-center'>
+              <p class='text-secondary'>Keluarga Besar</p>
+              <h3 class='text-primary'>Mempelai Wanita</h3>
+              <p class='text-secondary'>Bapak {wFather} & Ibu {wMother}</p>
+            </div>
+          </div>
+          <div class='col'>
+            <div class='text-wrapper text-center'>
+              <p class='text-secondary'>Keluarga Besar</p>
+              <h3 class='text-primary'>Mempelai Pria</h3>
+              <p class='text-secondary'>Bapak {mFather} & Ibu {mMother}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- family section end -->
+  </main>
+  <Footer />
+  <!-- audio -->
+  <div id='audio-container'>
+    <audio id='song' autoplay loop>
+      <source src='/audio/massobeats - gift.mp3' type='audio/mp3' />
+    </audio>
+    <div class='audio-icon-wrapper' style='display: none'>
+      <i class='bi bi-disc'></i>
+    </div>
+  </div>
+  <!-- end audio -->
+  <!-- save to calendar -->
+  <script type='application/javascript' is:inline>
+    const config = {
+      name: 'The wedding of Sarah & Angga',
+      description: 'Acara Resepsi Pernikahan Sarah & Angga',
+      startDate: '2025-01-01',
+      startTime: '09:00',
+      endTime: '17:00',
+      location: 'Grand Pasific Hall',
+      options: ['Google|My custom label'],
+      timeZone: 'Asia/Jakarta',
+    };
+    const button = document.getElementById('my-default-button');
+    if (button) {
+      button.addEventListener('click', () => atcb_action(config, button));
+    }
+  </script>
+  <!-- countdown -->
+  <script is:inline>
+    const wDate = '2025-01-01';
+
+    function padNumber(number) {
+      return number < 10 ? `0${number}` : number;
+    }
+
+    function countDownClock() {
+      const targetDate = new Date(wDate);
+      const now = Date.now();
+      const secondsLeft = Math.round((targetDate.getTime() - now) / 1000);
+
+      if (secondsLeft <= 0) {
+        // Countdown has finished
+        const countdownElements = document.querySelectorAll(
+          '.days, .hours, .minutes, .seconds'
+        );
+        countdownElements.forEach((element) => (element.textContent = '00'));
+        return; // Stop updating
+      }
+
+      const days = Math.floor(secondsLeft / 86400);
+      const hours = Math.floor((secondsLeft % 86400) / 3600);
+      const minutes = Math.floor(((secondsLeft % 86400) % 3600) / 60);
+      const seconds = padNumber(secondsLeft % 60);
+      const daysElement = document.querySelector('.days');
+      const hoursElement = document.querySelector('.hours');
+      const minutesElement = document.querySelector('.minutes');
+      const secondsElement = document.querySelector('.seconds');
+      daysElement.textContent = days;
+      hoursElement.textContent = padNumber(hours);
+      minutesElement.textContent = padNumber(minutes);
+      secondsElement.textContent = seconds;
+
+      setTimeout(countDownClock, 1000);
+    }
+    countDownClock();
+  </script>
+  <!-- js -->
+  <script is:inline>
+    //  custom guest name
+    const urlParams = new URLSearchParams(window.location.search);
+    const nama = urlParams.get('n') || '';
+    const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
+    const namaContainer = document.querySelector('.cover .text-guest h4');
+
+    if (nama && pronoun !== 'Bapak/Ibu/Saudara/i') {
+      namaContainer.innerText = `${pronoun}, ${nama}`;
+    } else if (nama) {
+      namaContainer.innerText = `${nama}`;
+    } else {
+      namaContainer.innerText = `Bapak/Ibu/Saudara/i`;
+    }
+    //  end custom guest name
+
+    // form
+    const scriptURL =
+      'https://script.google.com/macros/s/AKfycbxWD3oOpbeQKe328sQEY2Vm63pkzJ9YE_Seh8WfYSY8RZ4EVMJSMXP5mdI8X7iB7h3IsA/exec';
+    const form = document.forms['submit-rsvp'];
+    const alert = document.getElementById('alert-done');
+    const btnSubmit = document.getElementById('btn-submit');
+    const btnLoading = document.getElementById('btn-loading');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // change button
+      btnLoading.classList.toggle('d-none');
+      btnSubmit.classList.toggle('d-none');
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) }).then(
+        () => {
+          btnLoading.classList.toggle('d-none');
+          btnSubmit.classList.toggle('d-none');
+          // reset forms
+          form.reset();
+          // show alert
+          swal({
+            title: 'Submitted!',
+            text: 'Pesan Anda berhasil terkirim',
+            icon: 'success',
+            button: false,
+            timer: 2000,
+          });
+          alert.classList.toggle('d-none');
+          // console.log('Success!', response);
+        }
+      );
+      // .catch((error) => console.error('Error!', error.message));
+    });
+  </script>
+</Layout>

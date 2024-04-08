@@ -1,0 +1,277 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+import Guide from '@layouts/section/GuideOrder.astro';
+// components
+import BtnPrimary from '@components/button/Primary.astro';
+import Navbar from '@components/navbar/Navbar.astro';
+import CardFeature from '@components/feature/CardFeature.astro';
+import CardProduct from '@components/theme/CardProduct.astro';
+import CardProductSoon from '@components/theme/CardProductSoon.astro';
+import CardTestimonial from '@components/testimonial/CardTestimonial.astro';
+import CardPricingBasic from '@components/pricing/CardPricingBasic.astro';
+import CardPricingCustom from '@components/pricing/CardPricingCustom.astro';
+import Accordion from '@components/Accordion.astro';
+import Footer from '@components/Footer.astro';
+
+// css
+import '@styles/index.css';
+
+import { Picture } from 'astro:assets';
+// images
+import heroImg from '@assets/images/hero-image.webp';
+// icons-feature
+import fBooks from '@assets/images/feature/books.svg';
+import fCalendar from '@assets/images/feature/calendar.svg';
+import fGift from '@assets/images/feature/gift.svg';
+import fImages from '@assets/images/feature/images.svg';
+import fMaps from '@assets/images/feature/maps.svg';
+
+// images product
+import imgSweetBrown from '@assets/images/product/thumbnail/img-sweet-brown.webp';
+import imgSweetPurple from '@assets/images/product/thumbnail/img-sweet-purple.webp';
+import imgSweetGreen from '@assets/images/product/thumbnail/img-sweet-green.webp';
+// image testimonial
+import tOne from '@assets/images/testimonial/people-1.webp';
+import tTwo from '@assets/images/testimonial/people-2.webp';
+import tThree from '@assets/images/testimonial/people-3.webp';
+
+// SEO
+import { HOME_PAGE } from '@data/seo';
+---
+
+<Layout
+  title={HOME_PAGE.title}
+  desc={HOME_PAGE.desc}
+  image={HOME_PAGE.image}
+  domain={HOME_PAGE.domain}
+  url={HOME_PAGE.url}
+>
+  <Navbar />
+  <!-- hero section -->
+  <header>
+    <section class='hero-section'>
+      <div class='container'>
+        <div class='row d-flex text-center'>
+          <div class='text-wrapper order-2 order-sm-0 mt-5 mt-lg-0'>
+            <h1>Undangan Pernikahan Digital</h1>
+            <p class='text-secondary'>
+              Dikemas dalam bentuk website yang menarik serta dapat dibagikan
+              kapanpun dan dimanapun.
+            </p>
+          </div>
+          <div
+            class='d-flex justify-content-center flex-column flex-sm-row gap-2 order-3 order-sm-0'
+          >
+            <a href='/tema' class='btn btn-primary'>Pesan Sekarang</a>
+            <a href='#fitur' class='btn btn-secondary'>Pelajari lebih lanjut</a>
+          </div>
+          <Picture
+            src={heroImg}
+            class='img-fluid mt-sm-5 rounded-5 order-1 order-sm-0'
+            alt='hero-image'
+            formats={['avif', 'webp']}
+          />
+        </div>
+      </div>
+    </section>
+  </header>
+  <!-- hero section end-->
+  <main>
+    <!-- feature section -->
+    <section id='fitur' class='feature'>
+      <div class='container'>
+        <div class='row text-center'>
+          <h3>Fitur-fitur Unggulan</h3>
+          <p class='text-secondary'>
+            Fitur undangan pernikahan digital unggulan yang siap anda gunakan
+          </p>
+        </div>
+        <!-- card-wrapper -->
+        <!-- row 1st -->
+        <div class='row mt-5'>
+          <div class='col d-flex flex-column flex-sm-row gap-3'>
+            <CardFeature
+              src={fImages}
+              alt='f-img-card'
+              style='p-3 rounded-5'
+              title='Galeri Foto & Video'
+              desc='Tunjukan foto & video prewedding indah Anda kepada tamu undangan.'
+            />
+            <CardFeature
+              src={fCalendar}
+              alt='f-img-card'
+              style='p-3 rounded-5'
+              title='Save to Calendar'
+              desc='Mempermudah para tamu undangan supaya tidak lupa/melewatkan acara pernikahanmu.'
+            />
+          </div>
+        </div>
+        <!-- row 2nd-->
+        <div class='row mt-3 mt-lg-4'>
+          <div
+            class='col d-flex flex-column flex-sm-row flex-wrap flex-lg-nowrap gap-3'
+          >
+            <CardFeature
+              src={fMaps}
+              alt='f-img-card'
+              style='p-3 rounded-5'
+              title='Penujuk Lokasi'
+              desc='Petunjuk Google Maps yang dapat mempermudah tamu undangan menuju ke lokasi.'
+            />
+            <CardFeature
+              src={fBooks}
+              alt='f-img-card'
+              style='p-3 rounded-5'
+              title='Buku Tamu'
+              desc='Dapat menerima ucapan dan doa serta status kehadiran dari tamu undangan.'
+            />
+            <CardFeature
+              src={fGift}
+              alt='f-img-card'
+              style='p-3 rounded-5'
+              title='Wedding gift'
+              desc='Memudahkan para tamu untuk mengirimkan hadiah untuk pernikahanmu.'
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- feature section end -->
+    <!-- guide section -->
+    <Guide />
+    <!-- guide section end -->
+    <!-- theme section -->
+    <section id='tema' class='theme'>
+      <div class='container'>
+        <div class='row d-flex justify-content-between'>
+          <div class='col-lg-8'>
+            <div class='text-wrapper text-center text-lg-start'>
+              <h3>Pilihan Tema</h3>
+              <p class='text-secondary'>
+                Pilih Tema Sesuai Dengan Undangan Pernikahan Impianmu.
+              </p>
+            </div>
+          </div>
+          <div
+            class='col d-flex align-items-center justify-content-end d-none d-lg-inline-flex'
+          >
+            <BtnPrimary href='/tema' text='Lihat semua tema' style='' />
+          </div>
+        </div>
+        <!-- card-wrapper -->
+        <div class='row mt-4'>
+          <div
+            class='col d-flex flex-column flex-sm-row flex-wrap flex-lg-nowrap gap-3'
+          >
+            <CardProduct
+              src={imgSweetBrown}
+              alt='img-card'
+              title='Sweet brown'
+              price='Rp.479.000'
+              nPrice='Rp.249.000'
+              urlPreview='/sarah-angga'
+              url='/product/sweet-brown'
+            />
+            <CardProductSoon
+              src={imgSweetPurple}
+              alt='img-card'
+              title='Sweet purple'
+              price='Rp.479.000'
+              nPrice='Rp.249.000'
+            />
+            <CardProductSoon
+              src={imgSweetGreen}
+              alt='img-card'
+              title='Sweet green'
+              price='Rp.479.000'
+              nPrice='Rp.249.000'
+            />
+          </div>
+        </div>
+        <div
+          class='col d-flex align-items-center justify-content-center mt-5 d-lg-none'
+        >
+          <BtnPrimary href='/tema' text='Lihat semua tema' style='' />
+        </div>
+      </div>
+    </section>
+    <!-- theme section end -->
+    <!-- testimonil section -->
+    <section id='testimoni' class='testimoni'>
+      <div class='container'>
+        <div class='row text-center'>
+          <h3>Testimonial</h3>
+          <p class='text-secondary'>
+            Lihat Seberapa Puas Mereka Yang Menggukan Undangan Digital
+          </p>
+        </div>
+        <div class='row mt-4'>
+          <div class='col d-flex flex-column flex-lg-row gap-3'>
+            <CardTestimonial
+              text='Puas banget sama Wadda! Undangan digitalnya cantik dan gampang dibuat. Nggak ribet dan ramah lingkungan. Adminnya juga ramah dan helpful. Terima kasih Wadda!'
+              name='Sarah Putri'
+              photo={tOne}
+            />
+            <CardTestimonial
+              text='Wadda solusi terbaik untuk undangan pernikahan. Desainnya modern dan kekinian, fiturnya lengkap, dan harganya terjangkau. Terima kasih Wadda!'
+              name='Angga Putra'
+              photo={tTwo}
+            />
+            <CardTestimonial
+              text='Awalnya ragu pake undangan digital, tapi setelah coba Wadda langsung jatuh cinta. Desainnya keren, dan bisa diakses kapanpun. Nggak nyesel pilih Wadda! Thanks Wadda!'
+              name='Nabila putri'
+              photo={tThree}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- testimonil section end -->
+    <!-- pricing section -->
+    <section id='harga' class='pricing'>
+      <div class='container'>
+        <div class='row text-center'>
+          <h3>Paket Harga</h3>
+          <p class='text-secondary'>
+            Dapatkan Undangan Digital Premium Dengan Harga Terjangkau
+          </p>
+        </div>
+        <div class='row mt-4'>
+          <div
+            class='col d-flex flex-column flex-sm-row gap-3 align-items-center'
+          >
+            <CardPricingBasic
+              title='Design Template'
+              desc='Pilih Tema Sesuai Dengan Undangan Pernikahan Impianmu, Ada berbagai tema menarik siap pakai.'
+              nPrice='Rp.479.000'
+              price='Rp.249.000'
+            />
+            <CardPricingCustom
+              title='Custom Desain'
+              desc='Wujudkan desain impianmu! Tentukan tema, warna, ornament, sesuai yang kamu inginkan.'
+              nPrice='Rp.1.500.000'
+              price='Rp.749.000'
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- pricing section end -->
+    <!-- FAQ section -->
+    <section id='faq' class='faq'>
+      <div class='container'>
+        <div class='row text-center'>
+          <span><p class='fs-5 text-secondary mb-0'>FAQ</p></span>
+          <h3>Pertanyaan yang sering diajukan</h3>
+        </div>
+        <div class='row mt-5'>
+          <div class='col-lg-8 mx-auto'>
+            <Accordion />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FAQ section end -->
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+// icons
+import igImg from '@assets/icons/ig.svg';
+import fbImg from '@assets/icons/fb.svg';
+import twitterImg from '@assets/icons/twitter.svg';
+
+// links
+const product = [
+  { name: 'Tema', url: '/tema' },
+  { name: 'Harga', url: '#harga' },
+  { name: 'Testimonial', url: '#testimoni' },
+];
+const info = [
+  { name: 'Panduan', url: '#panduan' },
+  { name: 'Fitur', url: '#fitur' },
+  { name: 'FAQ', url: '#faq' },
+];
+const support = [
+  { name: 'Kebijakan privasi', url: '#kebijakan-privasi' },
+  { name: 'Syarat dan ketentuan', url: '#syarat-ketentuan' },
+  { name: 'Kontak kami', url: '/kontak' },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class='container'>
+    <div class='row d-flex justify-content-between'>
+      <div class='brand col-lg-4'>
+        <h5 class='text-white'>Wadda.</h5>
+        <p>
+          Wadda adalah jasa undangan digital yang dapat membantu Anda membuat
+          undangan pernikahan digital untuk pernikahan impian Anda.
+        </p>
+        <div class='d-flex gap-3'>
+          <a href='https://instagram.com' target='_blank'
+            ><Image src={igImg} alt='icon-social' loading={'eager'} /></a
+          >
+          <a href='https://twitter.com' target='_blank'
+            ><Image src={twitterImg} alt='icon-social' loading={'eager'} /></a
+          >
+          <a href='https://facebook.com' target='_blank'
+            ><Image src={fbImg} alt='icon-social' loading={'eager'} /></a
+          >
+        </div>
+      </div>
+      <div class='col d-md-flex justify-content-lg-end gap-5'>
+        <div class='link-wrappe mt-5 mt-lg-0'>
+          <p class='text-white'>Produk</p>
+          <div class='d-flex flex-column gap-3'>
+            {product.map((list) => <a href={list.url}>{list.name}</a>)}
+          </div>
+        </div>
+        <div class='link-wrapper mt-5 mt-lg-0'>
+          <p class='text-white'>Info</p>
+          <div class='d-flex flex-column gap-3'>
+            {info.map((list) => <a href={list.url}>{list.name}</a>)}
+          </div>
+        </div>
+        <div class='link-wrapper mt-5 mt-lg-0'>
+          <p class='text-white'>Dukungan</p>
+          <div class='d-flex flex-column gap-3'>
+            {support.map((list) => <a href={list.url}>{list.name}</a>)}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='row text-center pt-5'>
+      <hr class='border-2' />
+      <p class='text-white'>&copy; {year} Wadda - All right reserved</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,42 @@
+/* theme section */
+.theme {
+    padding: 5rem 0;
+    background: linear-gradient(
+      180deg,
+      rgba(246, 246, 246, 0) 0%,
+      var(--grey-50) 100%
+    );
+  }
+  /* theme section end */
+  
+  /* guide section */
+  .guide {
+    padding: 8rem 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      var(--grey-50) 100%
+    );
+  }
+  
+  .guide .card h6 {
+    color: var(--brown-700);
+  }
+  
+  .guide .card {
+    transition: box-shadow 1s;
+  }
+  
+  .guide .card:hover {
+    box-shadow: 0 0 16px rgba(33, 33, 33, 0.2);
+  }
+  /* guide section end */
+  
+  /* --- Media Query --- */
+  /* tablet */
+  @media (max-width: 992px) {
+    .theme {
+      padding: 3rem 0;
+    }
+  }
+  

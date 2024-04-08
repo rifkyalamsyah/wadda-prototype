@@ -1,0 +1,28 @@
+<div class='form-check mb-3 mt-3 has-validation'>
+  <input type='checkbox' class='form-check-input' id='exampleCheck1' required />
+  <label class='form-check-label ms-2 mb-0' for='exampleCheck1'
+    >Semua data yang saya isi sudah benar dan sesuai dengan data pernikahan
+    saya.</label
+  >
+  <div class='invalid-feedback'>Harus di checklist!</div>
+</div>
+
+<div
+  class='button-wrapper d-flex flex-lg-row justify-content-between gap-3 mt-3'
+>
+  <button type='submit' id='btn-submit' class='btn btn-primary'>
+    Submit Form
+  </button>
+  <button
+    id='btn-loading'
+    class='btn btn-primary d-none'
+    type='button'
+    disabled
+  >
+    <span class='spinner-border spinner-border-sm' aria-hidden='true'></span>
+    <span role='status'>Mengirim...</span>
+  </button>
+  <button type='button' class='btn btn-link btn-clear-forms'>
+    Clear Forms
+  </button>
+</div>

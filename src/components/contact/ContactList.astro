@@ -1,0 +1,25 @@
+---
+const {src, title, link, text, w, h} = Astro.props;
+---
+
+
+<div class='d-flex align-items-center'>
+  <div class='img-wrapper flex-shrink-0'>
+    <img
+      src={src}
+      class='rounded-4 border-3'
+      alt='img-contact'
+      loading={'eager'}
+      width={w}
+      height={h}
+    />
+  </div>
+  <div class='flex-grow-1 ms-3'>
+    <h6>{title}</h6>
+    <a
+      href={link}
+      class='text-secondary text-decoration-none mb-0'
+      target='_blank'>{text}</a
+    >
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<form action='' method='post' class='p-3 p-sm-4'>
+  <div class='row d-flex flex-column flex-lg-row g-3'>
+    <!-- title link -->
+    <div class='col'>
+      <div class='input-group'>
+        <span class='input-group-text'>wadda.me/</span>
+        <div class='form-floating'>
+          <input
+            type='text'
+            class='form-control'
+            id='inputTitleLink'
+            name='inputTitleLink'
+            placeholder='Nama Undangan'
+            required
+          />
+          <label for='inputTitleLink'>Nama Undangan</label>
+        </div>
+      </div>
+    </div>
+    <!-- pronoun -->
+    <div class='col'>
+      <div class='form-floating'>
+        <select
+          class='form-select'
+          id='selectPronoun'
+          name='selectPronoun'
+          aria-label='Floating label select example'
+        >
+          <option selected value='' disabled>pilih</option>
+          <option value='Bapak'>Bapak</option>
+          <option value='Ibu'>Ibu</option>
+          <option value='Mas'>Mas</option>
+          <option value='Mbak'>Mbak</option>
+          <option value='Bestie'>Bestie</option>
+        </select>
+        <label for='selectPronoun'>Bpk/Ibu/Saudara/i</label>
+      </div>
+    </div>
+    <!-- guest name -->
+    <div class='col'>
+      <div class='form-floating'>
+        <input
+          type='text'
+          class='form-control'
+          id='inputGuestName'
+          name='inputGuestName'
+          placeholder='nama'
+          required
+        />
+        <label for='inputGuestName'>Nama Tamu</label>
+      </div>
+    </div>
+  </div>
+  <!-- CTA -->
+  <div class='row mt-4'>
+    <div
+      class='btn-wrapper d-flex justify-content-center flex-column flex-sm-row gap-3'
+    >
+      <button type='submit' id='btn-generate-link' class='btn btn-primary'>
+        <i class='bi bi-stars'></i> Generate Link
+      </button>
+      <button id='btn-reset' type='reset' class='btn btn-outline-danger d-none'>
+        <i class='bi bi-eraser'></i> Delete
+      </button>
+    </div>
+  </div>
+</form>
+

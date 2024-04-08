@@ -1,0 +1,19 @@
+---
+import Head from '@layouts/MainHead.astro';
+
+import '@styles/global.css';
+
+const { title, desc, image, domain, url } = Astro.props;
+---
+
+<html lang='en'>
+  <Head title={title} desc={desc} image={image} domain={domain} url={url} />
+  <body>
+    <slot />
+    <!-- Bootstrap js -->
+    <script
+      src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'
+      integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz'
+      crossorigin='anonymous' is:inline></script>
+  </body>
+</html>

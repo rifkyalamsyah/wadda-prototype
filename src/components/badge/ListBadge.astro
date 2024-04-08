@@ -1,0 +1,13 @@
+---
+const { text } = Astro.props;
+
+interface Props {
+  text: string[];
+}
+---
+
+{
+  text.map((text: string) => (
+    <span class='badge rounded-pill'>{text}</span>
+  ))
+}

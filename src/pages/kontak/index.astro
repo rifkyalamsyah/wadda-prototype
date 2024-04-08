@@ -1,0 +1,154 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+// components
+import Navbar from '@components/navbar/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import FormContact from '@components/contact/Form.astro';
+
+// css
+import '@styles/contact.css';
+
+// icons
+import iEmail from '@assets/icons/contact/email.svg';
+import iPhone from '@assets/icons/contact/phone.svg';
+import iMap from '@assets/icons/contact/map.svg';
+
+// contact list
+const contact = [
+  {
+    title: 'Email',
+    text: 'waddadigital@gmail.com',
+    link: 'mailto:waddadigital@gmail.com',
+    image: `${iEmail.src}`,
+    width: `${iEmail.width}`,
+    height: `${iEmail.height}`,
+  },
+  {
+    title: 'Phone',
+    text: '+62 856 2376 627',
+    link: 'https://wa.me/+628562376627',
+    image: `${iPhone.src}`,
+    width: `${iPhone.width}`,
+    height: `${iPhone.height}`,
+  },
+];
+
+// SEO
+import { CONTACT_PAGE } from '@data/seo';
+import ContactList from '@components/contact/ContactList.astro';
+---
+
+<Layout
+  title={CONTACT_PAGE.title}
+  desc={CONTACT_PAGE.desc}
+  image={CONTACT_PAGE.image}
+  domain={CONTACT_PAGE.domain}
+  url={CONTACT_PAGE.url}
+>
+  <Navbar />
+  <main>
+    <!-- contact section -->
+    <section class='contact'>
+      <div class='container'>
+        <div class='row d-flex flex-column flex-lg-row gap-5'>
+          <div class='col'>
+            <div class='text-wrapper text-center text-lg-start'>
+              <h3>Kontak kami</h3>
+              <p class='text-secondary'>Tim support kami siap membantu anda.</p>
+            </div>
+            <!-- contact info -->
+            <div class='contact-wrapper d-flex flex-column gap-4 mt-5'>
+              {
+                contact.map((list) => (
+                  <>
+                    <ContactList
+                      src={list.image}
+                      title={list.title}
+                      link={list.link}
+                      text={list.text}
+                      w={list.width}
+                      h={list.height}
+                    />
+                  </>
+                ))
+              }
+              <div class='d-flex align-items-center'>
+                <div class='img-wrapper flex-shrink-0'>
+                  <img
+                    src={iMap.src}
+                    class='rounded-4 border-3'
+                    alt='img-contact'
+                    loading={'eager'}
+                    width={iMap.width}
+                    height={iMap.height}
+                  />
+                </div>
+                <div class='flex-grow-1 ms-3'>
+                  <h6>Alamat</h6>
+                  <p class='text-secondary text-decoration-none mb-0'>
+                    Jl. Benjot RT/RW 32/09 Caringin, Gegerbitung, Sukabumi, Jawa
+                    Barat, Indonesia.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- contact info end-->
+          </div>
+          <!-- form -->
+          <div class='col mt-4 mt-lg-0'>
+            <FormContact />
+          </div>
+          <!-- form end-->
+        </div>
+      </div>
+    </section>
+    <!-- contact section end -->
+  </main>
+  <Footer />
+  <!-- swal-->
+  <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+  <!-- js -->
+  <script is:inline>
+    const scriptURL =
+      'https://script.google.com/macros/s/AKfycbzHaQg7__CLu1tdAT_NWWzn-Ac2o7Dr-k3I2t5mePM-YtNfDhSylPyX4N0JIUStwG65/exec';
+    // ref, form, alert & button
+    const form = document.forms['submit-form-contact'];
+    const alert = document.getElementById('alert-done');
+    const btnSubmit = document.getElementById('btn-submit');
+    const btnLoading = document.getElementById('btn-loading');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (form.checkValidity()) {
+        // change button
+        btnLoading.classList.toggle('d-none');
+        btnSubmit.classList.toggle('d-none');
+        // send form
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) }).then(
+          () => {
+            // change button
+            btnLoading.classList.toggle('d-none');
+            btnSubmit.classList.toggle('d-none');
+            // reset form
+            form.reset();
+            form.classList.remove('was-validated');
+            // alert
+            swal({
+              title: 'Submitted!',
+              text: 'Pesan anda berhasil terkirim',
+              icon: 'success',
+              button: false,
+              timer: 3000,
+            });
+            // hide alert
+            alert.classList.toggle('d-none');
+          }
+        );
+      } else {
+        // check validation
+        form.classList.add('was-validated');
+      }
+    });
+  </script>
+</Layout>

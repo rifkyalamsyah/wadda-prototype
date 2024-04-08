@@ -1,0 +1,75 @@
+<div class='form-wrapper card rounded-4 p-3 p-lg-4'>
+  <h5 class='mb-4 text-center text-lg-start'>Pemesan Undangan</h5>
+  <div class='mb-3'>
+    <label for='inputNameCustomer' class='form-label'>Nama Pemesan</label>
+    <input
+      name='Nama Pemesan'
+      type='text'
+      class='form-control'
+      id='inputNameCustomer'
+      placeholder='Nama Lengkap'
+      pattern='^[^0-9]+$'
+      title='Hanya diizinkan menggunakan huruf dan spasi, tanpa angka'
+      maxlength='50'
+      onkeypress='if(this.value.length==50) return false;'
+      required
+    />
+    <div class='invalid-feedback'>Nama pemesan harus di isi, tanpa angka!</div>
+  </div>
+  <div class='input-group d-flex flex-column flex-sm-row gap-0 gap-sm-4'>
+    <div class='col'>
+      <div class='mb-3'>
+        <label for='inputEmail' class='form-label'>Email</label>
+        <input
+          name='Email'
+          type='email'
+          class='form-control'
+          id='inputEmail'
+          placeholder='nama@email.com'
+          onkeypress='if(this.value.length==64) return false;'
+          required
+        />
+        <div class='invalid-feedback'>Harap masukan email yang valid!</div>
+      </div>
+    </div>
+    <div class='col'>
+      <div class='mb-3'>
+        <label for='inputWa' class='form-label'>No. WhatsApp</label>
+        <input
+          name='WhatsApp'
+          type='number'
+          class='form-control'
+          id='inputWa'
+          placeholder='+6281234567890'
+          pattern='[0-9]{11,14}'
+          title='Hanya diizinkan menggunakan angka, minimal 11 dan maksimal 14 digit'
+          onkeypress='if(this.value.length==15) return false;'
+          required
+        />
+        <div class='invalid-feedback'>
+          No. WhatsApp harus di isi! max. 14 digit angka
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='mb-3'>
+    <label for='inputTitleLink' class='form-label'>Custom link undangan</label>
+    <div class='input-group has-validation'>
+      <span class='input-group-text' id='NameUrl'>wadda.me/</span>
+      <input
+        name='Nama Undangan'
+        type='text'
+        class='form-control'
+        id='inputTitleLink'
+        aria-describedby='NameUrl NameLink'
+        placeholder='fulanah-fulan'
+        required
+      />
+      <div class='invalid-feedback'>Judul undangan harus di isi!</div>
+    </div>
+    <div class='form-text mt-3' id='NameLink'>
+      Contoh ketika undangan sudah aktif link akan menjadi seperti berikut:
+      <strong>https://wadda.me/fulanah-fulan</strong>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+import Navbar from '@components/navbar/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import Guide from '@layouts/section/GuideOrder.astro';
+// compoents
+import CardProduct from '@components/theme/CardProduct.astro';
+import CardProductSoon from '@components/theme/CardProductSoon.astro';
+
+// css
+import '@styles/theme.css';
+
+// images product
+import imgSweetPurple from '@assets/images/product/thumbnail/img-sweet-purple.webp';
+import imgSweetGreen from '@assets/images/product/thumbnail/img-sweet-green.webp';
+import imgSweetRose from '@assets/images/product/thumbnail/img-sweet-rose.webp';
+import imgSweetBlue from '@assets/images/product/thumbnail/img-sweet-blue.webp';
+import imgSweetRosy from '@assets/images/product/thumbnail/img-sweet-pink.webp';
+
+// content collection
+import { getCollection } from 'astro:content';
+const themes = await getCollection('theme');
+
+// SEO
+import { THEME_PAGE } from '@data/seo';
+---
+
+<Layout
+  title={THEME_PAGE.title}
+  desc={THEME_PAGE.desc}
+  image={THEME_PAGE.image}
+  domain={THEME_PAGE.domain}
+  url={THEME_PAGE.url}
+>
+  <Navbar />
+  <main>
+    <!-- theme section -->
+    <section id='tema' class='theme'>
+      <div class='container'>
+        <div class='row d-flex justify-content-between'>
+          <div class='col'>
+            <div class='text-wrapper text-center'>
+              <h3>Berbagai Tema Premium Siap Pakai</h3>
+              <p class='text-secondary'>
+                Tidak perlu bingung untuk membuat desainnya. Pilih tema yang
+                sesuai dengan anda.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- card-wrapper -->
+        <div class='row mt-4'>
+          {
+            themes.map((item) => (
+              <div class='col d-flex flex-column flex-sm-row flex-wrap flex-lg-nowrap gap-3'>
+                <CardProduct
+                  src={item.data.thumbnail}
+                  alt='img-card'
+                  title={item.data.title}
+                  price={item.data.price}
+                  nPrice={item.data.nPrice}
+                  urlPreview={item.data.urlPreview}
+                  url={`/product/${item.slug}`}
+                />
+                <CardProductSoon
+                  src={imgSweetPurple}
+                  alt='img-card'
+                  title='Sweet Purple'
+                  price='Rp.479.000'
+                  nPrice='Rp.249.000'
+                />
+                <CardProductSoon
+                  src={imgSweetGreen}
+                  alt='img-card'
+                  title='Sweet Green'
+                  price='Rp.479.000'
+                  nPrice='Rp.249.000'
+                />
+              </div>
+            ))
+          }
+        </div>
+        <!-- row 2nd -->
+        <div class='row mt-4'>
+          <div
+            class='col d-flex flex-column flex-sm-row flex-wrap flex-lg-nowrap gap-3'
+          >
+            <CardProductSoon
+              src={imgSweetRose}
+              alt='img-card'
+              title='Sweet Rose'
+              price='Rp.479.000'
+              nPrice='Rp.249.000'
+            />
+            <CardProductSoon
+              src={imgSweetBlue}
+              alt='img-card'
+              title='Sweet Blue'
+              price='Rp.479.000'
+              nPrice='Rp.249.000'
+            />
+            <CardProductSoon
+              src={imgSweetRosy}
+              alt='img-card'
+              title='Sweet Rosy'
+              price='Rp.479.000'
+              nPrice='Rp.249.000'
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- theme section end -->
+    <Guide />
+  </main>
+  <Footer />
+</Layout>

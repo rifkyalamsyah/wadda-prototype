@@ -1,0 +1,30 @@
+---
+import BtnDisable from '@components/button/Disable.astro';
+
+import { Picture } from 'astro:assets';
+
+const { src, alt, title, price, nPrice } = Astro.props;
+---
+
+<div class='card rounded-4 w-100'>
+  <Picture
+    src={src}
+    class='card-img-top w-100 h-100 p-3 rounded-5'
+    alt={alt}
+    formats={['avif', 'webp']}
+  />
+  <div class='card-body'>
+    <h5 class='card-title'>{title}</h5>
+    <div class='d-flex align-items-end flex-wrap gap-1'>
+      <p class='fw-bold text-decoration-line-through text-secondary'>
+        {price}
+      </p>
+      <p class='fw-bold fs-5'>{nPrice}</p>
+    </div>
+    <div
+      class='d-flex flex-lg-row justify-content-center align-items-center gap-2'
+    >
+      <BtnDisable text='Coming Soon!' style='w-100' />
+    </div>
+  </div>
+</div>

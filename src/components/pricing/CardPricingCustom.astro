@@ -1,0 +1,30 @@
+---
+import BtnSecondary from '@components/button/Secondary.astro';
+const { title, desc, price, nPrice } = Astro.props;
+
+const LinkWA =
+  'https://wa.me/+628562376627?text=Halo%20Wadda,%0A%0APerkenalkan,%20nama%20saya%20%5Bnama%20Anda%5D.%20Saya%20dan%20pasangan%20saya%20akan%20melangsungkan%20pernikahan%20pada%20%5Btanggal%5D.%0A%0AKami%20tertarik%20untuk%20menggunakan%20layanan%20undangan%20pernikahan%20digital%20custom%20desain%20dari%20Wadda.%0A%0AKami%20ingin%20berkonsultasi%20mengenai%20beberapa%20hal,%20yaitu:%0A-%0A-%0A-%0A%0ATerima%20kasih.%0A%0ASalam,%0A%5BNama%20Anda%5D';
+---
+
+<div class='card w-100 rounded-4 p-3'>
+  <div class='card-body'>
+    <h3 class='card-title'>{title}</h3>
+    <p class='card-text text-secondary'>
+      {desc}
+    </p>
+    <div class='d-flex align-items-end flex-wrap gap-1 gap-lg-2 mb-2 mb-lg-3'>
+      <p class='fw-bold text-decoration-line-through text-secondary fs-5 mb-0'>
+        {nPrice}
+      </p>
+      <p class='fw-bold fs-4 mb-0'>{price}</p>
+    </div>
+    <div class='d-flex'>
+      <BtnSecondary
+        href={LinkWA}
+        text='Konsultasi Sekarang'
+        style='flex-grow-1 flex-lg-grow-0'
+        target='_blank'
+      />
+    </div>
+  </div>
+</div>

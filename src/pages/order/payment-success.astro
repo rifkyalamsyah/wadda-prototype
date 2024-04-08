@@ -1,0 +1,61 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+// compoents
+import Navbar from '@components/navbar/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import BtnPrimary from '@components/button/Primary.astro';
+// css
+import '@styles/payment-success.css';
+// images
+import { Image } from 'astro:assets';
+import iSuccess from '@assets/icons/order/done.svg';
+// seo
+import { PAYMENT_SUCCESS_PAGE } from '@data/seo';
+---
+
+<Layout
+  title={PAYMENT_SUCCESS_PAGE.title}
+  desc={PAYMENT_SUCCESS_PAGE.desc}
+  image={PAYMENT_SUCCESS_PAGE.image}
+  domain={PAYMENT_SUCCESS_PAGE.domain}
+  url={PAYMENT_SUCCESS_PAGE.url}
+>
+  <Navbar />
+  <main>
+    <!-- success payment section -->
+    <section class='success-payment'>
+      <div class='container'>
+        <div class='row'>
+          <div
+            class='col d-flex flex-column justify-content-center align-items-center'
+          >
+            <div class='img-wrapper'>
+              <Image
+                src={iSuccess}
+                class='icon rounded-circle'
+                alt='img-success'
+              />
+            </div>
+            <div class='text-wrapper text-center mt-4'>
+              <h1>Pembayaran Berhasil</h1>
+              <p class='text-secondary'>
+                Terima kasih telah melakukan pembayaran. Selanjutnya silahkan
+                anda mengisi form data pernikahan!
+              </p>
+            </div>
+            <div class='cta-wrapper mt-2'>
+              <BtnPrimary
+                href='/order/form'
+                text='Isi data pernikahan'
+                style=''
+                target=''
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- success payment section end -->
+  </main>
+  <Footer />
+</Layout>

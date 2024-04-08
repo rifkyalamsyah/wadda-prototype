@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets"; 
+
+const {text, name, photo} = Astro.props;
+---
+
+<div class='card rounded-4 p-2'>
+  <div class='card-body'>
+    <figure class='mb-0'>
+      <blockquote class='blockquote'>
+        <p class='text-secondary'>
+          "{text}"
+        </p>
+      </blockquote>
+      <div class='d-flex align-items-center gap-3 mt-4'>
+        <Image
+          src={photo}
+          class='rounded-circle'
+          style='width: 60px;'
+          alt='img-people'
+        />
+        <p class='fw-bold mb-0'>{name}</p>
+      </div>
+    </figure>
+  </div>
+</div>

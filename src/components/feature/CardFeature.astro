@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+
+const { src, alt, style, title, desc } = Astro.props;
+---
+
+<div class='card w-100 rounded-4'>
+  <div class='img-wrapper'>
+    <Image src={src} class={style} alt={alt} width={84} height={84} />
+  </div>
+  <div class='card-body'>
+    <h5 class='card-title'>{title}</h5>
+    <p class='card-text text-secondary'>{desc}</p>
+  </div>
+</div>
