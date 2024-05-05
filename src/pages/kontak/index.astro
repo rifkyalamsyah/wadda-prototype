@@ -25,13 +25,15 @@ const contact = [
   },
   {
     title: 'Phone',
-    text: '+62 856 2376 627',
-    link: 'https://wa.me/+628562376627',
+    text: '+62 858 6091 1693',
+    link: 'https://wa.me/+6285860911693',
     image: `${iPhone.src}`,
     width: `${iPhone.width}`,
     height: `${iPhone.height}`,
   },
 ];
+
+const address = 'Jl. Benjot RT.32/RW.09 Caringin, Gegerbitung, Kab. Sukabumi, Jawa Barat, Indonesia.';
 
 // SEO
 import { CONTACT_PAGE } from '@data/seo';
@@ -86,8 +88,7 @@ import ContactList from '@components/contact/ContactList.astro';
                 <div class='flex-grow-1 ms-3'>
                   <h6>Alamat</h6>
                   <p class='text-secondary text-decoration-none mb-0'>
-                    Jl. Benjot RT/RW 32/09 Caringin, Gegerbitung, Sukabumi, Jawa
-                    Barat, Indonesia.
+                    {address}
                   </p>
                 </div>
               </div>

@@ -10,6 +10,7 @@ const product = [
   { name: 'Tema', url: '/tema' },
   { name: 'Harga', url: '#harga' },
   { name: 'Testimonial', url: '#testimoni' },
+  { name: 'Guest Link', url: '/guest-link' },
 ];
 const info = [
   { name: 'Panduan', url: '#panduan' },
@@ -22,6 +23,9 @@ const support = [
   { name: 'Kontak kami', url: '/kontak' },
 ];
 
+const aWadda =
+  'Solusi tepat untuk pernikahan impian Anda! Dapatkan undangan digital yang mudah dibagikan. Ciptakan momen spesial yang tak terlupakan bersama Wadda.';
+
 const year = new Date().getFullYear();
 ---
 
@@ -31,8 +35,7 @@ const year = new Date().getFullYear();
       <div class='brand col-lg-4'>
         <h5 class='text-white'>Wadda.</h5>
         <p>
-          Wadda adalah jasa undangan digital yang dapat membantu Anda membuat
-          undangan pernikahan digital untuk pernikahan impian Anda.
+          {aWadda}
         </p>
         <div class='d-flex gap-3'>
           <a href='https://instagram.com' target='_blank'
