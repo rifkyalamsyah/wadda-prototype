@@ -23,7 +23,7 @@ export const PRODUCT_PAGE = {
 }
 
 export const CONTACT_PAGE = {
-    title: 'Kontak Kami - Wadda: Layanan Undangan Digital Terbaik!',
+    title: 'Kontak Kami - Wadda',
     desc: 'Butuh Bantuan? Hubungi Tim Wadda! Berbagai Cara Mudah untuk Menghubungi Kami. Pertanyaan, Saran, dan Bantuan Di Sini!',
     image: 'https://wadda.me/img/og/og-img-wadda.webp',
     domain: 'wadda.me',
@@ -52,4 +52,12 @@ export const FORM_PAGE = {
     image: 'https://wadda.me/img/og/og-img-wadda.webp',
     domain: 'wadda.me',
     url: 'https://wadda.me/order/form'
+}
+
+export const GUEST_LINK_PAGE = {
+    title: 'Custom Guest Link - Wadda: Undangan Digital',
+    desc: 'Buat Link Undangan Pernikahan Digital yang Personal dengan Wadda! Coba Custom Guest Link Sekarang!',
+    image: 'https://wadda.me/img/og/og-img-wadda.webp',
+    domain: 'wadda.me',
+    url: 'https://wadda.me/guest-link/'
 }

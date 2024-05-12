@@ -4,6 +4,7 @@ const themeCollection = defineCollection({
   type: 'content', 
   schema: ({ image }) => z.object({
     title: z.string(),
+    sortTitle: z.string(),
     desc: z.string(),
     image: image(),
     thumbnail: image(),
